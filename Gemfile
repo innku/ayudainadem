@@ -26,7 +26,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 4.2.0'
 
-
 group :development do
   gem 'awesome_print', '~> 1.2'
   gem 'better_errors', '~> 2.0'
