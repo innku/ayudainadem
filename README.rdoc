@@ -4,52 +4,56 @@ Sistema de FAQ y tickets para el INADEM
 
 == Dependencias
 
-Las dependencias de Ofertas Hacker son las siguientes.
+Las dependencias del Proyecto
 
 * {Ruby 2.1.4}[https://www.ruby-lang.org/en/news/2014/10/27/ruby-2-1-4-released/]
-* {Rails 3.2.3}[https://github.com/rails/rails/tree/v3.2.3]
-* {Bundler}[http://gembundler.com/]
+* {Rails 4.1.7}[https://github.com/rails/rails/tree/4-1-stable]
+* {Postgresql}[http://www.postgresql.org/]
 
 == Instrucciones de Instalación
 
-La instalación de Ofertas Hacker es bastante sencilla, solo se requieren los siguientes pasos.
-
 1. Clona la aplicación a tu un repositorio local.
 
-git clone git@github.com:innku/ofertashacker.git
+git clone git@github.com:innku/ayudainadem.git
 
-2. Instala Ruby on Rails si aun no lo tienes instalado.
+2. Ingresar a la carpeta
 
-gem install rails
+cd ayudainadem
 
-3. Ejecuta el bundle para instalar todas las gemas y dependencias requeridas en Ofertas Hacker
+3. Ejecuta el bundle para instalar todas las gemas y dependencias requeridas
 
 bundle install
 
-4. Debes de hacer la migración la base de datos
+4. Archivo de configuración de la base de datos
+
+cp config/database.yml.example config/database.yml
+
+NOTA: hacer las modificaciones correspondientes para tu configuración local
+
+4. Crear base de datos, tanto para pruebas y desarrollo
+
+rake db:create:all
+
+5. Correr las migración para desarrollo
 
 rake db:migrate
 
-5. Si quieres crear una cuenta de administrador puedes correr:
+
+5. Si quieres crear cuentas e información por default
 
 rake db:seed
-rake db:seed:sample
 
-Nota: Las compañías creadas por el seed tienen:
+Nota: De datos de pruebas
 
 * Email de administrador: "admin@sample.com"
-* Email de compañías de prueba: "company@sample.com" y "company2@sample.com"
+* Email de agente de prueba: "agente@sample.com" y "agente2@sample.com"
 * Todas las contraseñs: "secret"
 
-== ¿Quienes somos?
+== El equipo
 
-Este es un proyecto creado y mantenido por la comunidad de Ruby en Latinoamérica por el momento los participantes activos en este repositorio somos: 
+* {Gize Bonilla}[https://github.com/xixebombilla]
 
-* {Juan Pablo Escobar}[https://github.com/juanpabloe]
+* {Alberto Padilla}[https://github.com/albertopadilla]
 
-* {Rogelio Guzmán Huerta}[https://github.com/rogeliog]
-
-* {Elías Matheus}[https://github.com/e3matheus]
-
-* {Sebastián Gutiérrez}[http://github.com]
+* {Ismael Marín}[http://github.com/igmarin]
 
