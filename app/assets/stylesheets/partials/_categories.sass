@@ -1,0 +1,36 @@
+// Categories
+
+.categories
+  ul
+    @include outer-container
+    li
+      @include span-columns(6)
+      @include omega(2n)
+      margin: 5px
+      background: white
+      .header
+        padding: em(5)
+        background: $redColor
+        .fa-stack
+          float: left
+          .fa-circle
+            color: $graySuperDarkColor
+        .title
+          padding: em(8) em(10)
+          float: left
+          color: white
+        @include clearfix
+      .link-to
+        background: darken($bodyBackground,5)
+        display: block
+        padding: em(5) em(10)
+        color: $grayDarkColor
+        &:hover
+          background: darken($bodyBackground,20)
+          color: $graySuperDarkColor
+        span
+          float: left
+        i
+          float: right
+          padding: em(5)
+        @include clearfix
