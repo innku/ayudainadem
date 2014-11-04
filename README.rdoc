@@ -1,28 +1,59 @@
-== README
+== INADEM tickets
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sistema de FAQ y tickets para el INADEM
 
-Things you may want to cover:
+== Dependencias
 
-* Ruby version
+Las dependencias del Proyecto
 
-* System dependencies
+* {Ruby 2.1.4}[https://www.ruby-lang.org/en/news/2014/10/27/ruby-2-1-4-released/]
+* {Rails 4.1.7}[https://github.com/rails/rails/tree/4-1-stable]
+* {Postgresql}[http://www.postgresql.org/]
 
-* Configuration
+== Instrucciones de Instalación
 
-* Database creation
+1. Clona la aplicación a tu un repositorio local.
 
-* Database initialization
+git clone git@github.com:innku/ayudainadem.git
 
-* How to run the test suite
+2. Ingresar a la carpeta
 
-* Services (job queues, cache servers, search engines, etc.)
+cd ayudainadem
 
-* Deployment instructions
+3. Ejecuta el bundle para instalar todas las gemas y dependencias requeridas
 
-* ...
+bundle install
+
+4. Archivo de configuración de la base de datos
+
+cp config/database.yml.example config/database.yml
+
+NOTA: hacer las modificaciones correspondientes para tu configuración local
+
+4. Crear base de datos, tanto para pruebas y desarrollo
+
+rake db:create:all
+
+5. Correr las migración para desarrollo
+
+rake db:migrate
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+5. Si quieres crear cuentas e información por default
+
+rake db:seed
+
+Nota: De datos de pruebas
+
+* Email de administrador: "admin@sample.com"
+* Email de agente de prueba: "agente@sample.com" y "agente2@sample.com"
+* Todas las contraseñs: "secret"
+
+== El equipo
+
+* {Gize Bonilla}[https://github.com/xixebombilla]
+
+* {Alberto Padilla}[https://github.com/albertopadilla]
+
+* {Ismael Marín}[http://github.com/igmarin]
+
