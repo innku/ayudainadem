@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
 
   private
   def default_role
-    self.add_role :usuario
+    self.add_role :emprendedor
   end
 end
