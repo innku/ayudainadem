@@ -4,6 +4,7 @@ $bodyBackground: #f5f5f5
 // Colors
 $redColor: #c21533
 $greenLightColor: #79bb2f
+$greenMediumColor: #0e8b48
 $greenDarkColor: #0e7736
 $grayLightColor: #8c9192
 $grayDarkColor: #67676d
@@ -29,5 +30,18 @@ $max-width: em(1088)
 // Media Queries
 $tablet: new-breakpoint(max-width 768px)
 $mobile: new-breakpoint(max-width 480px)
+
+//Breadcrumbs
+
+$breadcrumb-border-color: darken($bodyBackground,10)
+$breadcrumb-border: 1px solid $breadcrumb-border-color
+$breadcrumb-height: $gutter * 1.5
+$breadcrumb-arrow-color: $breadcrumb-border-color
+$breadcrumb-background: $bodyBackground
+$breadcrumb-background-last: $greenMediumColor
+$breadcrumb-inactive-hover-color: $breadcrumb-background
+$breadcrumb-color: $grayLightColor
+$breadcrumb-color-hover: $grayDarkColor
+$breadcrumb-color-active: $breadcrumb-color
 
 // Custom Style
