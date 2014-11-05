@@ -14,10 +14,10 @@
         <div class='content'>
           <ul>
             <li>
-              <%= link_to 'Este es un Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+              <%= link_to 'Este es un Subtitulo'.html_safe , root_path %>
             </li>
             <li>
-              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path%>
             </li>
           </ul>
         </div>
@@ -36,10 +36,10 @@
         <div class='content'>
           <ul>
             <li>
-              <%= link_to 'Este es un Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+              <%= link_to 'Este es un Subtitulo'.html_safe , root_path%>
             </li>
             <li>
-              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path%>
             </li>
           </ul>
         </div>
@@ -58,10 +58,10 @@
         <div class='content'>
           <ul>
             <li>
-              <%= link_to 'Este es un Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+              <%= link_to 'Este es un Subtitulo'.html_safe , root_path %>
             </li>
             <li>
-              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path %>
             </li>
           </ul>
         </div>
@@ -80,10 +80,10 @@
         <div class='content'>
           <ul>
             <li>
-              <%= link_to 'Este es un Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+              <%= link_to 'Este es un Subtitulo'.html_safe , root_path %>
             </li>
             <li>
-              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path %>
             </li>
           </ul>
         </div>
@@ -91,8 +91,8 @@
       </li>
     </ul>
   </div>
-  <div class='col-3'>
-    sidebar
+  <div class='col-3 sidebar'>
+    <%= render 'home/sidebar' %>
   </div>
 </div>
 
@@ -161,8 +161,8 @@
       </dd>
     </dl>
   </div>
-  <div class='col-3'>
-    sidebar
+  <div class='col-3 sidebar'>
+    <%= render 'home/sidebar' %>
   </div>
 </div>
 
@@ -197,7 +197,63 @@
       </li>
     </ul>
   </div>
-  <div class='col-3'>
-    sidebar
+  <div class='col-3 sidebar'>
+    <%= render 'home/sidebar' %>
+  </div>
+</div>
+
+<hr>
+
+<div class='row'>
+  <div class='col-12'>
+    <div class="breadcrumb">
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Quiero Aprender', root_path %>
+      <%= link_to 'Subcategory', root_path %>
+      <%= link_to 'Pregunta', root_path %>
+    </div>
+  </div>
+  <div class='col-9 question'>
+    <!--Header -->
+    <div class='header' style='background: #993366'>
+      <div class="icon">
+        <span class='icon' style='background: #993366'>
+          <i class="fa fa-male fa-lg"></i>
+        </span>
+        <span class='back'></span>
+      </div>
+      <h3 class='title'>quiero aprender</h3>
+    </div>
+    <h4 class='subtitle'>Subcategory</h4>
+    <div class='content'>
+      <h2 class='title'>Titulo de la Pregunta</h2>
+      <div class='image'>
+
+      </div>
+      <div class='info'>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies, nibh sed varius vulputate,
+          odio urna maximus ligula, sit amet elementum justo mi quis diam. Phasellus vel ultrices sapien, et eleifend dui.
+          Duis pretium, justo volutpat vestibulum accumsan, turpis nisi scelerisque mauris, non varius enim massa id neque.
+          Nulla et nulla nec nisl interdum vestibulum nec sit amet erat. Sed sit amet iaculis ipsum. Vestibulum a porta neque,
+          sit amet aliquet erat. Etiam commodo neque ut turpis tincidunt molestie sed non nulla. Integer imperdiet efficitur
+          dui eget ornare. Praesent porta lorem augue, a faucibus tellus mollis id. Suspendisse luctus id ligula eu iaculis.
+          Maecenas maximus consectetur molestie. Morbi pellentesque lectus id risus convallis rutrum. Ut id est efficitur ante
+          luctus vulputate. Nunc sodales sapien odio, in elementum velit commodo eget. Vestibulum maximus erat quis mi egestas
+          ultrices. Suspendisse sed massa enim.
+
+        </p>
+        <p>
+          Pellentesque sodales tellus at vestibulum commodo. Duis est elit, suscipit ut ipsum porttitor,
+          dapibus consequat est. Morbi rhoncus suscipit leo, vulputate finibus mauris facilisis id. Maecenas
+          varius eros quis ante rhoncus, at scelerisque massa eleifend. Duis finibus quis nisi sed semper.
+          Praesent hendrerit ullamcorper magna. Vivamus nec sagittis libero, in pulvinar ex. Suspendisse sit amet
+          enim et eros volutpat accumsan at in justo. Curabitur rhoncus vulputate libero, eu placerat nulla consequat id.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class='col-3 sidebar'>
+    <%= render 'home/sidebar' %>
   </div>
 </div>

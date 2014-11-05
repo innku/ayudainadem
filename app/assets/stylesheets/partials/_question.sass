@@ -1,6 +1,4 @@
-// Subcategories
-
-.subcategory
+.question
   .header
     background: $redColor
     height: 45px
@@ -45,11 +43,14 @@
     margin: 0
   .content
     background: white
-    margin: 0
-    a
-      padding: em(10) em(25)
-      font-size: 10pt
-      display: block
-      border-bottom: 1px solid darken($bodyBackground,5)
-      &:hover
-        background: darken($bodyBackground,2)
+    padding: em(20)
+    .title
+      color: $grayDarkColor
+      margin-bottom: em(10)
+    .image
+      width: 100%
+      height: em(200)
+      background: $bodyBackground
+      margin-bottom: em(20)
+    .info
+      text-align: justify
