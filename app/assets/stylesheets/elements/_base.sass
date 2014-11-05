@@ -1,0 +1,25 @@
+// General Styles
+
+body
+  margin: 0
+  padding: 0
+  background: $bodyBackground
+  font-family: 'Titillium Web', sans-serif
+
+a
+  text-decoration: none
+  color: $greenDarkColor
+  @include animate-all(.3s)
+  &:hover
+    color: darken($greenDarkColor,5)
+
+h1,h2,h3,h4
+  font-family: 'Marcellus', serif
+  margin: 2px 0
+h5,h6
+  margin: 2px 0
+
+ul
+  list-style: none
+  margin: 0
+  padding: 0

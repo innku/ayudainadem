@@ -1,0 +1,56 @@
+// General  Mixins
+//---------------------
+//Media queries
+@mixin mobile
+  @include media($mobile)
+    @include span-columns(12)
+// Animation
+//---------------------
+@mixin animate-all($sec)
+  -webkit-transition: all $sec ease-in-out
+  -moz-transition: all $sec ease-in-out
+  -o-transition: all $sec ease-in-out
+  transition: all $sec ease-in-out
+
+// General Buttons
+//---------------------
+// Buttons with Background
+@mixin button-base($background,$textColor)
+  @include mobile
+  @include inline-block
+  @include all-border(3px)
+  margin: em(5) 0
+  background: $background
+  padding: em(12) em(30)
+  color: $textColor
+  text-align: center
+  text-transform: lowercase
+  font-weight: 400
+  &:hover
+    background: lighten($background,8)
+
+
+@mixin button-base-dis($background,$textColor)
+  @include mobile
+  @include inline-block
+  @include all-border(3px)
+  margin: em(5) 0
+  background: $background
+  padding: em(12) em(30)
+  text-align: center
+  color: $textColor
+  text-transform: lowercase
+  font-weight: 400
+
+//Border Radius
+//----------------
+// All with Border
+@mixin all-border($pixels)
+  @include border-top-radius($pixels)
+  @include border-bottom-radius($pixels)
+// Left with border
+@mixin left-border($pixels)
+  @include border-left-radius($pixels)
+// Right with border
+@mixin right-border($pixels)
+  @include border-right-radius($pixels)

@@ -60,6 +60,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bourbon (3.2.3)
+      sass (~> 3.2)
+      thor
     builder (3.2.2)
     byebug (2.7.0)
       columnize (~> 0.3)
@@ -161,6 +164,8 @@ GEM
     fog-xml (0.1.0)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-sass (4.2.2)
+      sass (~> 3.2)
     foreigner (1.6.1)
       activerecord (>= 3.0.0)
     formatador (0.2.5)
@@ -197,6 +202,9 @@ GEM
     minitest (5.4.2)
     multi_json (1.10.1)
     multi_test (0.1.1)
+    neat (1.5.1)
+      bourbon (>= 3.1)
+      sass (~> 3.2.19)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
@@ -338,6 +346,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print (~> 1.2)
   better_errors (~> 2.0)
+  bourbon
   cancancan (~> 1.9.2)
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.0.0)
@@ -349,12 +358,14 @@ DEPENDENCIES
   email_spec (~> 1.6.0)
   factory_girl_rails (~> 4.5.0)
   fog (~> 1.24.0)
+  font-awesome-sass (~> 4.2.0)
   foreigner (~> 1.6.1)
   friendly_id (~> 5.0.4)
   jazz_hands!
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick (~> 3.8.1)
+  neat
   pg (~> 0.17.1)
   pg_search (~> 0.7.8)
   pry-byebug

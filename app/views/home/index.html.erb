@@ -1,0 +1,203 @@
+<div class='row'>
+  <div class='col-9 categories'>
+    <ul>
+      <li>
+        <div class='header' style='background: #993366'>
+          <div class="icon">
+            <span class='icon' style='background: #993366'>
+              <i class="fa fa-male fa-lg"></i>
+            </span>
+            <span class='back'></span>
+          </div>
+          <h3 class='title'>quiero aprender</h3>
+        </div>
+        <div class='content'>
+          <ul>
+            <li>
+              <%= link_to 'Este es un Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+            </li>
+            <li>
+              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+            </li>
+          </ul>
+        </div>
+        <%= link_to '<span>ver todas las subcategorias</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, root_path , class: 'link-to'%>
+      </li>
+      <li>
+        <div class='header' style='background: orange'>
+          <div class="icon">
+            <span class='icon' style='background: orange'>
+              <i class="fa fa-bicycle fa-lg"></i>
+            </span>
+            <span class='back'></span>
+          </div>
+          <h3 class='title'>arrancando</h3>
+        </div>
+        <div class='content'>
+          <ul>
+            <li>
+              <%= link_to 'Este es un Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+            </li>
+            <li>
+              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+            </li>
+          </ul>
+        </div>
+        <%= link_to '<span>ver todas las subcategorias</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, root_path , class: 'link-to'%>
+      </li>
+      <li>
+        <div class='header'  style='background: green'>
+          <div class="icon">
+            <span class='icon' style='background: green'>
+              <i class="fa fa-adjust fa-lg"></i>
+            </span>
+            <span class='back'></span>
+          </div>
+          <h3 class='title'>estancado</h3>
+        </div>
+        <div class='content'>
+          <ul>
+            <li>
+              <%= link_to 'Este es un Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+            </li>
+            <li>
+              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+            </li>
+          </ul>
+        </div>
+        <%= link_to '<span>ver todas las subcategorias</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, root_path , class: 'link-to'%>
+      </li>
+      <li>
+        <div class='header'>
+          <div class="icon">
+            <span class='icon'>
+              <i class="fa fa-home fa-lg"></i>
+            </span>
+            <span class='back'></span>
+          </div>
+          <h3 class='title'>en crecimiento</h3>
+        </div>
+        <div class='content'>
+          <ul>
+            <li>
+              <%= link_to 'Este es un Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+            </li>
+            <li>
+              <%= link_to 'Este es otro Subtitulo'.html_safe , root_path, class: 'subtitle'%>
+            </li>
+          </ul>
+        </div>
+        <%= link_to '<span>ver todas las subcategorias</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, root_path , class: 'link-to'%>
+      </li>
+    </ul>
+  </div>
+  <div class='col-3'>
+    sidebar
+  </div>
+</div>
+
+<hr>
+
+<div class='row'>
+  <div class='col-12'>
+    <div class="breadcrumb">
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Quiero Aprender', root_path %>
+    </div>
+  </div>
+  <div class='col-9 category'>
+    <!--Header -->
+    <div class='header' style='background: #993366'>
+      <div class="icon">
+        <span class='icon'  style='background: #993366'>
+          <i class="fa fa-male fa-lg"></i>
+        </span>
+        <span class='back'></span>
+      </div>
+      <h3 class='title'>quiero aprender</h3>
+    </div>
+    <!--Subcategorias -->
+    <dl class="accordion">
+      <dt>
+        <%= link_to '<span>Subtitulo 1</span> <i class="fa fa-sort"></i>'.html_safe, root_path %></dt>
+      <dd class='content'>
+        <ul>
+          <li>
+            <%= link_to 'Pregunta', root_path %>
+          </li>
+          <li>
+            <%= link_to 'Pregunta', root_path %>
+          </li>
+        </ul>
+        <%= link_to '<span>ver todas las preguntas</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, root_path , class: 'link-to'%>
+      </dd>
+      <dt>
+        <%= link_to '<span>Subtitulo 2</span> <i class="fa fa-sort"></i>'.html_safe, root_path %></dt>
+      </dt>
+      <dd class='content'>
+        <ul>
+          <li>
+            <%= link_to 'Pregunta', root_path %>
+          </li>
+          <li>
+            <%= link_to 'Pregunta', root_path %>
+          </li>
+        </ul>
+        <%= link_to '<span>ver todas las preguntas</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, root_path , class: 'link-to'%>
+      </dd>
+      <dt>
+        <%= link_to '<span>Subtitulo 3</span> <i class="fa fa-sort"></i>'.html_safe, root_path %></dt>
+      </dt>
+      <dd class='content'>
+        <ul>
+          <li>
+            <%= link_to 'Pregunta', root_path %>
+          </li>
+          <li>
+            <%= link_to 'Pregunta', root_path %>
+          </li>
+        </ul>
+        <%= link_to '<span>ver todas las preguntas</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, root_path , class: 'link-to'%>
+      </dd>
+    </dl>
+  </div>
+  <div class='col-3'>
+    sidebar
+  </div>
+</div>
+
+<hr>
+
+<div class='row'>
+  <div class='col-12'>
+    <div class="breadcrumb">
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Quiero Aprender', root_path %>
+      <%= link_to 'Subcategory', root_path %>
+    </div>
+  </div>
+  <div class='col-9 subcategory'>
+    <!--Header -->
+    <div class='header' style='background: #993366'>
+      <div class="icon">
+        <span class='icon' style='background: #993366'>
+          <i class="fa fa-male fa-lg"></i>
+        </span>
+        <span class='back'></span>
+      </div>
+      <h3 class='title'>quiero aprender</h3>
+    </div>
+    <h4 class='subtitle'>Subcategory</h4>
+    <ul class='content'>
+      <li>
+        <%= link_to 'Pregunta', root_path %>
+      </li>
+      <li>
+        <%= link_to 'Pregunta', root_path %>
+      </li>
+    </ul>
+  </div>
+  <div class='col-3'>
+    sidebar
+  </div>
+</div>

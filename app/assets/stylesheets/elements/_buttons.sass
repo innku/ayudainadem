@@ -1,0 +1,24 @@
+// Buttons with background
+//-----------------------------
+//Default Button
+.btn-default
+  @include button-base($buttonBaseColor,$colorWhite)
+  @include animate-all(.2s)
+//Success Button
+.btn-success
+  @include button-base($buttonGreenColor,$colorWhite)
+  @include animate-all(.2s)
+//Warning Button
+.btn-warning
+  @include button-base($buttonYellowColor,$colorWhite)
+  @include animate-all(.2s)
+//Cancel Button
+.btn-cancel
+  @include button-base($buttonRedColor,$colorWhite)
+  @include animate-all(.2s)
+
+//Disabled Button
+//-----------------------------
+.btn-disabled
+  @include button-base-dis($colorDisabled,$grayLightColor)
+  @include animate-all(.2s)
