@@ -65,10 +65,13 @@
       background: white
       margin: 0
       ul
-        padding: em(10) em(25)
         li
-          padding: em(5) 0
-          border-bottom: 1px solid darken($bodyBackground,5)
+          a
+            padding: em(10) em(30)
+            display: block
+            border-bottom: 1px solid darken($bodyBackground,5)
+            &:hover
+              background: darken($bodyBackground,2)
       .link-to
         background: darken($bodyBackground,5)
         display: block
