@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   rolify
-  devise :database_authenticatable, :registerable, #:omniauthable,
+  devise :database_authenticatable,# :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
   before_save :default_role
