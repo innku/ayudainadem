@@ -2,7 +2,7 @@ class CategoriasController < ApplicationController
   respond_to :html, :xml, :json
 
   def index
-    @categorias = Categoria.all
+    @categorias = Categoria.disponibles
     respond_with(@categorias)
   end
 

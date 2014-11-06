@@ -1,4 +1,4 @@
-<%= form_for(@categoria) do |f| %>
+<%= form_for [:admin, @categoria] do |f| %>
   <% if @categoria.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@categoria.errors.count, "error") %> prohibited this categoria from being saved:</h2>
@@ -16,10 +16,6 @@
     <%= f.text_field :titulo %>
   </div>
   <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
-  </div>
-  <div class="field">
     <%= f.label :prioridad %><br>
     <%= f.number_field :prioridad %>
   </div>
@@ -28,6 +24,6 @@
     <%= f.check_box :visible %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Guardar' %>
   </div>
 <% end %>

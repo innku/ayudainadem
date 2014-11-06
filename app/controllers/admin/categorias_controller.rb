@@ -22,12 +22,12 @@ class Admin::CategoriasController < ApplicationController
   def create
     @categoria = Categoria.new(categoria_params)
     @categoria.save
-    respond_with(@categoria)
+    redirect_to admin_categoria_path(@categoria)
   end
 
   def update
     @categoria.update(categoria_params)
-    respond_with(@categoria)
+    redirect_to admin_categoria_path(@categoria)
   end
 
   def destroy
@@ -36,11 +36,11 @@ class Admin::CategoriasController < ApplicationController
   end
 
   private
-    def set_categoria
-      @categoria = Categoria.friendly.find(params[:id])
-    end
+  def set_categoria
+    @categoria = Categoria.friendly.find(params[:id])
+  end
 
-    def categoria_params
-      params.require(:categoria).permit(:titulo, :slug, :prioridad, :visible)
-    end
+  def categoria_params
+    params.require(:categoria).permit(:titulo, :slug, :prioridad, :visible)
+  end
 end
