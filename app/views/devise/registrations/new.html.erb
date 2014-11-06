@@ -1,18 +1,35 @@
-<h2><%= t('.sign_up', :default => "Sign up") %></h2>
+<div class='devise'>
+  <div class='header'>
+    <span class='icon'>
+      <i class="fa fa-arrow-circle-right fa-lg"></i>
+    </span>
+    <h2><%= t('.sign_up', :default => "Sign up") %></h2>
+  </div>
+  <div class='content'>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <div class='grouped-inputs'>
+        <label><i class="fa fa-at"></i></label>
+        <%= f.email_field :email, placeholder: 'Correo Electrónico', class: 'required' %>
+      </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+      <div class='grouped-inputs'>
+        <label><i class="fa fa-lock"></i></label>
+        <%= f.password_field :password, placeholder: 'Contraseña', class: 'required'  %>
+      </div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+      <div class='grouped-inputs'>
+        <label><i class="fa fa-lock"></i></label>
+        <%= f.password_field :password_confirmation, placeholder: 'Confirmar Contraseña', class: 'required'  %>
+      </div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+      <div class='float'><%= f.button t('.sign_up', :default => "Sign up") , class:'btn-default push-right', data: {disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> cargando..."}%></div>
+    <% end %>
+    <hr>
+    <div class='float'>
+      <%= render "devise/shared/links" %>
+    </div>
 
-  <div><%= f.submit t('.sign_up', :default => "Sign up") %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  </div>
+</div>

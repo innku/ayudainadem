@@ -1,0 +1,196 @@
+// Forms
+//--------------
+//Input & Textarea
+.grouped-inputs
+  @include clearfix
+  @include all-border(3px)
+  margin: em(5) 0
+  border: 1px solid $bodyBackground
+  @include inline-block
+  width: 100%
+  label
+    float: left
+    width: 20%
+    text-align: center
+    padding: em(10)
+    color: $grayLightColor
+    background: $bodyBackground
+  input[type='text'], textarea, input[type='email'], input[type='password']
+    float: left
+    margin: 0 !important
+    border: none
+    width: 80%
+    &:focus
+      border: none
+
+input[type='text'], textarea, input[type='email'], input[type='password']
+  @include all-border(3px)
+  border: 1px solid $grayLightColor
+  padding: em(10)
+  display: block
+  margin: em(5) 0
+  width: 100%
+  &:focus,
+  &.required:focus
+    outline: none
+    @include animate-all(.2s)
+  &:focus
+    box-shadow: 0 0 5px $bodyBackground
+    border: 1px solid $bodyBackground
+  &.required:focus
+    box-shadow: 0 0 5px $redColor
+    //border: 1px solid $redColor
+
+//Search
+.search-rounded
+  margin: em(5) 0
+  @include clearfix
+  button[type='submit']
+    @include right-border(20px)
+    @include animate-all(.2s)
+    float: left
+    padding: em(10) em(20)
+    border: 1px solid darken($bodyBackground,5)
+    border-left: none
+    background: $bodyBackground
+    color: white
+    &:hover
+      background: lighten($bodyBackground,5)
+  input[type='search']
+    border: 1px solid $grayLightColor
+    padding: em(10)
+    border-right: none
+    float: left
+    @include left-border(20px)
+    display: block
+    &:focus
+      box-shadow: 0 0 5px $bodyBackground
+      border: 1px solid $bodyBackground
+      outline: none
+      @include animate-all(.2s)
+.search
+  margin: em(5) 0
+  @include clearfix
+  button[type='submit']
+    float: left
+    @include animate-all(.2s)
+    padding: em(10) em(20)
+    border: 1px solid darken($bodyBackground,5)
+    border-left: none
+    @include right-border(3px)
+    background: $bodyBackground
+    color: white
+    &:hover
+      background: lighten($bodyBackground,5)
+  input[type='search']
+    border: 1px solid $grayLightColor
+    padding: em(10)
+    border-right: none
+    @include left-border(3px)
+    float: left
+    display: block
+    &:focus
+      box-shadow: 0 0 5px $bodyBackground
+      border: 1px solid $bodyBackground
+      outline: none
+      @include animate-all(.2s)
+
+//Checkbox
+.checkbox
+  width: 20px
+  margin: em(10) 0
+  position: relative
+  input[type='checkbox']
+    visibility: hidden
+    position: absolute
+  input[type='checkbox']:checked + label:after
+    opacity: 1
+  span
+    @include inline-block
+    margin-left: 30px
+  label
+    cursor: pointer
+    position: absolute
+    @include inline-block
+    width: 20px
+    height: 20px
+    top: 0
+    @include all-border(4px)
+    background: $bodyBackground
+    &:after
+      opacity: 0
+      content: ''
+      position: absolute
+      width: 9px
+      height: 5px
+      background: transparent
+      top: 4px
+      left: 4px
+      border: 3px solid $grayLightColor
+      border-top: none
+      border-right: none
+      @include transform(rotate(-45deg))
+    &:hover::after
+      opacity: 0.8
+      @include animate-all(.2s)
+
+// Radio
+.radio
+  width: 20px
+  margin: em(10) 0
+  position: relative
+  input[type='radio']
+    visibility: hidden
+    position: absolute
+  input[type='radio']:checked + label:after
+    opacity: 1
+  span
+    @include inline-block
+    margin-left: 30px
+  label
+    @include all-border(20px)
+    cursor: pointer
+    position: absolute
+    @include inline-block
+    width: 20px
+    height: 20px
+    top: 0
+    background: $bodyBackground
+    &:after
+      @include all-border(20px)
+      opacity: 0
+      content: ''
+      position: absolute
+      width: 10px
+      height: 10px
+      top: 5px
+      left: 5px
+      background: white
+    &:hover::after
+      opacity: 0.8
+      @include animate-all(.2s)
+
+// Select
+select
+  border: 1px solid $bodyBackground
+  height: em(40)
+
+// Labels [error,warning,success]
+label
+  &.success ,
+  &.error ,
+  &.warning
+    margin: em(5) 0
+    width: 100%
+    @include inline-block
+    color: white
+    padding: em(10) em(20)
+    @include all-border(4px)
+    i
+      margin-right: em(10)
+  &.success
+    background: $greenLightColor
+  &.warning
+    background: $yellowColor
+  &.error
+    background: $redColor
