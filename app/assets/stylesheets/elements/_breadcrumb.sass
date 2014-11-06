@@ -2,14 +2,14 @@
 
   @include inline-block
   text-align: left
-  margin-bottom: $gutter
+  margin-bottom: em(10)
   a
     @include inline-block
     background-color: $breadcrumb-background
     border: $breadcrumb-border
     color: $breadcrumb-color
     line-height: $breadcrumb-height
-    margin-right: -5px
+    margin-right: -4px
     font-size: .8em
     padding: 0 $breadcrumb-height/4 0 $breadcrumb-height/2
     position: relative
@@ -21,20 +21,25 @@
       border-bottom-left-radius: em(5)
 
     &:last-child
-      background-color: $breadcrumb-background-last
-      color: white
+      background-color: lighten($breadcrumb-color,33)
+      color: $breadcrumb-color
       border-bottom-right-radius: em(5)
       border-top-right-radius: em(5)
       padding-right: $breadcrumb-height/2
+      &:hover
+        background-color: lighten($breadcrumb-color,33)
+        color: $breadcrumb-color
 
     &:hover
-      color: $breadcrumb-color-hover
-      background-color: $breadcrumb-inactive-hover-color
+      background-color: $breadcrumb-color-hover
+      color: $breadcrumb-inactive-hover-color
 
     &:hover:after
-      border-left-color: $breadcrumb-inactive-hover-color
+      border-left-color: $breadcrumb-color-hover
+
     &:after,
     &:before
+      @include animate-all(.3s)
       @include position(absolute, 0px auto 0px 100%)
       border-bottom: $breadcrumb-height/2 solid transparent
       border-left: $breadcrumb-height/4 solid transparent
