@@ -1,0 +1,22 @@
+<h1>Listing categorias</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Slug</th>
+      <th>Prioridad</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categorias.each do |categoria| %>
+      <tr>
+        <td><%= categoria.titulo %></td>
+        <td><%= categoria.slug %></td>
+        <td><%= categoria.prioridad %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
