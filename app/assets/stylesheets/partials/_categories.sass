@@ -2,43 +2,7 @@
 
 // Categorias Show
 .category
-  .header
-    background: $greenMediumColor
-    height: 45px
-    .icon
-      float: left
-      color: white
-      position: relative
-      width: 50px
-      height: 100%
-      text-align: center
-      .icon
-        background: $greenMediumColor
-        line-height: 45px
-        height: 45px
-        opacity: .85
-        width: 100%
-        z-index: 2
-        position: absolute
-        top: 0
-        left: 0
-      .back
-        background: white
-        height: 45px
-        width: 49px
-        z-index: 1
-        position: absolute
-        top: 0
-        left: 0
-    .title
-      padding: 0 em(10)
-      line-height: 45px
-      margin: 0
-      height: 45px
-      float: left
-      color: white
-      text-transform: capitalize
-    @include clearfix
+  @include header
   .accordion
     @include outer-container
     margin: 0
@@ -96,44 +60,7 @@
 
 // Categorias Index
 .categories
-  .header
-    background: $greenMediumColor
-    height: 45px
-    position: relative
-    .icon
-      float: left
-      color: white
-      position: relative
-      width: 50px
-      height: 45px
-      text-align: center
-      .icon
-        background: $greenMediumColor
-        line-height: 45px
-        height: 45px
-        opacity: .85
-        width: 50px
-        z-index: 2
-        position: absolute
-        top: 0
-        left: 0
-      .back
-        background: white
-        height: 45px
-        width: 49px
-        z-index: 1
-        position: absolute
-        top: 0
-        left: 0
-    .title
-      padding: 0 em(10)
-      line-height: 45px
-      margin: 0
-      height: 45px
-      float: left
-      color: white
-      text-transform: capitalize
-    @include clearfix
+  @include header
   ul
     @include outer-container
     li

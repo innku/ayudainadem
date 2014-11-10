@@ -1,0 +1,77 @@
+// Admin Base
+
+.admin
+  margin-top: 50px
+  position: relative
+  height: 100%
+  .sidebar-admin
+    width: 20%
+    position: fixed
+    background: $sidebarAdmin
+    top: 0
+    bottom: 0
+    footer
+      margin-top: em(20)
+      width: 100%
+      color: $grayDarkColor
+      padding: em(10)
+      font-size: 9pt
+      background: lighten($sidebarAdmin,10)
+      position: fixed
+      bottom: 0
+    .top-header
+      color: white
+      height: 40px
+      line-height: 40px
+      padding: em(10) em(20)
+      h2
+        margin: 0
+    ul
+      margin-top: em(20)
+      padding: em(10) em(20)
+      li
+        a
+          color: white
+          display: block
+          padding: em(10) 0
+          border-bottom: solid 1px lighten($sidebarAdmin,5)
+          i
+            margin-right: em(10)
+            color: $greenMediumColor
+          &:hover
+            color: darken(white,30)
+  .container-admin
+    width: 80%
+    margin-left: 20%
+    position: fixed
+    background: $bodyBackground
+    bottom: 0
+    top: 50px
+    header
+      width: 100%
+      height: 50px
+      position: fixed
+      top: 0
+      padding: em(10)
+      background: $headerAdmin
+      color: $grayDarkColor
+    .content
+      padding: em(10) em(20)
+      .title
+        background: $greenMediumColor
+        height: 45px
+        .icon
+          float: left
+          color: white
+          padding: 0 em(15)
+          line-height: 45px
+          text-align: center
+          background: lighten($greenMediumColor,5)
+        h3
+          padding: 0 em(10)
+          line-height: 45px
+          float: left
+          color: white
+          text-transform: capitalize
+          height: 45px
+        @include clearfix

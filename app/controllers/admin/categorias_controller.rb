@@ -1,8 +1,8 @@
 class Admin::CategoriasController < ApplicationController
   before_filter :authenticate_user!
-
   respond_to :html, :xml, :json
   before_action :set_categoria, only: [:show, :edit, :update, :destroy]
+  layout 'admin'
 
   def index
     @categorias = Categoria.all

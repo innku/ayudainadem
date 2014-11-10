@@ -1,22 +1,33 @@
-<h1>Listing categorias</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Titulo</th>
-      <th>Slug</th>
-      <th>Prioridad</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categorias.each do |categoria| %>
-      <tr>
-        <td><%= categoria.titulo %></td>
-        <td><%= categoria.slug %></td>
-        <td><%= categoria.prioridad %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+<div class='row'>
+  <div class='col-9 categories'>
+    <ul>
+      <% @categorias.each do |categoria| %>
+        <li>
+          <div class='header' style=''>
+            <div class="icon">
+              <span class='icon' style=''>
+                <i class="fa fa-male fa-lg"></i>
+              </span>
+              <span class='back'></span>
+            </div>
+            <h3 class='title'><%= categoria.titulo %></h3>
+          </div>
+          <div class='content'>
+            <ul>
+              <li>
+                <%= link_to 'Este es un Subtitulo'.html_safe , root_path %>
+              </li>
+              <li>
+                <%= link_to 'Este es otro Subtitulo'.html_safe , root_path%>
+              </li>
+            </ul>
+          </div>
+          <%= link_to '<span>ver todas las subcategorias</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, root_path , class: 'link-to'%>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class='col-3 sidebar'>
+    <%= render 'home/sidebar' %>
+  </div>
+</div>
