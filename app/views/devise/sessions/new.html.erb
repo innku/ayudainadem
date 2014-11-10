@@ -7,8 +7,8 @@
   </div>
   <div class='content'>
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-
+      <!--Errores-->
+      <%= render 'shared/flash_messages' if !flash.empty? %>
       <div class='grouped-inputs'>
         <label><i class="fa fa-at"></i></label>
         <%= f.email_field :email , placeholder: 'Correo Electrónico', class: 'required'%>
