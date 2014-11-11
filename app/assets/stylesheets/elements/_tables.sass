@@ -16,6 +16,15 @@
   width: 100%
   font-size: 10pt
 
+  .green-label
+    color: $greenDarkColor
+    padding: em(5) em(10)
+    display: inline-block
+  .red-label
+    color: $redColor
+    padding: em(5) em(10)
+    display: inline-block
+
   .acciones
     a
       margin: 0 em(5)
@@ -28,14 +37,10 @@
       color: $redColor
       &:hover
         color: darken($redColor,10)
-    .edit
-      color: $yellowColor
-      &:hover
-        color: darken($yellowColor,10)
     .show
-      color: $greenLightColor
+      color: $greenDarkColor
       &:hover
-        color: darken($greenLightColor,10)
+        color: darken($greenDarkColor,10)
 
 
   tbody
