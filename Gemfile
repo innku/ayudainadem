@@ -26,7 +26,6 @@ gem 'bourbon'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
 gem 'neat'
 gem 'sass-rails', '~> 4.0.3'
 
