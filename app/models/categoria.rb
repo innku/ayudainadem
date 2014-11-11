@@ -5,5 +5,4 @@ class Categoria < ActiveRecord::Base
   default_scope ->{ order(:prioridad) }
 
   scope :disponibles, ->{where(visible: true)}
-
 end
