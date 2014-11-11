@@ -1,34 +1,44 @@
-<p id="notice"><%= notice %></p>
+<% content_for :breadcrumbs do %>
+  <div class="breadcrumb">
+    <%= link_to 'Dashboard', admin_path %>
+    <%= link_to 'Artículos', admin_articulos_path %>
+    <%= link_to @articulo.titulo , '' %>
+  </div>
+<% end %>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @articulo.titulo %>
-</p>
-
-<p>
-  <strong>Contenido:</strong>
-  <%= @articulo.contenido %>
-</p>
-
-<p>
-  <strong>Subcategoria:</strong>
-  <%= @articulo.subcategoria %>
-</p>
-
-<p>
-  <strong>Video:</strong>
-  <%= @articulo.video %>
-</p>
-
-<p>
-  <strong>Imagen:</strong>
-  <%= @articulo.imagen %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @articulo.slug %>
-</p>
-
-<%= link_to 'Edit', edit_admin_articulo_path(@articulo) %> |
-<%= link_to 'Back', admin_articulos_path %>
+<div class='container'>
+  <div class='row title'>
+    <div class='col-12'>
+      <span class='icon'>
+        <i class="fa fa-file fa-lg"></i>
+      </span>
+      <h3><%= @articulo.titulo %></h3>
+    </div>
+    <div class='col-12 info'>
+      <div class='row'>
+        <div class='col-12'>
+          <ul>
+            <li>
+              La subcategoría de este artículo es <b class='green-text'><%= @articulo.subcategoria %></b>.
+            </li>
+            <li>
+              <%= @articulo.video %>
+            </li>
+          </ul>
+          <hr>
+          <h4>Contenido</h4>
+          <%= image_tag @articulo.imagen.url(:grande) if @articulo.imagen %>
+          <p>
+            <%= raw @articulo.contenido %>
+          </p>
+        </div>
+        <div class='col-12'>
+          <div class='float'>
+            <%= link_to 'Editar', edit_admin_articulo_path(@articulo), class:'btn-default push-right'  %>
+            <%= link_to 'regresar', admin_articulos_path, class:'btn-gray push-right'  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

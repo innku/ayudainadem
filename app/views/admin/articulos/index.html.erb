@@ -1,15 +1,30 @@
-<h1>Listing articulos</h1>
+<% content_for :breadcrumbs do %>
+  <div class="breadcrumb">
+    <%= link_to 'Dashboard', admin_path %>
+    <%= link_to 'Artículos', admin_articulos_path %>
+  </div>
+<% end %>
 
-<table>
+<div class='container'>
+  <div class='row title'>
+    <div class='col-9'>
+      <span class='icon'>
+        <i class="fa fa-file fa-lg"></i>
+      </span>
+      <h3>Todos los Artículos</h3>
+    </div>
+    <div class='col-3 float'>
+      <%= link_to '<i class="fa fa-plus"></i> Agregar Artículo'.html_safe, new_admin_articulo_path , class: 'btn-default push-right mt'%>
+    </div>
+  </div>
+</div>
+
+<table class='table'>
   <thead>
     <tr>
       <th>Titulo</th>
-      <th>Contenido</th>
       <th>Subcategoria</th>
-      <th>Video</th>
-      <th>Imagen</th>
-      <th>Slug</th>
-      <th colspan="3"></th>
+      <th>Acciones</th>
     </tr>
   </thead>
 
@@ -17,19 +32,13 @@
     <% @articulos.each do |articulo| %>
       <tr>
         <td><%= articulo.titulo %></td>
-        <td><%= articulo.contenido %></td>
-        <td><%= articulo.subcategoria %></td>
-        <td><%= articulo.video %></td>
-        <td><%= articulo.imagen %></td>
-        <td><%= articulo.slug %></td>
-        <td><%= link_to 'Show', admin_articulo_path(articulo) %></td>
-        <td><%= link_to 'Edit', edit_admin_articulo_path(articulo) %></td>
-        <td><%= link_to 'Destroy', admin_articulo_path(articulo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= articulo.subcategoria.titulo if articulo.subcategoria %></td>
+        <td class= 'acciones'>
+          <%= link_to '<i class="fa fa-plus-square fa-lg"></i>'.html_safe, admin_articulo_path(articulo), class: 'show' %>
+          <%= link_to '<i class="fa fa-pencil fa-lg"></i>'.html_safe, edit_admin_articulo_path(articulo), class: 'show' %>
+          <%= link_to '<i class="fa fa-trash fa-lg"></i>'.html_safe, admin_articulo_path(articulo), method: :delete, data: { confirm: 'Are you sure?' } , class: 'delete'%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Articulo', new_admin_articulo_path %>

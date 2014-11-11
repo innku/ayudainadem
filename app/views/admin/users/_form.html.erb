@@ -2,8 +2,7 @@
   <%= form_for [:admin, @user] do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this categoria from being saved:</h2>
-
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
         <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -13,12 +12,32 @@
     <% end %>
 
     <div class='col-12'>
-      <div class='grouped-inputs '>
+      <div class='grouped-inputs'>
         <%= f.label :email %>
         <%= f.text_field :email, placeholder: 'Correo Electrónico' %>
       </div>
     </div>
 
+    <div class="col-12">
+      <div class='grouped-inputs'>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class='grouped-inputs'>
+        <%= f.label 'Confirmar Contraseña' %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class='grouped-inputs-select'>
+        <%= f.label :roles %>
+        <%= f.select :roles, User::ROLES, {prompt: "Selecciona los roles"}, {:multiple => true} %>
+      </div>
+    </div>
 
     <div class='col-12'>
       <div class='float'>
@@ -26,7 +45,5 @@
         <%= link_to 'Cancelar', admin_users_path, class:'btn-cancel push-right' %>
       </div>
     </div>
-
   <% end %>
-
 </div>
