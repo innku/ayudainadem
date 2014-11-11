@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
   get 'admin', to: 'admin#index', as: :admin
   get 'examples', to: 'home#index', as: :examples

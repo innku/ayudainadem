@@ -37,7 +37,7 @@
             </div>
             <div class='col-5'>
               <div class='menu'>
-                  <h6><%= current_user.email %></h6>
+                  <h6><%= link_to current_user.email, edit_user_registration_path %></h6>
                   <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
               </div>
             </div>
