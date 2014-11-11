@@ -1,11 +1,11 @@
 <div class='row'>
-  <%= form_for [:admin, @categoria] do |f| %>
-    <% if @categoria.errors.any? %>
+  <%= form_for [:admin, @user] do |f| %>
+    <% if @user.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@categoria.errors.count, "error") %> prohibited this categoria from being saved:</h2>
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
         <ul>
-        <% @categoria.errors.full_messages.each do |message| %>
+        <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
         </ul>
@@ -14,32 +14,36 @@
 
     <div class='col-12'>
       <div class='grouped-inputs '>
-        <%= f.label :titulo %>
-        <%= f.text_field :titulo, placeholder: 'Título de la Categoría' %>
+        <%= f.label :email %>
+        <%= f.email_field :email, placeholder: 'Email' %>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class='grouped-inputs'>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
       </div>
     </div>
 
-    <div class="col-5">
+    <div class="col-12">
       <div class='grouped-inputs'>
-        <%= f.label :prioridad %>
-        <%= f.number_field :prioridad %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
       </div>
     </div>
-    <div class="col-5">
-      <div class="checkbox">
-        <%= f.check_box :visible %>
-        <label for="categoria_visible"></label>
-        <span>Ver en Sitio</span>
+
+    <div class="col-12">
+      <div class='grouped-inputs'>
+        <%= f.label :roles %>
+        <%= f.select :roles, User::ROLES, {prompt: "Select Permission Level"}, {:multiple => true} %>
       </div>
     </div>
 
     <div class='col-12'>
       <div class='float'>
         <%= f.submit 'Guardar', class:'btn-default push-right'  %>
-        <%= link_to 'Cancelar', admin_categorias_path, class:'btn-cancel push-right' %>
+        <%= link_to 'Cancelar', admin_users_path, class:'btn-cancel push-right' %>
       </div>
     </div>
-
   <% end %>
-
 </div>

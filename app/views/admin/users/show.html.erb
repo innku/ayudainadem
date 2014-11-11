@@ -1,8 +1,8 @@
 <% content_for :breadcrumbs do %>
   <div class="breadcrumb">
     <%= link_to 'Dashboard', admin_path %>
-    <%= link_to 'Categorías', admin_categorias_path %>
-    <%= link_to @categoria.titulo , '' %>
+    <%= link_to 'Usuarios', admin_users_path %>
+    <%= link_to @user.email , '' %>
   </div>
 <% end %>
 
@@ -12,29 +12,19 @@
       <span class='icon'>
         <i class="fa fa-star fa-lg"></i>
       </span>
-      <h3><%= @categoria.titulo %></h3>
+      <h3><%= @user.email %></h3>
     </div>
     <div class='col-12 info'>
       <div class='row'>
-        <div class='col-12'>
           <ul>
             <li>
-              La prioridad de esta categoría es <%= @categoria.prioridad %>.
-            </li>
-            <hr>
-            <li>
-              <% if @categoria.visible?  %>
-                Esta categoría <b>esta visible</b> en el sitio.
-              <%else%>
-                Esta categoría <b>no esta visible</b> en el sitio.
-              <%end%>
             </li>
           </ul>
         </div>
         <div class='col-12'>
           <div class='float'>
-            <%= link_to 'Editar', edit_admin_categoria_path(@categoria), class:'btn-default push-right'  %>
-            <%= link_to 'Regresar', admin_categorias_path, class:'btn-gray push-right'  %>
+            <%= link_to 'Editar', edit_admin_user_path(@user), class:'btn-default push-right'  %>
+            <%= link_to 'Regresar', admin_users_path, class:'btn-gray push-right'  %>
           </div>
         </div>
       </div>
