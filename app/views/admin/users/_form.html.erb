@@ -1,0 +1,45 @@
+<div class='row'>
+  <%= form_for [:admin, @categoria] do |f| %>
+    <% if @categoria.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@categoria.errors.count, "error") %> prohibited this categoria from being saved:</h2>
+
+        <ul>
+        <% @categoria.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='col-12'>
+      <div class='grouped-inputs '>
+        <%= f.label :titulo %>
+        <%= f.text_field :titulo, placeholder: 'Título de la Categoría' %>
+      </div>
+    </div>
+
+    <div class="col-5">
+      <div class='grouped-inputs'>
+        <%= f.label :prioridad %>
+        <%= f.number_field :prioridad %>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="checkbox">
+        <%= f.check_box :visible %>
+        <label for="categoria_visible"></label>
+        <span>Ver en Sitio</span>
+      </div>
+    </div>
+
+    <div class='col-12'>
+      <div class='float'>
+        <%= f.submit 'Guardar', class:'btn-default push-right'  %>
+        <%= link_to 'Cancelar', admin_categorias_path, class:'btn-cancel push-right' %>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>

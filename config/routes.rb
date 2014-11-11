@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :categorias
     resources :subcategorias
     resources :articulos
+    resources :users
   end
 
   root 'categorias#index'

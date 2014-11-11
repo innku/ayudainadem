@@ -18,9 +18,9 @@
         <td><%= subcategoria.posicion %></td>
         <td><%= subcategoria.descripcion %></td>
         <td><%= subcategoria.categoria %></td>
-        <td><%= link_to 'Show', admin_subcategoria_path(subcategoria) %></td>
+        <td><%= link_to 'Show', [:admin, subcategoria] %></td>
         <td><%= link_to 'Edit', edit_admin_subcategoria_path(subcategoria) %></td>
-        <td><%= link_to 'Destroy', admin_subcategoria_path(subcategoria), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', [:admin, subcategoria], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
