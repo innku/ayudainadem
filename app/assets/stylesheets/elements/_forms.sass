@@ -15,7 +15,7 @@
     padding: em(10)
     color: $grayLightColor
     background: $bodyBackground
-  input[type='text'], textarea, input[type='email'], input[type='password']
+  input[type='text'], textarea, input[type='email'], input[type='password'], input[type='number']
     float: left
     margin: 0 !important
     border: none
@@ -23,7 +23,7 @@
     &:focus
       border: none
 
-input[type='text'], textarea, input[type='email'], input[type='password']
+input[type='text'], textarea, input[type='email'], input[type='password'], input[type='number']
   @include all-border(3px)
   border: 1px solid $grayLightColor
   padding: em(10)
@@ -108,6 +108,7 @@ input[type='text'], textarea, input[type='email'], input[type='password']
   span
     @include inline-block
     margin-left: 30px
+    width: 100px
   label
     cursor: pointer
     position: absolute

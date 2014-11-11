@@ -27,12 +27,21 @@
         </footer>
       </div>
       <div class='container-admin'>
-        <header>
-          <%= yield :breadcrumbs %>
+        <header class='container'>
+          <div class='row'>
+            <div class='col-6'>
+              <%= yield :breadcrumbs %>
+            </div>
+            <div class='col-5'>
+              <div class='menu'>
+                  <h6><%= current_user.email %></h6>
+                  <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
+              </div>
+            </div>
+          </div>
         </header>
         <div class='content'>
           <%= yield %>
-
         </div>
 
       </div>

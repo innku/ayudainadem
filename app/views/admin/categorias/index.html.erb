@@ -7,14 +7,14 @@
 
 <div class='container'>
   <div class='row title'>
-    <div class='col-10'>
+    <div class='col-9'>
       <span class='icon'>
         <i class="fa fa-star fa-lg"></i>
       </span>
       <h3>Todas las Categorías</h3>
     </div>
-    <div class='col-2'>
-      <%= link_to '<i class="fa fa-plus"></i> Agregar Categoria'.html_safe, new_admin_categoria_path , class: 'btn-default'%>
+    <div class='col-3 float'>
+      <%= link_to '<i class="fa fa-plus"></i> Agregar Categoria'.html_safe, new_admin_categoria_path , class: 'btn-default push-right mt'%>
     </div>
   </div>
 </div>
@@ -34,11 +34,21 @@
       <tr>
         <td><%= categoria.titulo %></td>
         <td><%= categoria.prioridad %></td>
-        <td><%= categoria.visible %></td>
+        <td>
+          <% if categoria.visible? %>
+            <div class='green-label'>
+              <i class="fa fa-toggle-on fa-lg"></i>
+            </div>
+          <% else %>
+            <div class='red-label'>
+              <i class="fa fa-toggle-off fa-lg"></i>
+            </div>
+          <% end %>
+        </td>
         <td class='acciones'>
-          <%= link_to '<i class="fa fa-eye"></i>'.html_safe, admin_categoria_path(categoria), class: 'show' %>
-          <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_categoria_path(categoria) , class: 'edit' %>
-          <%= link_to '<i class="fa fa-trash"></i>'.html_safe, categoria, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' %>
+          <%= link_to '<i class="fa fa-eye fa-lg"></i>'.html_safe, admin_categoria_path(categoria), class: 'show' %>
+          <%= link_to '<i class="fa fa-pencil fa-lg"></i>'.html_safe, edit_admin_categoria_path(categoria) , class: 'show' %>
+          <%= link_to '<i class="fa fa-trash fa-lg"></i>'.html_safe, categoria, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' %>
         </td>
       </tr>
     <% end %>
