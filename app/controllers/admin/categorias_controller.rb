@@ -5,7 +5,7 @@ class Admin::CategoriasController < ApplicationController
   layout 'admin'
 
   def index
-    @categorias = Categoria.all
+    @categorias = Categoria.includes(:subcategorias).all
     respond_with(@categorias)
   end
 

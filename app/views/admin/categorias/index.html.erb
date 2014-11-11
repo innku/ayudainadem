@@ -25,6 +25,7 @@
       <th>Titulo</th>
       <th>Prioridad</th>
       <th>Visibilidad</th>
+      <th>Subcategorias</th>
       <th>Acciones</th>
     </tr>
   </thead>
@@ -34,7 +35,8 @@
       <tr>
         <td><%= categoria.titulo %></td>
         <td><%= categoria.prioridad %></td>
-        <td><%= categoria.visible %></td>
+        <td><%= categoria.visible ? 'SI' : 'NO' %></td>
+        <td><%= categoria.subcategorias.join(', ') %></td>
         <td class='acciones'>
           <%= link_to '<i class="fa fa-eye"></i>'.html_safe, admin_categoria_path(categoria), class: 'show' %>
           <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_categoria_path(categoria) , class: 'edit' %>
