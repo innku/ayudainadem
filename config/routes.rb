@@ -5,12 +5,15 @@ Rails.application.routes.draw do
   get 'examples', to: 'home#index', as: :examples
 
   resources :categorias, only: [:show, :index] do
-    resources :subcategorias, only: [:show, :index]
+    resources :subcategorias, only: [:show, :index] do
+      resources :articulos, only: [:show, :index]
+    end
   end
 
   namespace :admin do
     resources :categorias
     resources :subcategorias
+    resources :articulos
   end
 
   root 'categorias#index'
