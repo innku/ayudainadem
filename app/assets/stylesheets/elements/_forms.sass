@@ -23,6 +23,40 @@
     &:focus
       border: none
 
+.grouped-inputs-select
+  @include clearfix
+  @include all-border(3px)
+  margin: em(5) 0
+  @include inline-block
+  width: 100%
+  label
+    float: left
+    width: 20%
+    text-align: center
+    padding: em(10)
+    color: $grayLightColor
+    background: $bodyBackground
+  select
+    margin-left: em(10)
+
+.grouped-inputs-textarea
+  @include clearfix
+  @include all-border(3px)
+  margin: em(5) 0
+  @include inline-block
+  width: 100%
+  label
+    float: left
+    width: 20%
+    text-align: center
+    padding: em(10)
+    color: $grayLightColor
+    background: $bodyBackground
+  textarea
+    margin: em(5) 0
+    border: 1px solid $bodyBackground
+    height: 100px
+
 input[type='text'], textarea, input[type='email'], input[type='password'], input[type='number']
   @include all-border(3px)
   border: 1px solid $grayLightColor

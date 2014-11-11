@@ -19,17 +19,30 @@
         <div class='col-12'>
           <ul>
             <li>
-              La prioridad de esta categoría es <%= @categoria.prioridad %>.
+              La prioridad de esta categoría es <b class='green-text'><%= @categoria.prioridad %></b>.
             </li>
-            <hr>
             <li>
               <% if @categoria.visible?  %>
-                Esta categoría <b>esta visible</b> en el sitio.
+                 Esta categoría <b class='green-text'>esta visible <i class="fa fa-eye fa-lg"></i></b> en el sitio.
               <%else%>
-                Esta categoría <b>no esta visible</b> en el sitio.
+                Esta categoría <b class='green-text'>no esta visible <i class="fa fa-eye-slash fa-lg red-text"></i></b> en el sitio.
               <%end%>
             </li>
           </ul>
+          <hr>
+          <% if @categoria.subcategorias.count > 0 %>
+          <h4>Subcategorías</h4>
+          <ul>
+            <% @categoria.subcategorias.each  do |subcategoria| %>
+              <li><i class="fa fa-check"></i> <%= link_to subcategoria.titulo, admin_subcategoria_path(subcategoria) %></li>
+            <% end %>
+          </ul>
+          <%= link_to '<i class="fa fa-plus"></i> Agregar otra Subcategoría'.html_safe, new_admin_subcategoria_path , class: 'btn-default push-right mt'%>
+
+          <%else%>
+            Sin Subcategorías <br>
+            <%= link_to '<i class="fa fa-plus"></i> Agregar Subcategoría'.html_safe, new_admin_subcategoria_path , class: 'btn-default push-right mt'%>
+          <%end%>
         </div>
         <div class='col-12'>
           <div class='float'>

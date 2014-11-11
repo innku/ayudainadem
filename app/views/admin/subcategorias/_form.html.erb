@@ -1,33 +1,48 @@
-<%= form_for [:admin, @subcategoria] do |f| %>
-  <% if @subcategoria.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@subcategoria.errors.count, "error") %> prohibited this subcategoria from being saved:</h2>
+<div class='row'>
+  <%= form_for [:admin, @subcategoria] do |f| %>
+    <% if @subcategoria.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@subcategoria.errors.count, "error") %> prohibited this subcategoria from being saved:</h2>
 
-      <ul>
-      <% @subcategoria.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @subcategoria.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='col-12'>
+      <div class='grouped-inputs '>
+      <%= f.label :titulo %>
+      <%= f.text_field :titulo, placeholder: 'Título de la Subategoría'  %>
+      </div>
     </div>
-  <% end %>
+    <div class='col-5'>
+      <div class='grouped-inputs '>
+        <%= f.label 'Posición' %>
+        <%= f.number_field :posicion, placeholder: 'Posición en número'  %>
+      </div>
+    </div>
+    <div class='col-5'>
+      <div class='grouped-inputs-select '>
+        <%= f.label 'Categoría' %>
+        <%= f.collection_select :categoria_id, Categoria.all, :id, :titulo %>
+      </div>
+    </div>
+    <div class='col-12'>
+      <div class='grouped-inputs-textarea'>
+        <%= f.label 'Descripción' %>
+        <%= f.text_area :descripcion, placeholder: 'Descripción de la Subategoría' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
-  </div>
-  <div class="field">
-    <%= f.label :posicion %><br>
-    <%= f.number_field :posicion %>
-  </div>
-  <div class="field">
-    <%= f.label :descripcion %><br>
-    <%= f.text_area :descripcion %>
-  </div>
-  <div class="field">
-    <%= f.label :categoria %><br>
-    <%= f.collection_select :categoria_id, Categoria.all, :id, :titulo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class='col-12'>
+      <div class='float'>
+        <%= f.submit 'Guardar', class:'btn-default push-right'  %>
+        <%= link_to 'Cancelar', admin_subcategorias_path, class:'btn-cancel push-right' %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

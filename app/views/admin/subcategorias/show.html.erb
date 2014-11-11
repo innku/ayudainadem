@@ -1,24 +1,42 @@
-<p id="notice"><%= notice %></p>
+<% content_for :breadcrumbs do %>
+  <div class="breadcrumb">
+    <%= link_to 'Dashboard', admin_path %>
+    <%= link_to 'Subcategorías', admin_subcategorias_path %>
+    <%= link_to @subcategoria.titulo , '' %>
+  </div>
+<% end %>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @subcategoria.titulo %>
-</p>
-
-<p>
-  <strong>Posicion:</strong>
-  <%= @subcategoria.posicion %>
-</p>
-
-<p>
-  <strong>Descripcion:</strong>
-  <%= @subcategoria.descripcion %>
-</p>
-
-<p>
-  <strong>Categoria:</strong>
-  <%= @subcategoria.categoria %>
-</p>
-
-<%= link_to 'Edit', edit_admin_subcategoria_path(@subcategoria) %> |
-<%= link_to 'Back', admin_subcategorias_path %>
+<div class='container'>
+  <div class='row title'>
+    <div class='col-12'>
+      <span class='icon'>
+        <i class="fa fa-star fa-lg"></i>
+      </span>
+      <h3><%= @subcategoria.titulo %></h3>
+    </div>
+    <div class='col-12 info'>
+      <div class='row'>
+        <div class='col-12'>
+          <ul>
+            <li>
+              Su categoría es <b class='green-text'><%= link_to @subcategoria.categoria, admin_categoria_path(@subcategoria.categoria) %></b>.
+            </li>
+            <li>
+              La posicion de esta categoría es <b class='green-text'><%= @subcategoria.posicion %></b>.
+            </li>
+          </ul>
+          <hr>
+          <h4>Descripción</h4>
+          <p>
+            <%= raw @subcategoria.descripcion %>
+          </p>
+        </div>
+        <div class='col-12'>
+          <div class='float'>
+            <%= link_to 'Editar', edit_admin_subcategoria_path(@subcategoria), class:'btn-default push-right' %>
+            <%= link_to 'Regresar', admin_subcategorias_path, class:'btn-gray push-right' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
