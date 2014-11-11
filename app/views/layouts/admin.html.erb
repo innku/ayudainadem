@@ -21,6 +21,9 @@
           <li>
             <%= link_to '<i class="fa fa-star"></i> Categorías'.html_safe, admin_categorias_path %>
           </li>
+          <li>
+            <%= link_to '<i class="fa fa-star"></i> Sub Categorías'.html_safe, admin_subcategorias_path %>
+          </li>
         </ul>
         <footer>
           footer
@@ -34,7 +37,7 @@
             </div>
             <div class='col-5'>
               <div class='menu'>
-                  <h6><%= current_user.email %></h6>
+                  <h6><%= link_to current_user.email, edit_user_registration_path %></h6>
                   <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
               </div>
             </div>

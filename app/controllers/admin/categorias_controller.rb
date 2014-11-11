@@ -5,7 +5,7 @@ class Admin::CategoriasController < ApplicationController
   layout 'admin'
 
   def index
-    @categorias = Categoria.all
+    @categorias = Categoria.includes(:subcategorias).all
     respond_with(@categorias)
   end
 
@@ -34,7 +34,7 @@ class Admin::CategoriasController < ApplicationController
 
   def destroy
     @categoria.destroy
-    respond_with(@categoria)
+    redirect_to admin_categorias_path
   end
 
   private
