@@ -1,18 +1,17 @@
 Rails.application.routes.draw do
-  resources :subcategorias
-
-  resources :categorias, only: [:show, :index]
-  resources :admin, only: [:index]
-
-  namespace :admin do
-    resources :categorias
-  end
-
   devise_for :users
 
   get 'admin', to: 'admin#index', as: :admin
-
   get 'examples', to: 'home#index', as: :examples
+
+  resources :categorias, only: [:show, :index] do
+    resources :subcategorias, only: [:show, :index]
+  end
+
+  namespace :admin do
+    resources :categorias
+    resources :subcategorias
+  end
 
   root 'categorias#index'
 end

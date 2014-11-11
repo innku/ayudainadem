@@ -34,7 +34,7 @@ class Admin::CategoriasController < ApplicationController
 
   def destroy
     @categoria.destroy
-    respond_with(@categoria)
+    redirect_to admin_categorias_path
   end
 
   private

@@ -1,4 +1,4 @@
-<%= form_for(@subcategoria) do |f| %>
+<%= form_for [:admin, @subcategoria] do |f| %>
   <% if @subcategoria.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@subcategoria.errors.count, "error") %> prohibited this subcategoria from being saved:</h2>
@@ -24,8 +24,8 @@
     <%= f.text_area :descripcion %>
   </div>
   <div class="field">
-    <%= f.label :categoria_id %><br>
-    <%= f.text_field :categoria_id %>
+    <%= f.label :categoria %><br>
+    <%= f.collection_select :categoria_id, Categoria.all, :id, :titulo %>
   </div>
   <div class="actions">
     <%= f.submit %>
