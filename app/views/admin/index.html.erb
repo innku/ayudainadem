@@ -4,4 +4,27 @@
   </div>
 <% end %>
 
-Dashboard
+<div class='container'>
+  <div class='row'>
+    <div class='col-6 back-dashboard'>
+      <div class='row'>
+        <h3 class='dash-title'><i class="fa fa-bookmark-o"></i> Total de Datos</h3>
+        <div class='col-4'>
+          <div class='circle100 text-center'><%= @categorias.count %></div>
+          <h5 class='text-center'>Categorías</h5>
+        </div>
+        <div class='col-4'>
+          <div class='circle100 text-center subcategoria'>200</div>
+          <h5 class='text-center'>Subcategorías</h5>
+        </div>
+        <div class='col-4'>
+          <div class='circle100 text-center articulo'>2000</div>
+          <h5 class='text-center'>Artículos</h5>
+        </div>
+      </div>
+    </div>
+    <div class='col-6'>
+      <h3>Todos</h3>
+    </div>
+  </div>
+</div>

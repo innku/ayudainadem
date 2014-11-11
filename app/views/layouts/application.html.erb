@@ -7,9 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class='container'>
-    <%= link_to 'ejemplos', examples_path%>
+  <%= image_tag 'header.png', style: 'width:100%' %>
+  <div class='container general'>
     <%= yield %>
   </div>
+  <%= image_tag 'footer.png', style: 'width:100%' %>
 </body>
 </html>

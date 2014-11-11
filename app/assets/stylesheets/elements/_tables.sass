@@ -17,11 +17,11 @@
   font-size: 10pt
 
   .green-label
-    color: $greenDarkColor
+    color: $greenLightColor
     padding: em(5) em(10)
     display: inline-block
   .red-label
-    color: $redColor
+    color:  lighten($redColor,5)
     padding: em(5) em(10)
     display: inline-block
 
@@ -34,13 +34,13 @@
       border-radius: $base-border-radius
 
     .delete
-      color: $redColor
+      color: lighten($redColor,5)
       &:hover
-        color: darken($redColor,10)
+        color: darken($redColor,5)
     .show
-      color: $greenDarkColor
+      color: $greenLightColor
       &:hover
-        color: darken($greenDarkColor,10)
+        color: darken($greenLightColor,10)
 
 
   tbody
