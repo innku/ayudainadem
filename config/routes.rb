@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :subcategorias
+
   resources :categorias, only: [:show, :index]
   resources :admin, only: [:index]
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107200545) do
+ActiveRecord::Schema.define(version: 20141111064638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,19 @@ ActiveRecord::Schema.define(version: 20141107200545) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "subcategorias", force: true do |t|
+    t.string   "titulo"
+    t.string   "slug"
+    t.integer  "posicion"
+    t.text     "descripcion"
+    t.integer  "categoria_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subcategorias", ["categoria_id"], name: "index_subcategorias_on_categoria_id", using: :btree
+  add_index "subcategorias", ["slug"], name: "index_subcategorias_on_slug", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
