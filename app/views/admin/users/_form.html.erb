@@ -1,0 +1,32 @@
+<div class='row'>
+  <%= form_for [:admin, @user] do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this categoria from being saved:</h2>
+
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='col-12'>
+      <div class='grouped-inputs '>
+        <%= f.label :email %>
+        <%= f.text_field :email, placeholder: 'Correo Electrónico' %>
+      </div>
+    </div>
+
+
+    <div class='col-12'>
+      <div class='float'>
+        <%= f.submit 'Guardar', class:'btn-default push-right'  %>
+        <%= link_to 'Cancelar', admin_users_path, class:'btn-cancel push-right' %>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>

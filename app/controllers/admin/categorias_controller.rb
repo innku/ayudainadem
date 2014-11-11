@@ -1,8 +1,5 @@
-class Admin::CategoriasController < ApplicationController
-  before_filter :authenticate_user!
-  respond_to :html, :xml, :json
+class Admin::CategoriasController < Admin::BaseController
   before_action :set_categoria, only: [:show, :edit, :update, :destroy]
-  layout 'admin'
 
   def index
     @categorias = Categoria.includes(:subcategorias).all
@@ -23,18 +20,24 @@ class Admin::CategoriasController < ApplicationController
 
   def create
     @categoria = Categoria.new(categoria_params)
-    @categoria.save
-    redirect_to admin_categoria_path(@categoria)
+    if @categoria.save
+      respond_with([:admin, @categoria])
+    else
+      render :new
+    end
   end
 
   def update
-    @categoria.update(categoria_params)
-    redirect_to admin_categoria_path(@categoria)
+    if @categoria.update(categoria_params)
+      respond_with([:admin, @categoria])
+    else
+      render :edit
+    end
   end
 
   def destroy
     @categoria.destroy
-    redirect_to admin_categorias_path
+    respond_with([:admin, @categoria])
   end
 
   private

@@ -1,0 +1,21 @@
+<% content_for :breadcrumbs do %>
+  <div class="breadcrumb">
+    <%= link_to 'Dashboard', admin_path %>
+    <%= link_to 'Categorías', admin_categorias_path %>
+    <%= link_to 'Editar Categoría', '' %>
+  </div>
+<% end %>
+
+<div class='container'>
+  <div class='row title'>
+    <div class='col-12'>
+      <span class='icon'>
+        <i class="fa fa-star fa-lg"></i>
+      </span>
+      <h3>Editar Categoría</h3>
+    </div>
+    <div class='col-12 info'>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
