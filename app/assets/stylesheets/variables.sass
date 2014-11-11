@@ -18,7 +18,7 @@ $buttonBaseColor: $greenMediumColor
 $buttonRedColor: $redColor
 $buttonYellowColor: $yellowColor
 $buttonGreenColor: $greenLightColor
-$buttonGrayColor: $grayLightColor
+$buttonGrayColor: darken($bodyBackground,20)
 
 // Neat Grid
 //--------------
@@ -36,7 +36,7 @@ $mobile: new-breakpoint(max-width 480px)
 
 $breadcrumb-border-color: darken($bodyBackground,10)
 $breadcrumb-border: 1px solid $breadcrumb-border-color
-$breadcrumb-height: $gutter * 1.5
+$breadcrumb-height: $gutter
 $breadcrumb-arrow-color: $breadcrumb-border-color
 $breadcrumb-background: $bodyBackground
 $breadcrumb-inactive-hover-color: $breadcrumb-background
@@ -44,4 +44,13 @@ $breadcrumb-color: $grayLightColor
 $breadcrumb-color-hover: $greenMediumColor
 $breadcrumb-color-active: $breadcrumb-color
 
+// Tables
+
+$base-border-color: darken($bodyBackground,10)
+$base-border-radius: 2px
+
+//Admin
+
+$headerAdmin: darken($bodyBackground,10)
+$sidebarAdmin: #333
 // Custom Style

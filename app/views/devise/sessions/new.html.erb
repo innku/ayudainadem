@@ -7,8 +7,8 @@
   </div>
   <div class='content'>
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-
+      <!--Errores-->
+      <%= render 'shared/flash_messages' if !flash.empty? %>
       <div class='grouped-inputs'>
         <label><i class="fa fa-at"></i></label>
         <%= f.email_field :email , placeholder: 'Correo Electrónico', class: 'required'%>
@@ -18,17 +18,23 @@
         <%= f.password_field :password, placeholder: 'Contraseña', class: 'required' %>
       </div>
 
-      <% if devise_mapping.rememberable? -%>
-        <div class="checkbox push-right">
-          <%= f.check_box :remember_me %>
-          <label for="user_remember_me"></label>
-          <span>Recuerdame</span>
+      <div class='row'>
+        <div class='col-6'>
+          <% if devise_mapping.rememberable? -%>
+            <div class="checkbox push-right">
+              <%= f.check_box :remember_me %>
+              <label for="user_remember_me"></label>
+              <span>Recuerdame</span>
+            </div>
+          <% end -%>
         </div>
-      <% end -%>
-
-      <div class='float'>
-        <%= f.button t('.sign_in', :default => "Sign in"), class: 'btn-default push-right', data: {disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> cargando..."} %>
+        <div class='col-6'>
+          <div class='float'>
+            <%= f.button t('.sign_in', :default => "Sign in"), class: 'btn-default push-right', data: {disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> cargando..."} %>
+          </div>
+        </div>
       </div>
+
     <% end %>
     <hr>
 

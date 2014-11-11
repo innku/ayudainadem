@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inadem tickets :: Admin</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='admin'>
+    <%#= render 'flash_messages' if !flash.empty? %>
+      <div class='sidebar-admin'>
+        <%#= render 'admin/sidebarAdmin' %>
+        <div class='top-header'>
+          <h2>Administrador</h2>
+        </div>
+        <ul>
+          <li>
+            <%= link_to '<i class="fa fa-line-chart"></i> Dashboard'.html_safe, admin_path %>
+          </li>
+          <li>
+            <%= link_to '<i class="fa fa-star"></i> Categorías'.html_safe, admin_categorias_path %>
+          </li>
+        </ul>
+        <footer>
+          footer
+        </footer>
+      </div>
+      <div class='container-admin'>
+        <header>
+          <%= yield :breadcrumbs %>
+        </header>
+        <div class='content'>
+          <%= yield %>
+
+        </div>
+
+      </div>
+  </div>
+</body>
+</html>

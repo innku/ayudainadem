@@ -1,42 +1,7 @@
 // Subcategories
 
 .subcategory
-  .header
-    background: $redColor
-    height: 45px
-    .icon
-      float: left
-      color: white
-      position: relative
-      width: 50px
-      height: 100%
-      text-align: center
-      .icon
-        background: $redColor
-        line-height: 45px
-        opacity: .85
-        width: 100%
-        z-index: 2
-        position: absolute
-        top: 0
-        left: 0
-      .back
-        background: white
-        line-height: 45px
-        width: 49px
-        height: 45px
-        z-index: 1
-        position: absolute
-        top: 0
-        left: 0
-    .title
-      padding: 0 em(10)
-      margin: 0
-      line-height: 45px
-      float: left
-      color: white
-      text-transform: capitalize
-    @include clearfix
+  @include header
   .subtitle
     background: $greenMediumColor
     color: white
