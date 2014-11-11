@@ -7,11 +7,13 @@
 <div class='container'>
   <div class='row'>
     <div class='col-6 back-dashboard'>
+      <h3 class='dash-title'><i class="fa fa-bookmark-o"></i> Total de Datos</h3>
       <div class='row'>
-        <h3 class='dash-title'><i class="fa fa-bookmark-o"></i> Total de Datos</h3>
         <div class='col-4'>
+          <%= link_to(admin_categorias_path) do %>
           <div class='circle100 text-center'><%= @categorias.count %></div>
           <h5 class='text-center'>Categorías</h5>
+          <%end%>
         </div>
         <div class='col-4'>
           <div class='circle100 text-center subcategoria'>200</div>
@@ -23,8 +25,14 @@
         </div>
       </div>
     </div>
-    <div class='col-6'>
-      <h3>Todos</h3>
+    <div class='col-6 back-dashboard'>
+      <h3 class='dash-title'><i class="fa fa-bookmark-o"></i> Porcentaje de Datos</h3>
+      barra con porcentaje segun la totalidad tipo ipod
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-12 back-dashboard'>
+      <h3 class='dash-title'><i class="fa fa-bookmark-o"></i> Tickets</h3>
     </div>
   </div>
 </div>
