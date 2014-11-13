@@ -21,6 +21,11 @@ gem 'therubyracer', '~> 0.12.1'
 gem 'turbolinks', '~> 2.5.1'
 gem 'uglifier', '>= 1.3.0'
 
+
+
+gem 'bootstrap-wysihtml5-rails'
+gem 'ransack'
+
 # Assets
 gem 'bourbon'
 gem 'coffee-rails', '~> 4.0.0'
