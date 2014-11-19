@@ -8,4 +8,5 @@ class ArticulosController < ApplicationController
     @articulo = Articulo.friendly.find(params[:id])
     respond_with(@articulo)
   end
+  
 end

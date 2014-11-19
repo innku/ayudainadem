@@ -4,6 +4,7 @@ class Subcategoria < ActiveRecord::Base
   validates :titulo, presence: true
   default_scope ->{ order(:posicion) }
   belongs_to :categoria
+  has_many :articulos
   def to_s
     titulo
   end
