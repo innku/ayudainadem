@@ -10754,7 +10754,7 @@ return jQuery;
 
 })( jQuery );
 (function() {
-  var CSRFToken, Click, ComponentUrl, EVENTS, Link, ProgressBar, browserCompatibleDocumentParser, browserIsntBuggy, browserSupportsCustomEvents, browserSupportsPushState, browserSupportsTurbolinks, bypassOnLoadPopstate, cacheCurrentPage, cacheSize, changePage, clone, constrainPageCacheTo, createDocument, crossOriginRedirect, currentState, enableProgressBar, enableTransitionCache, executeScriptTags, extractTitleAndBody, fetch, fetchHistory, fetchReplacement, historyStateIsDefined, initializeTurbolinks, installDocumentReadyPageEventTriggers, installHistoryChangeHandler, installJqueryAjaxSuccessPageUpdateTrigger, loadedAssets, manuallyTriggerHashChangeForFirefox, pageCache, pageChangePrevented, pagesCached, popCookie, processResponse, progressBar, recallScrollPosition, referer, reflectNewUrl, reflectRedirectedUrl, rememberCurrentState, rememberCurrentUrl, rememberReferer, removeNoscriptTags, requestMethodIsSafe, resetScrollPosition, setAutofocusElement, transitionCacheEnabled, transitionCacheFor, triggerEvent, visit, xhr, _ref,
+  var CSRFToken, Click, ComponentUrl, EVENTS, Link, ProgressBar, browserIsntBuggy, browserSupportsCustomEvents, browserSupportsPushState, browserSupportsTurbolinks, bypassOnLoadPopstate, cacheCurrentPage, cacheSize, changePage, clone, constrainPageCacheTo, createDocument, crossOriginRedirect, currentState, enableProgressBar, enableTransitionCache, executeScriptTags, extractTitleAndBody, fetch, fetchHistory, fetchReplacement, historyStateIsDefined, initializeTurbolinks, installDocumentReadyPageEventTriggers, installHistoryChangeHandler, installJqueryAjaxSuccessPageUpdateTrigger, loadedAssets, manuallyTriggerHashChangeForFirefox, pageCache, pageChangePrevented, pagesCached, popCookie, processResponse, progressBar, recallScrollPosition, referer, reflectNewUrl, reflectRedirectedUrl, rememberCurrentState, rememberCurrentUrl, rememberReferer, removeNoscriptTags, requestMethodIsSafe, resetScrollPosition, setAutofocusElement, transitionCacheEnabled, transitionCacheFor, triggerEvent, visit, xhr, _ref,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
@@ -10774,8 +10774,6 @@ return jQuery;
   loadedAssets = null;
 
   referer = null;
-
-  createDocument = null;
 
   xhr = null;
 
@@ -10825,6 +10823,9 @@ return jQuery;
   enableProgressBar = function(enable) {
     if (enable == null) {
       enable = true;
+    }
+    if (!browserSupportsTurbolinks) {
+      return;
     }
     if (enable) {
       return progressBar != null ? progressBar : progressBar = new ProgressBar('html');
@@ -11009,7 +11010,7 @@ return jQuery;
     if (location = xhr.getResponseHeader('X-XHR-Redirected-To')) {
       location = new ComponentUrl(location);
       preservedHash = location.hasNoHash() ? document.location.hash : '';
-      return window.history.replaceState(currentState, '', location.href + preservedHash);
+      return window.history.replaceState(window.history.state, '', location.href + preservedHash);
     }
   };
 
@@ -11170,74 +11171,13 @@ return jQuery;
     }
   };
 
-  browserCompatibleDocumentParser = function() {
-    var buildTestsUsing, createDocumentUsingDOM, createDocumentUsingFragment, createDocumentUsingParser, createDocumentUsingWrite, docTest, docTests, e, _i, _len;
-    createDocumentUsingParser = function(html) {
-      return (new DOMParser).parseFromString(html, 'text/html');
-    };
-    createDocumentUsingDOM = function(html) {
-      var doc;
-      doc = document.implementation.createHTMLDocument('');
-      doc.documentElement.innerHTML = html;
-      return doc;
-    };
-    createDocumentUsingWrite = function(html) {
-      var doc;
-      doc = document.implementation.createHTMLDocument('');
-      doc.open('replace');
-      doc.write(html);
-      doc.close();
-      return doc;
-    };
-    createDocumentUsingFragment = function(html) {
-      var body, doc, head, htmlWrapper, _ref, _ref1;
-      head = ((_ref = html.match(/<head[^>]*>([\s\S.]*)<\/head>/i)) != null ? _ref[0] : void 0) || '<head></head>';
-      body = ((_ref1 = html.match(/<body[^>]*>([\s\S.]*)<\/body>/i)) != null ? _ref1[0] : void 0) || '<body></body>';
-      htmlWrapper = document.createElement('html');
-      htmlWrapper.innerHTML = head + body;
-      doc = document.createDocumentFragment();
-      doc.appendChild(htmlWrapper);
-      return doc;
-    };
-    buildTestsUsing = function(createMethod) {
-      var buildTest, formNestingTest, structureTest;
-      buildTest = function(fallback, passes) {
-        return {
-          passes: passes(),
-          fallback: fallback
-        };
-      };
-      structureTest = buildTest(createDocumentUsingWrite, (function(_this) {
-        return function() {
-          var _ref, _ref1;
-          return ((_ref = createMethod('<html><body><p>test')) != null ? (_ref1 = _ref.body) != null ? _ref1.childNodes.length : void 0 : void 0) === 1;
-        };
-      })(this));
-      formNestingTest = buildTest(createDocumentUsingFragment, (function(_this) {
-        return function() {
-          var _ref, _ref1;
-          return ((_ref = createMethod('<html><body><form></form><div></div></body></html>')) != null ? (_ref1 = _ref.body) != null ? _ref1.childNodes.length : void 0 : void 0) === 2;
-        };
-      })(this));
-      return [structureTest, formNestingTest];
-    };
-    try {
-      if (window.DOMParser) {
-        docTests = buildTestsUsing(createDocumentUsingParser);
-        return createDocumentUsingParser;
-      }
-    } catch (_error) {
-      e = _error;
-      docTests = buildTestsUsing(createDocumentUsingDOM);
-      return createDocumentUsingDOM;
-    } finally {
-      for (_i = 0, _len = docTests.length; _i < _len; _i++) {
-        docTest = docTests[_i];
-        if (!docTest.passes) {
-          return docTest.fallback;
-        }
-      }
-    }
+  createDocument = function(html) {
+    var doc;
+    doc = document.documentElement.cloneNode();
+    doc.innerHTML = html;
+    doc.head = doc.querySelector('head');
+    doc.body = doc.querySelector('body');
+    return doc;
   };
 
   ComponentUrl = (function() {
@@ -11500,7 +11440,7 @@ return jQuery;
     };
 
     ProgressBar.prototype._createCSSRule = function() {
-      return "" + this.elementSelector + "." + className + "::before {\n  content: '" + this.content + "';\n  position: fixed;\n  top: 0;\n  left: 0;\n  background-color: #0076ff;\n  height: 3px;\n  opacity: " + this.opacity + ";\n  width: " + this.value + "%;\n  transition: width " + this.speed + "ms ease-out, opacity " + (this.speed / 2) + "ms ease-in;\n  transform: translate3d(0,0,0);\n}";
+      return "" + this.elementSelector + "." + className + "::before {\n  content: '" + this.content + "';\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 2000;\n  background-color: #0076ff;\n  height: 3px;\n  opacity: " + this.opacity + ";\n  width: " + this.value + "%;\n  transition: width " + this.speed + "ms ease-out, opacity " + (this.speed / 2) + "ms ease-in;\n  transform: translate3d(0,0,0);\n}";
     };
 
     return ProgressBar;
@@ -11544,7 +11484,6 @@ return jQuery;
   initializeTurbolinks = function() {
     rememberCurrentUrl();
     rememberCurrentState();
-    createDocument = browserCompatibleDocumentParser();
     document.addEventListener('click', Click.installHandlerLast, true);
     window.addEventListener('hashchange', function(event) {
       rememberCurrentUrl();
@@ -11592,6 +11531,213 @@ return jQuery;
   };
 
 }).call(this);
+/*
+Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.html or http://ckeditor.com/license
+*/
+
+
+CKEDITOR.editorConfig = function( config )
+{
+  // Define changes to default configuration here. For example:
+  // config.language = 'fr';
+  // config.uiColor = '#AADC6E';
+
+  /* Filebrowser routes */
+  // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
+  config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
+
+  // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Flash dialog.
+  config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
+
+  // The location of a script that handles file uploads in the Flash dialog.
+  config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";
+
+  // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Link tab of Image dialog.
+  config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
+
+  // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Image dialog.
+  config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
+
+  // The location of a script that handles file uploads in the Image dialog.
+  config.filebrowserImageUploadUrl = "/ckeditor/pictures";
+
+  // The location of a script that handles file uploads.
+  config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+
+  // Rails CSRF token
+  config.filebrowserParams = function(){
+    var csrf_token, csrf_param, meta,
+        metas = document.getElementsByTagName('meta'),
+        params = new Object();
+
+    for ( var i = 0 ; i < metas.length ; i++ ){
+      meta = metas[i];
+
+      switch(meta.name) {
+        case "csrf-token":
+          csrf_token = meta.content;
+          break;
+        case "csrf-param":
+          csrf_param = meta.content;
+          break;
+        default:
+          continue;
+      }
+    }
+
+    if (csrf_param !== undefined && csrf_token !== undefined) {
+      params[csrf_param] = csrf_token;
+    }
+
+    return params;
+  };
+
+  config.addQueryString = function( url, params ){
+    var queryString = [];
+
+    if ( !params ) {
+      return url;
+    } else {
+      for ( var i in params )
+        queryString.push( i + "=" + encodeURIComponent( params[ i ] ) );
+    }
+
+    return url + ( ( url.indexOf( "?" ) != -1 ) ? "&" : "?" ) + queryString.join( "&" );
+  };
+
+  // Integrate Rails CSRF token into file upload dialogs (link, image, attachment and flash)
+  CKEDITOR.on( 'dialogDefinition', function( ev ){
+    // Take the dialog name and its definition from the event data.
+    var dialogName = ev.data.name;
+    var dialogDefinition = ev.data.definition;
+    var content, upload;
+
+    if (CKEDITOR.tools.indexOf(['link', 'image', 'attachment', 'flash'], dialogName) > -1) {
+      content = (dialogDefinition.getContents('Upload') || dialogDefinition.getContents('upload'));
+      upload = (content == null ? null : content.get('upload'));
+
+      if (upload && upload.filebrowser && upload.filebrowser['params'] === undefined) {
+        upload.filebrowser['params'] = config.filebrowserParams();
+        upload.action = config.addQueryString(upload.action, upload.filebrowser['params']);
+      }
+    }
+  });
+};
+(function($) {
+  window.NestedFormEvents = function() {
+    this.addFields = $.proxy(this.addFields, this);
+    this.removeFields = $.proxy(this.removeFields, this);
+  };
+
+  NestedFormEvents.prototype = {
+    addFields: function(e) {
+      // Setup
+      var link      = e.currentTarget;
+      var assoc     = $(link).data('association');                // Name of child
+      var blueprint = $('#' + $(link).data('blueprint-id'));
+      var content   = blueprint.data('blueprint');                // Fields template
+
+      // Make the context correct by replacing <parents> with the generated ID
+      // of each of the parent objects
+      var context = ($(link).closest('.fields').closestChild('input, textarea, select').eq(0).attr('name') || '').replace(new RegExp('\[[a-z_]+\]$'), '');
+
+      // context will be something like this for a brand new form:
+      // project[tasks_attributes][1255929127459][assignments_attributes][1255929128105]
+      // or for an edit form:
+      // project[tasks_attributes][0][assignments_attributes][1]
+      if (context) {
+        var parentNames = context.match(/[a-z_]+_attributes(?=\]\[(new_)?\d+\])/g) || [];
+        var parentIds   = context.match(/[0-9]+/g) || [];
+
+        for(var i = 0; i < parentNames.length; i++) {
+          if(parentIds[i]) {
+            content = content.replace(
+              new RegExp('(_' + parentNames[i] + ')_.+?_', 'g'),
+              '$1_' + parentIds[i] + '_');
+
+            content = content.replace(
+              new RegExp('(\\[' + parentNames[i] + '\\])\\[.+?\\]', 'g'),
+              '$1[' + parentIds[i] + ']');
+          }
+        }
+      }
+
+      // Make a unique ID for the new child
+      var regexp  = new RegExp('new_' + assoc, 'g');
+      var new_id  = this.newId();
+      content     = $.trim(content.replace(regexp, new_id));
+
+      var field = this.insertFields(content, assoc, link);
+      // bubble up event upto document (through form)
+      field
+        .trigger({ type: 'nested:fieldAdded', field: field })
+        .trigger({ type: 'nested:fieldAdded:' + assoc, field: field });
+      return false;
+    },
+    newId: function() {
+      return new Date().getTime();
+    },
+    insertFields: function(content, assoc, link) {
+      var target = $(link).data('target');
+      if (target) {
+        return $(content).appendTo($(target));
+      } else {
+        return $(content).insertBefore(link);
+      }
+    },
+    removeFields: function(e) {
+      var $link = $(e.currentTarget),
+          assoc = $link.data('association'); // Name of child to be removed
+      
+      var hiddenField = $link.prev('input[type=hidden]');
+      hiddenField.val('1');
+      
+      var field = $link.closest('.fields');
+      field.hide();
+      
+      field
+        .trigger({ type: 'nested:fieldRemoved', field: field })
+        .trigger({ type: 'nested:fieldRemoved:' + assoc, field: field });
+      return false;
+    }
+  };
+
+  window.nestedFormEvents = new NestedFormEvents();
+  $(document)
+    .delegate('form a.add_nested_fields',    'click', nestedFormEvents.addFields)
+    .delegate('form a.remove_nested_fields', 'click', nestedFormEvents.removeFields);
+})(jQuery);
+
+// http://plugins.jquery.com/project/closestChild
+/*
+ * Copyright 2011, Tobias Lindig
+ *
+ * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
+ * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
+ *
+ */
+(function($) {
+        $.fn.closestChild = function(selector) {
+                // breadth first search for the first matched node
+                if (selector && selector != '') {
+                        var queue = [];
+                        queue.push(this);
+                        while(queue.length > 0) {
+                                var node = queue.shift();
+                                var children = node.children();
+                                for(var i = 0; i < children.length; ++i) {
+                                        var child = $(children[i]);
+                                        if (child.is(selector)) {
+                                                return child; //well, we found one
+                                        }
+                                        queue.push(child);
+                                }
+                        }
+                }
+                return $();//nothing found
+        };
+})(jQuery);
 (function() {
   $(document).ready(function() {
     var allPanels;
@@ -11604,6 +11750,10 @@ return jQuery;
       return false;
     });
   });
+
+}).call(this);
+(function() {
+
 
 }).call(this);
 (function() {
@@ -11633,6 +11783,8 @@ return jQuery;
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+
 
 
 
