@@ -38,7 +38,7 @@
       <div class='grouped-inputs'>
         <%= sub.text_field :titulo, placeholder: 'Agrega titulo de subcategoría' %>
         Posición: <%= sub.number_field :posicion %>
-        <%= sub.text_area :descripcion, placeholder: 'Descripción de la subcategoría' %>
+        <%= sub.cktext_area :descripcion, placeholder: 'Descripción de la subcategoría' %>
         <%= sub.link_to_remove 'Quita esta subcategoría' %>
       </div>
     <% end %>

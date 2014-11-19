@@ -22,7 +22,7 @@ gem 'turbolinks', '~> 2.5.1'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'nested_form'
-gem 'bootstrap-wysihtml5-rails'
+gem 'ckeditor'
 gem 'ransack'
 
 # Assets
