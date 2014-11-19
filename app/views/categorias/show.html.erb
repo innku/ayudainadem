@@ -20,4 +20,6 @@
   <%= @categoria.visible %>
 </p>
 
-<%= link_to 'Back', categorias_path %>
+<% @categoria.subcategorias.each do |subcategoria| %>
+  <% link_to subcategoria.titulo, root_path %>
+<%end%>

@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require accordion
+//= require jquery.multiple.select.js
+//= require jquery.minicolors
 //= require_tree .

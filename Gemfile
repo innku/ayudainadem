@@ -28,11 +28,13 @@ gem 'font-awesome-sass', '~> 4.2.0'
 gem 'jquery-rails'
 gem 'neat'
 gem 'sass-rails', '~> 4.0.3'
+gem 'jquery-minicolors-rails'
 
 group :development do
   gem 'awesome_print', '~> 1.2'
   gem 'better_errors', '~> 2.0'
   gem 'spring', '~> 1.1.3'
+  gem 'sextant'
 end
 
 group :test do

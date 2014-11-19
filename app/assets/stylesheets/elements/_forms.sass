@@ -1,5 +1,53 @@
 // Forms
 //--------------
+.icon-select
+  color: $grayLightColor
+  background: $bodyBackground
+  border: 1px solid $bodyBackground
+  padding: em(5)
+  width: 100%
+  display: inline-block
+  text-align: center
+  &:hover
+    background: darken($bodyBackground,10)
+    cursor: pointer
+  .icon-select-ul
+    text-align: left
+    background: white
+    @include clearfix
+    padding: em(5)
+    li
+      float: left
+      padding: em(5)
+      border: 1px solid $bodyBackground
+      &:hover
+        background: $bodyBackground
+      i:before
+        width: 40px
+        height: 40px
+        text-align: center
+
+
+
+.minicolors
+  margin-left: 100px
+  .minicolors-swatch
+    top: 8px !important
+.ms-parent
+  width: 300px !important
+  margin-left: 20px
+  ul
+    li
+      label
+        width: 300px !important
+        text-align: left
+  .ms-choice
+    padding: em(10)
+    height: 40px !important
+    border: 1px solid $bodyBackground
+    span, div
+      padding: em(10)
+
 //Input & Textarea
 .grouped-inputs
   @include clearfix

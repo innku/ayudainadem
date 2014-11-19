@@ -3,10 +3,10 @@
     <ul>
       <% @categorias.each do |categoria| %>
         <li>
-          <div class='header' style=''>
+          <div class='header' style='background:<%= categoria.color %>;'>
             <div class="icon">
-              <span class='icon' style=''>
-                <i class="fa fa-male fa-lg"></i>
+              <span class='icon' style='background:<%= categoria.color %>;'>
+                <i class="fa fa-<%= categoria.icon %>"></i>
               </span>
               <span class='back'></span>
             </div>
@@ -14,15 +14,14 @@
           </div>
           <div class='content'>
             <ul>
+              <% categoria.subcategorias.each do |subcategoria| %>
               <li>
-                <%= link_to 'Este es un Subtitulo'.html_safe , root_path %>
+                <%= link_to subcategoria.titulo , root_path %>
               </li>
-              <li>
-                <%= link_to 'Este es otro Subtitulo'.html_safe , root_path%>
-              </li>
+              <%end%>
             </ul>
           </div>
-          <%= link_to '<span>ver todas las subcategorias</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, root_path , class: 'link-to'%>
+          <%= link_to '<span>ver todas las subcategorias</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, categoria , class: 'link-to'%>
         </li>
       <% end %>
     </ul>

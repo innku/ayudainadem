@@ -35,7 +35,7 @@
     <div class="col-12">
       <div class='grouped-inputs-select'>
         <%= f.label :roles %>
-        <%= f.select :roles, User::ROLES, {prompt: "Selecciona los roles"}, {:multiple => true} %>
+        <%= f.select :roles, User::ROLES, {prompt: "Selecciona los roles"}, {:multiple => true, class: 'select-multiple'} %>
       </div>
     </div>
 

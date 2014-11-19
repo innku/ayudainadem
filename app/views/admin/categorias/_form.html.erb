@@ -31,6 +31,25 @@
         <label for="categoria_visible"></label>
         <span>Ver en Sitio</span>
       </div>
+      <br>
+    </div>
+
+    <div class="col-5">
+      <div class='grouped-inputs'>
+        <%= f.label :icon %>
+        <%= f.text_field :icon, class: 'value-icon' %>
+        <div class='icon-select'>
+          Seleccionar Icono
+          <%= render 'iconos' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5">
+      <div class='grouped-inputs'>
+        <%= f.label :color %>
+        <%= f.text_field :color, placeholder: 'Selecciona un Color', class: 'minicolor' %>
+      </div>
     </div>
 
     <div class='col-12'>
