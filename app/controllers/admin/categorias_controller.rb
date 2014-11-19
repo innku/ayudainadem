@@ -46,6 +46,6 @@ class Admin::CategoriasController < Admin::BaseController
   end
 
   def categoria_params
-    params.require(:categoria).permit(:titulo, :slug, :prioridad, :visible)
+    params.require(:categoria).permit(:titulo, :slug, :prioridad, :visible, subcategorias_attributes: [:id, :titulo, :posicion, :descripcion])
   end
 end

@@ -212,6 +212,7 @@ GEM
     neat (1.5.1)
       bourbon (>= 3.1)
       sass (~> 3.2.19)
+    nested_form (0.3.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
@@ -382,6 +383,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick (~> 3.8.1)
   neat
+  nested_form
   pg (~> 0.17.1)
   pg_search (~> 0.7.8)
   pry-byebug
