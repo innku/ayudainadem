@@ -1,9 +1,8 @@
 <div class='row'>
-  <%= form_for [:admin, @categoria] do |f| %>
+  <%= nested_form_for [:admin, @categoria] do |f| %>
     <% if @categoria.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@categoria.errors.count, "error") %> prohibited this categoria from being saved:</h2>
-
         <ul>
         <% @categoria.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -30,6 +29,20 @@
         <%= f.check_box :visible %>
         <label for="categoria_visible"></label>
         <span>Ver en Sitio</span>
+      </div>
+    </div>
+
+    <div class='col-12'>
+      <div class='grouped-inputs '>
+    <%= f.fields_for :subcategorias do |sub| %>
+      <div class='grouped-inputs'>
+        <%= sub.text_field :titulo, placeholder: 'Agrega titulo de subcategoría' %>
+        Posición: <%= sub.number_field :posicion %>
+        <%= sub.cktext_area :descripcion, placeholder: 'Descripción de la subcategoría' %>
+        <%= sub.link_to_remove 'Quita esta subcategoría' %>
+      </div>
+    <% end %>
+    <p><%= f.link_to_add 'Agrega subcategoría', :subcategorias %></p>
       </div>
     </div>
 
