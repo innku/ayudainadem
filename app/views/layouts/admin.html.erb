@@ -21,18 +21,36 @@
           <li>
             <%= link_to '<i class="fa fa-star"></i> Categorías'.html_safe, admin_categorias_path %>
           </li>
+          <li>
+            <%= link_to '<i class="fa fa-th-large"></i> Subcategorías'.html_safe, admin_subcategorias_path %>
+          </li>
+          <li>
+            <%= link_to '<i class="fa fa-file"></i> Artículos'.html_safe, admin_articulos_path %>
+          </li>
+          <li>
+            <%= link_to '<i class="fa fa-user"></i> Usuarios'.html_safe, admin_users_path %>
+          </li>
         </ul>
         <footer>
           footer
         </footer>
       </div>
       <div class='container-admin'>
-        <header>
-          <%= yield :breadcrumbs %>
+        <header class='container'>
+          <div class='row'>
+            <div class='col-6'>
+              <%= yield :breadcrumbs %>
+            </div>
+            <div class='col-5'>
+              <div class='menu'>
+                  <h6><%= link_to current_user.email, edit_user_registration_path %></h6>
+                  <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
+              </div>
+            </div>
+          </div>
         </header>
         <div class='content'>
           <%= yield %>
-
         </div>
 
       </div>

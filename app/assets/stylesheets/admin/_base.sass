@@ -49,14 +49,24 @@
     top: 50px
     header
       width: 100%
-      height: 50px
       position: fixed
       top: 0
       padding: em(10)
       background: $headerAdmin
       color: $grayDarkColor
+      &.container
+        .row
+          margin: 0
+      .menu
+        text-align: right
+        h6
+          display: inline-block
+          color: $greenMediumColor
     .content
       padding: em(10) em(20)
+      .info
+        background: white
+        padding: em(10)
       .title
         background: $greenMediumColor
         height: 45px
@@ -74,4 +84,5 @@
           color: white
           text-transform: capitalize
           height: 45px
+          margin: 0
         @include clearfix

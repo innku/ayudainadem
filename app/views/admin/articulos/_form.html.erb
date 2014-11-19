@@ -1,0 +1,55 @@
+<div class='row'>
+  <%= form_for [:admin, @articulo] do |f| %>
+    <% if @articulo.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@articulo.errors.count, "error") %> prohibited this articulo from being saved:</h2>
+
+        <ul>
+        <% @articulo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='col-12'>
+      <div class='grouped-inputs'>
+        <%= f.label :titulo %>
+        <%= f.text_field :titulo, placeholder: 'Título del Artículo' %>
+      </div>
+      <div class="grouped-inputs-select">
+        <%= f.label :subcategoria %>
+        <%= f.collection_select :subcategoria_id, Subcategoria.all, :id, :titulo %>
+      </div>
+      <div class="grouped-inputs-textarea">
+        <%= f.label :contenido %>
+        <%= f.text_area :contenido, placeholder: 'Contenido del Artículo' %>
+      </div>
+      <div class="grouped-inputs">
+        <%= f.label :video %>
+        <%= f.text_field :video, placeholder: 'Liga del Video del Artículo' %>
+      </div>
+    </div>
+
+    <div class='col-5'>
+      <div class='grouped-inputs'>
+        <%= f.label :posicion %>
+        <%= f.number_field :posicion, placeholder: 'Posición en número' %>
+      </div>
+    </div>
+    <div class='col-5'>
+      <div class='grouped-inputs'>
+        <%= f.label :imagen %>
+        <%= f.file_field :imagen %>
+      </div>
+    </div>
+
+    <div class='col-12'>
+      <div class='float'>
+        <%= f.submit 'Guardar', class:'btn-default push-right'  %>
+        <%= link_to 'Cancelar', admin_articulos_path, class:'btn-cancel push-right' %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

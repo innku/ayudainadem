@@ -1,0 +1,21 @@
+<% content_for :breadcrumbs do %>
+  <div class="breadcrumb">
+    <%= link_to 'Dashboard', admin_path %>
+    <%= link_to 'Usuarios', admin_users_path %>
+    <%= link_to 'Nuevo Usuario', '' %>
+  </div>
+<% end %>
+
+<div class='container'>
+  <div class='row title'>
+    <div class='col-12'>
+      <span class='icon'>
+        <i class="fa fa-user fa-lg"></i>
+      </span>
+      <h3>Nuevo Usuario</h3>
+    </div>
+    <div class='col-12 info'>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

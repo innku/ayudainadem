@@ -1,24 +1,56 @@
-<p id="notice"><%= notice %></p>
+<% content_for :breadcrumbs do %>
+  <div class="breadcrumb">
+    <%= link_to 'Dashboard', admin_path %>
+    <%= link_to 'Categorías', admin_categorias_path %>
+    <%= link_to @categoria.titulo , '' %>
+  </div>
+<% end %>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @categoria.titulo %>
-</p>
+<div class='container'>
+  <div class='row title'>
+    <div class='col-12'>
+      <span class='icon'>
+        <i class="fa fa-star fa-lg"></i>
+      </span>
+      <h3><%= @categoria.titulo %></h3>
+    </div>
+    <div class='col-12 info'>
+      <div class='row'>
+        <div class='col-12'>
+          <ul>
+            <li>
+              La prioridad de esta categoría es <b class='green-text'><%= @categoria.prioridad %></b>.
+            </li>
+            <li>
+              <% if @categoria.visible?  %>
+                 Esta categoría <b class='green-text'>esta visible <i class="fa fa-eye fa-lg"></i></b> en el sitio.
+              <%else%>
+                Esta categoría <b class='green-text'>no esta visible <i class="fa fa-eye-slash fa-lg red-text"></i></b> en el sitio.
+              <%end%>
+            </li>
+          </ul>
+          <hr>
+          <% if @categoria.subcategorias.count > 0 %>
+          <h4>Subcategorías</h4>
+          <ul>
+            <% @categoria.subcategorias.each  do |subcategoria| %>
+              <li><i class="fa fa-check"></i> <%= link_to subcategoria.titulo, admin_subcategoria_path(subcategoria) %></li>
+            <% end %>
+          </ul>
+          <%= link_to '<i class="fa fa-plus"></i> Agregar otra Subcategoría'.html_safe, new_admin_subcategoria_path , class: 'btn-default push-right mt'%>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @categoria.slug %>
-</p>
-
-<p>
-  <strong>Prioridad:</strong>
-  <%= @categoria.prioridad %>
-</p>
-
-<p>
-  <strong>Visible:</strong>
-  <%= @categoria.visible %>
-</p>
-
-<%= link_to 'Edit', edit_admin_categoria_path(@categoria) %> |
-<%= link_to 'Back', admin_categorias_path %>
+          <%else%>
+            Sin Subcategorías <br>
+            <%= link_to '<i class="fa fa-plus"></i> Agregar Subcategoría'.html_safe, new_admin_subcategoria_path , class: 'btn-default push-right mt'%>
+          <%end%>
+        </div>
+        <div class='col-12'>
+          <div class='float'>
+            <%= link_to 'Editar', edit_admin_categoria_path(@categoria), class:'btn-default push-right'  %>
+            <%= link_to 'Regresar', admin_categorias_path, class:'btn-gray push-right'  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
