@@ -34,7 +34,9 @@
             </li>
             <%end%>
           </ul>
-          <%= link_to '<span>ver todos los artículos</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, [subcategoria.categoria, subcategoria], class: 'link-to' %>
+          <%= link_to([subcategoria.categoria, subcategoria], html_options = {class: 'link-to' }) do %>
+            <span>ver todos los artículos de <%= subcategoria %></span> <i class="fa fa-arrow-circle-right"></i>
+          <% end %>
         </dd>
       <%end%>
     </dl>
