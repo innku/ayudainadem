@@ -4,6 +4,12 @@
 @mixin mobile
   @include media($mobile)
     @include span-columns(12)
+
+@mixin tablet
+  @include media($tablet)
+    @include span-columns(12)
+
+
 // Animation
 //---------------------
 @mixin animate-all($sec)
