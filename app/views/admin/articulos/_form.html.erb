@@ -22,8 +22,7 @@
         <%= f.collection_select :subcategoria_id, Subcategoria.all, :id, :titulo %>
       </div>
       <div class="grouped-inputs-textarea">
-        <%= f.label :contenido %>
-        <%= f.text_area :contenido, placeholder: 'Contenido del Artículo' %>
+        <%= f.cktext_area :contenido, placeholder: 'Contenido del Artículo' %>
       </div>
       <div class="grouped-inputs">
         <%= f.label :video %>
