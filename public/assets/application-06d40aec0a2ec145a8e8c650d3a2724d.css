@@ -3060,32 +3060,37 @@ hr {
   background: #dbdcdc;
 }
 
-/* line 36, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
+/* line 35, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
+.relative-div {
+  position: relative;
+}
+
+/* line 39, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
 .green-text {
   color: #0e8b48;
 }
 
-/* line 38, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
+/* line 41, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
 .red-text {
   color: #c21533;
 }
 
-/* line 42, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
+/* line 45, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
 .text-center {
   text-align: center;
 }
 
-/* line 44, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
+/* line 47, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
 .text-right {
   text-align: right;
 }
 
-/* line 48, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
+/* line 51, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
 .general {
   margin: 1.25em 0;
 }
 
-/* line 50, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
+/* line 53, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
 .mt {
   margin-top: 8px !important;
 }
@@ -3096,11 +3101,11 @@ hr {
   display: table;
   clear: both;
 }
-/* line 56, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
+/* line 59, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
 .float .push-right {
   float: right;
 }
-/* line 58, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
+/* line 61, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_base.sass */
 .float .push-left {
   float: left;
 }
@@ -3117,7 +3122,7 @@ hr {
   display: table;
   clear: both;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 2, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container {
     margin: 0.625em;
@@ -3144,7 +3149,7 @@ hr {
 .container .row .col-1:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 9, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-1 {
     float: left;
@@ -3168,7 +3173,7 @@ hr {
 .container .row .col-2:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 12, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-2 {
     float: left;
@@ -3192,7 +3197,7 @@ hr {
 .container .row .col-3:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 15, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-3 {
     float: left;
@@ -3216,7 +3221,7 @@ hr {
 .container .row .col-4:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 18, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-4 {
     float: left;
@@ -3240,7 +3245,7 @@ hr {
 .container .row .col-5:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 21, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-5 {
     float: left;
@@ -3264,7 +3269,7 @@ hr {
 .container .row .col-6:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 24, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-6 {
     float: left;
@@ -3288,7 +3293,7 @@ hr {
 .container .row .col-7:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 27, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-7 {
     float: left;
@@ -3312,7 +3317,7 @@ hr {
 .container .row .col-8:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 30, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-8 {
     float: left;
@@ -3336,7 +3341,7 @@ hr {
 .container .row .col-9:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 33, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-9 {
     float: left;
@@ -3360,7 +3365,7 @@ hr {
 .container .row .col-10:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 36, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-10 {
     float: left;
@@ -3384,7 +3389,7 @@ hr {
 .container .row .col-11:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 39, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-11 {
     float: left;
@@ -3408,7 +3413,7 @@ hr {
 .container .row .col-12:last-child {
   margin-right: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   /* line 42, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_grid.sass */
   .container .row .col-12 {
     float: left;
@@ -3460,7 +3465,7 @@ hr {
     margin-right: 0;
   }
 }
-/* line 72, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 79, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .btn-default:hover {
   background: #12b05b;
   color: white;
@@ -3504,7 +3509,7 @@ hr {
     margin-right: 0;
   }
 }
-/* line 72, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 79, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .btn-gray:hover {
   background: #dbdbdb;
   color: white;
@@ -3548,7 +3553,7 @@ hr {
     margin-right: 0;
   }
 }
-/* line 72, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 79, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .btn-success:hover {
   background: #8dd043;
   color: white;
@@ -3592,7 +3597,7 @@ hr {
     margin-right: 0;
   }
 }
-/* line 72, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 79, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .btn-warning:hover {
   background: #fcd129;
   color: white;
@@ -3636,7 +3641,7 @@ hr {
     margin-right: 0;
   }
 }
-/* line 72, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 79, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .btn-cancel:hover {
   background: #e61a3d;
   color: white;
@@ -3686,17 +3691,20 @@ hr {
   color: #8c9192;
   background: #fafafa;
   border: 1px solid #fafafa;
-  padding: 0.3125em;
-  width: 100%;
+  padding: 0.625em;
+  width: auto;
   display: inline-block;
   text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-/* line 11, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 14, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .icon-select:hover {
   background: #e1e1e1;
   cursor: pointer;
 }
-/* line 14, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 17, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .icon-select .icon-select-ul {
   text-align: left;
   background: white;
@@ -3708,54 +3716,54 @@ hr {
   display: table;
   clear: both;
 }
-/* line 19, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 22, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .icon-select .icon-select-ul li {
   float: left;
   padding: 0.3125em;
   border: 1px solid #fafafa;
 }
-/* line 23, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 26, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .icon-select .icon-select-ul li:hover {
   background: #fafafa;
 }
-/* line 25, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 28, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .icon-select .icon-select-ul li i:before {
   width: 40px;
   height: 40px;
   text-align: center;
 }
 
-/* line 32, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 35, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .minicolors {
   margin-left: 100px;
 }
-/* line 34, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 37, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .minicolors .minicolors-swatch {
   top: 8px !important;
 }
 
-/* line 36, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 39, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .ms-parent {
   width: 300px !important;
   margin-left: 20px;
 }
-/* line 41, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 44, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .ms-parent ul li label {
   width: 300px !important;
   text-align: left;
 }
-/* line 44, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 47, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .ms-parent .ms-choice {
   padding: 0.625em;
   height: 40px !important;
   border: 1px solid #fafafa;
 }
-/* line 48, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 51, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .ms-parent .ms-choice span, .ms-parent .ms-choice div {
   padding: 0.625em;
 }
 
-/* line 52, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 55, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .grouped-inputs {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -3776,7 +3784,7 @@ hr {
   display: table;
   clear: both;
 }
-/* line 59, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 62, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .grouped-inputs label {
   float: left;
   width: 20%;
@@ -3785,19 +3793,19 @@ hr {
   color: #8c9192;
   background: #fafafa;
 }
-/* line 66, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
-.grouped-inputs input[type='text'], .grouped-inputs textarea, .grouped-inputs input[type='email'], .grouped-inputs input[type='password'], .grouped-inputs input[type='number'] {
+/* line 69, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+.grouped-inputs input[type='text'], .grouped-inputs textarea, .grouped-inputs input[type='email'], .grouped-inputs input[type='password'], .grouped-inputs input[type='number'], .grouped-inputs input[type='file'] {
   float: left;
   margin: 0 !important;
   border: none;
   width: 80%;
 }
-/* line 71, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
-.grouped-inputs input[type='text']:focus, .grouped-inputs textarea:focus, .grouped-inputs input[type='email']:focus, .grouped-inputs input[type='password']:focus, .grouped-inputs input[type='number']:focus {
+/* line 74, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+.grouped-inputs input[type='text']:focus, .grouped-inputs textarea:focus, .grouped-inputs input[type='email']:focus, .grouped-inputs input[type='password']:focus, .grouped-inputs input[type='number']:focus, .grouped-inputs input[type='file']:focus {
   border: none;
 }
 
-/* line 74, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 77, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .grouped-inputs-select {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -3817,7 +3825,7 @@ hr {
   display: table;
   clear: both;
 }
-/* line 80, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 83, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .grouped-inputs-select label {
   float: left;
   width: 20%;
@@ -3826,12 +3834,12 @@ hr {
   color: #8c9192;
   background: #fafafa;
 }
-/* line 87, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 90, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .grouped-inputs-select select {
   margin-left: 0.625em;
 }
 
-/* line 90, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 93, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .grouped-inputs-textarea {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -3851,7 +3859,7 @@ hr {
   display: table;
   clear: both;
 }
-/* line 96, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 99, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .grouped-inputs-textarea label {
   float: left;
   width: 20%;
@@ -3860,15 +3868,15 @@ hr {
   color: #8c9192;
   background: #fafafa;
 }
-/* line 103, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 106, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .grouped-inputs-textarea textarea {
   margin: 0.3125em 0;
   border: 1px solid #fafafa;
   height: 100px;
 }
 
-/* line 108, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
-input[type='text'], textarea, input[type='email'], input[type='password'], input[type='number'] {
+/* line 111, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+input[type='text'], textarea, input[type='email'], input[type='password'], input[type='number'], input[type='file'] {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -3879,25 +3887,25 @@ input[type='text'], textarea, input[type='email'], input[type='password'], input
   margin: 0.3125em 0;
   width: 100%;
 }
-/* line 115, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
-input[type='text']:focus, input[type='text'].required:focus, textarea:focus, textarea.required:focus, input[type='email']:focus, input[type='email'].required:focus, input[type='password']:focus, input[type='password'].required:focus, input[type='number']:focus, input[type='number'].required:focus {
+/* line 118, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+input[type='text']:focus, input[type='text'].required:focus, textarea:focus, textarea.required:focus, input[type='email']:focus, input[type='email'].required:focus, input[type='password']:focus, input[type='password'].required:focus, input[type='number']:focus, input[type='number'].required:focus, input[type='file']:focus, input[type='file'].required:focus {
   outline: none;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 119, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
-input[type='text']:focus, textarea:focus, input[type='email']:focus, input[type='password']:focus, input[type='number']:focus {
+/* line 122, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+input[type='text']:focus, textarea:focus, input[type='email']:focus, input[type='password']:focus, input[type='number']:focus, input[type='file']:focus {
   box-shadow: 0 0 5px #fafafa;
   border: 1px solid #fafafa;
 }
-/* line 122, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
-input[type='text'].required:focus, textarea.required:focus, input[type='email'].required:focus, input[type='password'].required:focus, input[type='number'].required:focus {
+/* line 125, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+input[type='text'].required:focus, textarea.required:focus, input[type='email'].required:focus, input[type='password'].required:focus, input[type='number'].required:focus, input[type='file'].required:focus {
   box-shadow: 0 0 5px #c21533;
 }
 
-/* line 127, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 130, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .search-rounded {
   margin: 0.3125em 0;
 }
@@ -3907,7 +3915,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   display: table;
   clear: both;
 }
-/* line 130, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 133, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .search-rounded button[type='submit'] {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -3922,11 +3930,11 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   background: #fafafa;
   color: white;
 }
-/* line 139, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 142, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .search-rounded button[type='submit']:hover {
   background: white;
 }
-/* line 141, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 144, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .search-rounded input[type='search'] {
   border: 1px solid #8c9192;
   padding: 0.625em;
@@ -3936,7 +3944,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   border-bottom-left-radius: 20px;
   display: block;
 }
-/* line 148, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 151, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .search-rounded input[type='search']:focus {
   box-shadow: 0 0 5px #fafafa;
   border: 1px solid #fafafa;
@@ -3947,7 +3955,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   transition: all 0.2s ease-in-out;
 }
 
-/* line 153, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 156, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .search {
   margin: 0.3125em 0;
 }
@@ -3957,7 +3965,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   display: table;
   clear: both;
 }
-/* line 156, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 159, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .search button[type='submit'] {
   float: left;
   -webkit-transition: all 0.2s ease-in-out;
@@ -3972,11 +3980,11 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   background: #fafafa;
   color: white;
 }
-/* line 165, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 168, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .search button[type='submit']:hover {
   background: white;
 }
-/* line 167, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 170, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .search input[type='search'] {
   border: 1px solid #8c9192;
   padding: 0.625em;
@@ -3986,7 +3994,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   float: left;
   display: block;
 }
-/* line 174, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 177, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .search input[type='search']:focus {
   box-shadow: 0 0 5px #fafafa;
   border: 1px solid #fafafa;
@@ -3997,22 +4005,22 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   transition: all 0.2s ease-in-out;
 }
 
-/* line 181, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 184, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .checkbox {
   width: 20px;
   margin: 0.625em 0;
   position: relative;
 }
-/* line 185, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 188, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .checkbox input[type='checkbox'] {
   visibility: hidden;
   position: absolute;
 }
-/* line 188, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 191, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .checkbox input[type='checkbox']:checked + label:after {
   opacity: 1;
 }
-/* line 190, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 193, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .checkbox span {
   display: inline-block;
   vertical-align: baseline;
@@ -4022,7 +4030,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   margin-left: 30px;
   width: 100px;
 }
-/* line 194, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 197, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .checkbox label {
   cursor: pointer;
   position: absolute;
@@ -4040,7 +4048,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   border-bottom-right-radius: 4px;
   background: #fafafa;
 }
-/* line 203, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 206, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .checkbox label:after {
   opacity: 0;
   content: "";
@@ -4059,7 +4067,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 216, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 219, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .checkbox label:hover::after {
   opacity: 0.8;
   -webkit-transition: all 0.2s ease-in-out;
@@ -4068,22 +4076,22 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   transition: all 0.2s ease-in-out;
 }
 
-/* line 221, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 224, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .radio {
   width: 20px;
   margin: 0.625em 0;
   position: relative;
 }
-/* line 225, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 228, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .radio input[type='radio'] {
   visibility: hidden;
   position: absolute;
 }
-/* line 228, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 231, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .radio input[type='radio']:checked + label:after {
   opacity: 1;
 }
-/* line 230, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 233, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .radio span {
   display: inline-block;
   vertical-align: baseline;
@@ -4092,7 +4100,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   *vertical-align: auto;
   margin-left: 30px;
 }
-/* line 233, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 236, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .radio label {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -4110,7 +4118,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   top: 0;
   background: #fafafa;
 }
-/* line 242, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 245, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .radio label:after {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -4125,7 +4133,7 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   left: 5px;
   background: white;
 }
-/* line 252, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 255, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 .radio label:hover::after {
   opacity: 0.8;
   -webkit-transition: all 0.2s ease-in-out;
@@ -4134,18 +4142,18 @@ input[type='text'].required:focus, textarea.required:focus, input[type='email'].
   transition: all 0.2s ease-in-out;
 }
 
-/* line 257, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 260, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 select {
   border: 1px solid #fafafa;
   height: 2.5em;
 }
 
-/* line 260, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 263, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 select[multiple='multiple'] {
   height: 100px;
 }
 
-/* line 265, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 268, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 label.success, label.error, label.warning {
   margin: 0.3125em 0;
   width: 100%;
@@ -4161,19 +4169,19 @@ label.success, label.error, label.warning {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-/* line 274, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 277, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 label.success i, label.error i, label.warning i {
   margin-right: 0.625em;
 }
-/* line 276, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 279, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 label.success {
   background: #79bb2f;
 }
-/* line 278, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 281, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 label.warning {
   background: #f8c704;
 }
-/* line 280, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
+/* line 283, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/elements/_forms.sass */
 label.error {
   background: #c21533;
 }
@@ -4444,12 +4452,12 @@ label.error {
   border: 10px solid #941027;
 }
 
-/* line 18, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 24, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .category .header {
   background: #0e8b48;
   height: 45px;
 }
-/* line 21, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 27, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .category .header .icon {
   float: left;
   color: white;
@@ -4458,7 +4466,7 @@ label.error {
   height: 100%;
   text-align: center;
 }
-/* line 28, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 34, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .category .header .icon .icon {
   background: #0e8b48;
   line-height: 45px;
@@ -4470,7 +4478,7 @@ label.error {
   top: 0;
   left: 0;
 }
-/* line 38, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 44, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .category .header .icon .back {
   background: white;
   height: 45px;
@@ -4480,10 +4488,11 @@ label.error {
   top: 0;
   left: 0;
 }
-/* line 46, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 52, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .category .header .title {
   padding: 0 0.625em;
   line-height: 45px;
+  font-size: 12pt;
   margin: 0;
   height: 45px;
   float: left;
@@ -4515,17 +4524,18 @@ label.error {
   display: block;
   padding: 0.625em 1.25em;
   border-bottom: solid 1px #ededed;
+  font-size: 11pt;
 }
-/* line 15, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 16, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion dt a:hover {
   background: #0e8b48;
   color: white;
 }
-/* line 18, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 19, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion dt a span {
   float: left;
 }
-/* line 20, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 21, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion dt a i {
   float: right;
 }
@@ -4535,12 +4545,12 @@ label.error {
   display: table;
   clear: both;
 }
-/* line 23, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 24, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion dt a.active {
   background: #0e8b48;
   color: white;
 }
-/* line 27, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 28, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion .content {
   display: block;
   border-top: solid 1px #ededed;
@@ -4548,18 +4558,18 @@ label.error {
   background: white;
   margin: 0;
 }
-/* line 35, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 36, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion .content ul li a {
   padding: 0.625em 1.875em;
   font-size: 10pt;
   display: block;
   border-bottom: 1px solid #ededed;
 }
-/* line 40, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 41, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion .content ul li a:hover {
   background: whitesmoke;
 }
-/* line 42, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 43, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion .content .link-to {
   background: #ededed;
   display: block;
@@ -4568,16 +4578,16 @@ label.error {
   text-transform: lowercase;
   color: #67676d;
 }
-/* line 49, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 50, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion .content .link-to:hover {
   background: #c7c7c7;
   color: #333333;
 }
-/* line 53, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 54, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion .content .link-to span {
   float: left;
 }
-/* line 55, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 56, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .category .accordion .content .link-to i {
   float: right;
   padding: 0.3125em;
@@ -4589,12 +4599,12 @@ label.error {
   clear: both;
 }
 
-/* line 18, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 24, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .categories .header {
   background: #0e8b48;
   height: 45px;
 }
-/* line 21, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 27, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .categories .header .icon {
   float: left;
   color: white;
@@ -4603,7 +4613,7 @@ label.error {
   height: 100%;
   text-align: center;
 }
-/* line 28, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 34, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .categories .header .icon .icon {
   background: #0e8b48;
   line-height: 45px;
@@ -4615,7 +4625,7 @@ label.error {
   top: 0;
   left: 0;
 }
-/* line 38, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 44, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .categories .header .icon .back {
   background: white;
   height: 45px;
@@ -4625,10 +4635,11 @@ label.error {
   top: 0;
   left: 0;
 }
-/* line 46, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 52, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .categories .header .title {
   padding: 0 0.625em;
   line-height: 45px;
+  font-size: 12pt;
   margin: 0;
   height: 45px;
   float: left;
@@ -4641,7 +4652,7 @@ label.error {
   display: table;
   clear: both;
 }
-/* line 64, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 65, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .categories ul {
   max-width: 60em;
   margin-left: auto;
@@ -4653,12 +4664,12 @@ label.error {
   display: table;
   clear: both;
 }
-/* line 66, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 67, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .categories ul li {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 48.82117%;
+  width: 100%;
   margin-bottom: 0.625em;
   background: white;
 }
@@ -4674,25 +4685,38 @@ label.error {
 .categories ul li:nth-child(2n+1) {
   clear: left;
 }
-/* line 73, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+@media screen and (max-width: 768px) {
+  /* line 67, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+  .categories ul li {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  /* line 38, /Users/xixebombilla/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/neat-1.5.1/app/assets/stylesheets/grid/_span-columns.scss */
+  .categories ul li:last-child {
+    margin-right: 0;
+  }
+}
+/* line 75, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .categories ul li .content ul li {
   margin: 0;
   padding: 0;
   width: 100%;
 }
-/* line 77, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 79, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .categories ul li .content ul li a {
   border-bottom: 1px solid #ededed;
   display: block;
   padding: 0.625em 1.25em;
   font-size: 10pt;
 }
-/* line 82, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 84, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .categories ul li .content ul li a:hover {
   background: #0e8b48;
   color: white;
 }
-/* line 85, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 87, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .categories ul li .link-to {
   background: #ededed;
   display: block;
@@ -4701,16 +4725,16 @@ label.error {
   text-transform: lowercase;
   color: #67676d;
 }
-/* line 92, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 94, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .categories ul li .link-to:hover {
   background: #c7c7c7;
   color: #333333;
 }
-/* line 95, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 97, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .categories ul li .link-to span {
   float: left;
 }
-/* line 97, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
+/* line 99, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_categories.sass */
 .categories ul li .link-to i {
   float: right;
   padding: 0.3125em;
@@ -4722,12 +4746,12 @@ label.error {
   clear: both;
 }
 
-/* line 18, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 24, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .subcategory .header {
   background: #0e8b48;
   height: 45px;
 }
-/* line 21, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 27, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .subcategory .header .icon {
   float: left;
   color: white;
@@ -4736,7 +4760,7 @@ label.error {
   height: 100%;
   text-align: center;
 }
-/* line 28, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 34, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .subcategory .header .icon .icon {
   background: #0e8b48;
   line-height: 45px;
@@ -4748,7 +4772,7 @@ label.error {
   top: 0;
   left: 0;
 }
-/* line 38, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 44, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .subcategory .header .icon .back {
   background: white;
   height: 45px;
@@ -4758,10 +4782,11 @@ label.error {
   top: 0;
   left: 0;
 }
-/* line 46, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+/* line 52, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
 .subcategory .header .title {
   padding: 0 0.625em;
   line-height: 45px;
+  font-size: 12pt;
   margin: 0;
   height: 45px;
   float: left;
@@ -4779,33 +4804,34 @@ label.error {
   background: #0e8b48;
   color: white;
   display: block;
+  font-size: 11pt;
   padding: 0.625em 1.25em;
   margin: 0;
 }
-/* line 11, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_subcategories.sass */
+/* line 12, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_subcategories.sass */
 .subcategory .content {
   background: white;
   margin: 0;
 }
-/* line 14, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_subcategories.sass */
+/* line 15, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_subcategories.sass */
 .subcategory .content a {
   padding: 0.625em 1.5625em;
   font-size: 10pt;
   display: block;
   border-bottom: 1px solid #ededed;
 }
-/* line 19, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_subcategories.sass */
+/* line 20, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_subcategories.sass */
 .subcategory .content a:hover {
   background: whitesmoke;
 }
 
-/* line 2, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
-.question .header {
-  background: #c21533;
+/* line 24, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+.articulo .header {
+  background: #0e8b48;
   height: 45px;
 }
-/* line 5, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
-.question .header .icon {
+/* line 27, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+.articulo .header .icon {
   float: left;
   color: white;
   position: relative;
@@ -4813,10 +4839,11 @@ label.error {
   height: 100%;
   text-align: center;
 }
-/* line 12, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
-.question .header .icon .icon {
-  background: #c21533;
+/* line 34, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+.articulo .header .icon .icon {
+  background: #0e8b48;
   line-height: 45px;
+  height: 45px;
   opacity: 0.85;
   width: 100%;
   z-index: 2;
@@ -4824,59 +4851,61 @@ label.error {
   top: 0;
   left: 0;
 }
-/* line 21, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
-.question .header .icon .back {
+/* line 44, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+.articulo .header .icon .back {
   background: white;
-  line-height: 45px;
-  width: 49px;
   height: 45px;
+  width: 49px;
   z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 30, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
-.question .header .title {
+/* line 52, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/mixins.sass */
+.articulo .header .title {
   padding: 0 0.625em;
-  margin: 0;
   line-height: 45px;
+  font-size: 12pt;
+  margin: 0;
+  height: 45px;
   float: left;
   color: white;
   text-transform: capitalize;
 }
 /* line 15, /Users/xixebombilla/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/bourbon-3.2.3/app/assets/stylesheets/addons/_clearfix.scss */
-.question .header:after {
+.articulo .header:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 38, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
-.question .subtitle {
+/* line 3, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
+.articulo .subtitle {
   background: #0e8b48;
   color: white;
   display: block;
   padding: 0.625em 1.25em;
+  font-size: 11pt;
   margin: 0;
 }
-/* line 44, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
-.question .content {
+/* line 10, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
+.articulo .content {
   background: white;
   padding: 1.25em;
 }
-/* line 47, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
-.question .content .title {
+/* line 13, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
+.articulo .content .title {
   color: #67676d;
   margin-bottom: 0.625em;
 }
-/* line 50, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
-.question .content .image {
+/* line 16, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
+.articulo .content .image {
   width: 100%;
   height: 12.5em;
   background: #fafafa;
   margin-bottom: 1.25em;
 }
-/* line 55, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
-.question .content .info {
+/* line 21, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_question.sass */
+.articulo .content .info {
   text-align: justify;
 }
 
@@ -4902,6 +4931,7 @@ label.error {
   color: white;
   text-transform: capitalize;
   height: 45px;
+  font-size: 9pt;
 }
 /* line 15, /Users/xixebombilla/.rbenv/versions/2.1.4/lib/ruby/gems/2.1.0/gems/bourbon-3.2.3/app/assets/stylesheets/addons/_clearfix.scss */
 .sidebar .title:after {
@@ -4909,21 +4939,39 @@ label.error {
   display: table;
   clear: both;
 }
-/* line 23, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_sidebar.sass */
+/* line 24, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_sidebar.sass */
 .sidebar .content {
   margin-bottom: 1.25em;
   background: white;
 }
-/* line 26, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_sidebar.sass */
+/* line 27, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_sidebar.sass */
 .sidebar .content a {
   padding: 0.625em 1.25em;
   font-size: 9pt;
   display: block;
   border-bottom: 1px solid #ededed;
 }
-/* line 31, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_sidebar.sass */
+/* line 32, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_sidebar.sass */
 .sidebar .content a:hover {
   background: whitesmoke;
+}
+/* line 35, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_sidebar.sass */
+.sidebar .sidebar-categorias li {
+  background: #0e8b48;
+}
+/* line 37, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_sidebar.sass */
+.sidebar .sidebar-categorias li a {
+  color: white;
+}
+/* line 39, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_sidebar.sass */
+.sidebar .sidebar-categorias li a:hover {
+  background: #0e8b48;
+}
+@media screen and (max-width: 768px) {
+  /* line 3, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_sidebar.sass */
+  .sidebar {
+    margin-top: 1.25em;
+  }
 }
 
 /* line 3, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/partials/_login.sass */
@@ -4970,11 +5018,10 @@ label.error {
 
 /* line 3, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin {
-  margin-top: 50px;
   position: relative;
   height: 100%;
 }
-/* line 7, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 6, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .sidebar-admin {
   width: 20%;
   position: fixed;
@@ -4982,7 +5029,7 @@ label.error {
   top: 0;
   bottom: 0;
 }
-/* line 13, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 12, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .sidebar-admin footer {
   margin-top: 1.25em;
   width: 100%;
@@ -4993,84 +5040,78 @@ label.error {
   position: fixed;
   bottom: 0;
 }
-/* line 22, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 21, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .sidebar-admin .top-header {
   color: white;
   height: 40px;
   line-height: 40px;
   padding: 0.625em 1.25em;
 }
-/* line 27, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 26, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .sidebar-admin .top-header h2 {
   margin: 0;
 }
-/* line 29, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 28, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .sidebar-admin ul {
   margin-top: 1.25em;
   padding: 0.625em 1.25em;
 }
-/* line 33, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 32, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .sidebar-admin ul li a {
   color: white;
   display: block;
   padding: 0.625em 0;
   border-bottom: solid 1px #404040;
 }
-/* line 38, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 37, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .sidebar-admin ul li a i {
   margin-right: 0.625em;
   color: #0e8b48;
 }
-/* line 41, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 40, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .sidebar-admin ul li a:hover {
   color: #b3b3b3;
 }
-/* line 43, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 42, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .container-admin {
   width: 80%;
   margin-left: 20%;
-  position: fixed;
+  position: relative;
   background: #fafafa;
   bottom: 0;
-  top: 50px;
+  top: 0;
 }
-/* line 50, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 49, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .container-admin header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  padding: 0.625em;
   background: #e1e1e1;
   color: #67676d;
+  padding: 0.625em 1.25em;
 }
-/* line 58, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
-.admin .container-admin header.container .row {
-  margin: 0;
-}
-/* line 60, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 54, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .container-admin header .menu {
   text-align: right;
 }
-/* line 62, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 56, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .container-admin header .menu h6 {
   display: inline-block;
   color: #0e8b48;
 }
-/* line 65, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 59, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .container-admin .content {
   padding: 0.625em 1.25em;
 }
-/* line 67, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 61, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .container-admin .content .info {
   background: white;
   padding: 0.625em;
 }
-/* line 70, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 64, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .container-admin .content .title {
   background: #0e8b48;
   height: 45px;
 }
-/* line 73, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 67, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .container-admin .content .title .icon {
   float: left;
   color: white;
@@ -5079,7 +5120,7 @@ label.error {
   text-align: center;
   background: #10a254;
 }
-/* line 80, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
+/* line 74, /Users/xixebombilla/Documents/nebula/ayudainadem/app/assets/stylesheets/admin/_base.sass */
 .admin .container-admin .content .title h3 {
   padding: 0 0.625em;
   line-height: 45px;
