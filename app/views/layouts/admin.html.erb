@@ -35,23 +35,24 @@
         </footer>
       </div>
       <div class='container-admin'>
-        <header class='container'>
-          <div class='row'>
-            <div class='col-6'>
-              <%= yield :breadcrumbs %>
-            </div>
-            <div class='col-5'>
-              <div class='menu'>
-                  <h6><%= link_to current_user.email, edit_user_registration_path %></h6>
-                  <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
+        <header>
+            <div class='float'>
+              <div class='push-left'>
+                <%= yield :breadcrumbs %>
+              </div>
+              <div class='push-right'>
+                <div class='menu'>
+                    <h6><%= link_to current_user.email, edit_user_registration_path %></h6>
+                    <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
+                </div>
               </div>
             </div>
-          </div>
         </header>
-        <div class='content'>
-          <%= yield %>
+        <div class='overflow'>
+          <div class='content'>
+            <%= yield %>
+          </div>
         </div>
-
       </div>
   </div>
 </body>

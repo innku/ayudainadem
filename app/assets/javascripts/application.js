@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require ckeditor/init
+//= require jquery_nested_form
 //= require accordion
 //= require jquery.multiple.select.js
 //= require jquery.minicolors

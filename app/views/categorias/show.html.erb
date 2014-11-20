@@ -30,7 +30,7 @@
           <ul>
             <% subcategoria.articulos.each do |articulo| %>
             <li>
-              <%= link_to articulo.titulo , [:categoria :subcategoria , articulo ] %>
+              <%= link_to articulo.titulo , [:categoria , :subcategoria , articulo ] %>
             </li>
             <%end%>
           </ul>

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.4'
 
-gem 'rails', '4.1.7'
+gem 'rails', '4.1.8'
 gem 'cancancan', '~> 1.9.2'
 gem 'carrierwave', '~> 0.10.0'
 gem 'devise'
@@ -20,6 +20,10 @@ gem 'rolify', '~> 3.4.1'
 gem 'therubyracer', '~> 0.12.1'
 gem 'turbolinks', '~> 2.5.1'
 gem 'uglifier', '>= 1.3.0'
+
+gem 'nested_form'
+gem 'ckeditor'
+gem 'ransack'
 
 # Assets
 gem 'bourbon'

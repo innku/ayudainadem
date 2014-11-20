@@ -8,6 +8,7 @@ $(document).ready ->
       este = $(this).attr("class").split('-')
       ultimo = este[este.length-1]
       $('.value-icon').val(ultimo)
+      $(".icon-select-ul").hide()
       return
     return
   ), ->
