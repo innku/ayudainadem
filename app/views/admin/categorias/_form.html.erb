@@ -33,6 +33,7 @@
       <br>
     </div>
 
+    <!-- Iconos
     <div class="col-5">
       <div class='grouped-inputs relative-div'>
         <%= f.label :icon %>
@@ -42,7 +43,7 @@
           <%= render 'iconos' %>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="col-5">
       <div class='grouped-inputs'>
@@ -75,7 +76,7 @@
           <%= sub.number_field :posicion, placeholder: 'Posición en número' %>
         </div>
         <div class="grouped-inputs-textarea">
-          <%= sub.cktext_area :descripcion, placeholder: 'Descripción de la subcategoría' %>
+          <%= sub.text_area :descripcion, placeholder: 'Descripción de la subcategoría', class: 'edit' %>
         </div>
       </div>
       <% end %>

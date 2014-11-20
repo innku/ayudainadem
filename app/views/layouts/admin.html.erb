@@ -1,60 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Inadem tickets :: Admin</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>Inadem tickets :: Admin</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-  <div class='admin'>
-    <%#= render 'flash_messages' if !flash.empty? %>
-      <div class='sidebar-admin'>
-        <%#= render 'admin/sidebarAdmin' %>
-        <div class='top-header'>
-          <h2>Administrador</h2>
+<div class='admin'>
+  <%#= render 'flash_messages' if !flash.empty? %>
+  <div class='sidebar-admin'>
+    <%#= render 'admin/sidebarAdmin' %>
+    <div class='top-header'>
+      <h2>Administrador</h2>
+    </div>
+    <ul>
+      <li>
+      <%= link_to '<i class="fa fa-line-chart"></i> Dashboard'.html_safe, admin_path %>
+      </li>
+      <li>
+      <%= link_to '<i class="fa fa-star"></i> Categorías'.html_safe, admin_categorias_path %>
+      </li>
+      <li>
+      <%= link_to '<i class="fa fa-th-large"></i> Subcategorías'.html_safe, admin_subcategorias_path %>
+      </li>
+      <li>
+      <%= link_to '<i class="fa fa-file"></i> Artículos'.html_safe, admin_articulos_path %>
+      </li>
+      <li>
+      <%= link_to '<i class="fa fa-user"></i> Usuarios'.html_safe, admin_users_path %>
+      </li>
+    </ul>
+    <footer>
+      INADEM
+    </footer>
+  </div>
+  <div class='container-admin'>
+    <header>
+      <div class='float'>
+        <div class='push-left'>
+          <%= yield :breadcrumbs %>
         </div>
-        <ul>
-          <li>
-            <%= link_to '<i class="fa fa-line-chart"></i> Dashboard'.html_safe, admin_path %>
-          </li>
-          <li>
-            <%= link_to '<i class="fa fa-star"></i> Categorías'.html_safe, admin_categorias_path %>
-          </li>
-          <li>
-            <%= link_to '<i class="fa fa-th-large"></i> Subcategorías'.html_safe, admin_subcategorias_path %>
-          </li>
-          <li>
-            <%= link_to '<i class="fa fa-file"></i> Artículos'.html_safe, admin_articulos_path %>
-          </li>
-          <li>
-            <%= link_to '<i class="fa fa-user"></i> Usuarios'.html_safe, admin_users_path %>
-          </li>
-        </ul>
-        <footer>
-          INADEM
-        </footer>
-      </div>
-      <div class='container-admin'>
-        <header>
-            <div class='float'>
-              <div class='push-left'>
-                <%= yield :breadcrumbs %>
-              </div>
-              <div class='push-right'>
-                <div class='menu'>
-                    <h6><%= link_to current_user.email, edit_user_registration_path %></h6>
-                    <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
-                </div>
-              </div>
-            </div>
-        </header>
-        <div class='overflow'>
-          <div class='content'>
-            <%= yield %>
+        <div class='push-right'>
+          <div class='menu'>
+            <h6><%= link_to current_user.email, edit_user_registration_path %></h6>
+            <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
           </div>
         </div>
       </div>
+    </header>
+    <div class='overflow'>
+      <div class='content'>
+        <%= yield %>
+      </div>
+    </div>
   </div>
-</body>
+</div>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<script>
+$(function() {
+    $('.edit').editable({inlineMode: false})
+    });
+</script>
+</body>
 </html>
