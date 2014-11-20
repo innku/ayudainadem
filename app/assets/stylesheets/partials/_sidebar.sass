@@ -18,6 +18,7 @@
       color: white
       text-transform: capitalize
       height: 45px
+      font-size: 9pt
     @include clearfix
 
   .content
@@ -30,6 +31,13 @@
       border-bottom: 1px solid darken($bodyBackground,5)
       &:hover
         background: darken($bodyBackground,2)
+  .sidebar-categorias
+    li
+      background: $greenMediumColor
+      a
+        color: white
+        &:hover
+          background: $greenMediumColor
 
   @include media($tablet)
     margin-top: em(20)

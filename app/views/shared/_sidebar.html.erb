@@ -2,6 +2,26 @@
   <span class='icon'>
     <i class="fa fa-history fa-lg"></i>
   </span>
+  <h4>Lista de Categorías</h4>
+</div>
+<ul class='content sidebar-categorias'>
+  <% todas_categorias.each do |categoria|%>
+  <li style='background:<%= categoria.color %>;'>
+    <%= link_to(categoria) do  %>
+    <% if categoria.icon? %>
+      <i class="fa fa-<%= categoria.icon %> fa-lg" style='margin-right:10px;'></i><%= categoria %>
+    <% else %>
+      <i class="fa fa-file fa-lg" style='margin-right:10px;'></i><%= categoria %>
+    <% end %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<div class='title'>
+  <span class='icon'>
+    <i class="fa fa-history fa-lg"></i>
+  </span>
   <h4>Últimos Artículos</h4>
 </div>
 <ul class='content'>
