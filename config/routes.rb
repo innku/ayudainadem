@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   get 'examples', to: 'home#index', as: :examples
 
   resources :categorias, only: [:show, :index] do
-    resources :subcategorias, only: [:show, :index] do
-      resources :articulos, only: [:show, :index]
-    end
+    resources :subcategorias, only: [:show, :index]
+  end
+
+  resources :subcategorias, only: [:show, :index] do
+    resources :articulos, only: [:show, :index]
   end
 
   namespace :admin do

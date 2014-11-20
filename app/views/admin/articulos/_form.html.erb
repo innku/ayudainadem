@@ -19,7 +19,7 @@
       </div>
       <div class="grouped-inputs-select">
         <%= f.label :subcategoria %>
-        <%= f.collection_select :subcategoria_id, Subcategoria.all, :id, :titulo %>
+        <%= f.grouped_collection_select :subcategoria_id, Categoria.all, :subcategorias, :titulo, :id, :titulo, prompt: true %>
       </div>
       <div class="grouped-inputs-textarea">
         <%= f.cktext_area :contenido, placeholder: 'Contenido del Artículo' %>

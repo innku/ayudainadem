@@ -1,34 +1,40 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Titulo:</strong>
-  <%= @articulo.titulo %>
-</p>
-
-<p>
-  <strong>Contenido:</strong>
-  <%= @articulo.contenido %>
-</p>
-
-<p>
-  <strong>Subcategoria:</strong>
-  <%= @articulo.subcategoria %>
-</p>
-
-<p>
-  <strong>Video:</strong>
-  <%= @articulo.video %>
-</p>
-
-<p>
-  <strong>Imagen:</strong>
-  <%= @articulo.imagen %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @articulo.slug %>
-</p>
-
-<%= link_to 'Edit', edit_articulo_path(@articulo) %> |
-<%= link_to 'Back', articulos_path %>
+<div class='row'>
+  <div class='col-12'>
+    <div class="breadcrumb">
+      <%= link_to 'Home', root_path %>
+      <%= link_to @articulo.subcategoria.categoria, [@articulo.subcategoria.categoria] %>
+      <%= link_to @articulo.subcategoria, [@articulo.subcategoria] %>
+      <%= link_to @articulo, [@articulo.subcategoria, @articulo] %>
+    </div>
+    <br><br>
+  </div>
+  <div class='col-9 question'>
+    <!--Header -->
+    <div class='header' style='background: <%= @articulo.subcategoria.categoria.color %>;'>
+      <div class="icon">
+        <span class='icon' style='background: <%= @articulo.subcategoria.categoria.color %>;'>
+          <i class="fa fa-<%= @articulo.subcategoria.categoria.icon %> fa-lg"></i>
+        </span>
+        <span class='back'></span>
+      </div>
+      <h3 class='title'><%= @articulo.subcategoria.categoria %></h3>
+    </div>
+    <h4 class='subtitle'><%= @articulo.subcategoria %></h4>
+    <div class='content'>
+      <h2 class='title'><%= @articulo %></h2>
+      <% if @articulo.video? %>
+        <div class='image'>
+          <%= @articulo.imagen %>
+        </div>
+      <%end%>
+      <div class='info'>
+        <%= @articulo.contenido.html_safe %>
+        <br>
+        <%= link_to 'Ver video', @articulo.video if @articulo.video? %>
+      </div>
+    </div>
+  </div>
+  <div class='col-3 sidebar'>
+    <%= render 'shared/sidebar' %>
+  </div>
+</div>

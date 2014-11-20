@@ -1,4 +1,5 @@
 class SubcategoriasController < ApplicationController
+  respond_to :html, :json
   def index
     @subcategorias = Subcategoria.all
     respond_with(@subcategorias)

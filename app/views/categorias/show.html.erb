@@ -22,25 +22,25 @@
       <% @categoria.subcategorias.each do |subcategoria| %>
         <dt>
           <%= link_to(root_path) do %>
-          <span><%= subcategoria.titulo %></span> <i class="fa fa-sort"></i>
+            <span><%= subcategoria.titulo %></span> <i class="fa fa-sort"></i>
           <% end %>
         </dt>
         <dd class='content'>
           <!--Preguntas -->
           <ul>
-            <% subcategoria.articulos.each do |articulo| %>
+            <% subcategoria.articulos.primeros.each do |articulo| %>
             <li>
-              <%= link_to articulo.titulo , [:categoria , :subcategoria , articulo ] %>
+              <%= link_to articulo, [articulo.subcategoria, articulo] %>
             </li>
             <%end%>
           </ul>
-          <%= link_to '<span>ver todas las preguntas</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, root_path , class: 'link-to'%>
+          <%= link_to '<span>ver todos los artículos</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, [subcategoria.categoria, subcategoria], class: 'link-to' %>
         </dd>
       <%end%>
     </dl>
   </div>
   <div class='col-3 sidebar'>
-    <%= render 'home/sidebar' %>
+    <%= render 'shared/sidebar' %>
   </div>
 </div>
 
