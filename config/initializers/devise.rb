@@ -1,6 +1,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  config.secret_key = '16c171ad4a526e6f8a5d1e23ad96adcab6dae0f9afc6ddf390a09e5eca2fb263dae850da30ad24bb4a8f15e0ba50e7e9412a66fdf4aa6b158843d351a64761b0'
   config.mailer_sender = 'webmaster@inadem.gob.mx'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
