@@ -10,7 +10,6 @@ module Inademtickets
   class Application < Rails::Application
     config.time_zone = 'Central Time (US & Canada)'
     config.i18n.default_locale = 'es-MX'
-    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
 
     config.generators do |g|
       g.test_framework :rspec,
