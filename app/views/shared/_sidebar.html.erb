@@ -8,11 +8,13 @@
   <% todas_categorias.each do |categoria|%>
   <li style='background:<%= categoria.color %>;'>
     <%= link_to(categoria) do  %>
+    <i class="fa fa-file" style='margin-right:10px;'></i><%= categoria %>
+      <!-- Icono
       <% if categoria.icon? %>
         <i class="fa fa-<%= categoria.icon %>" style='margin-right:10px;'></i><%= categoria %>
       <% else %>
         <i class="fa fa-file" style='margin-right:10px;'></i><%= categoria %>
-      <% end %>
+      <% end %> -->
     <% end %>
   </li>
   <% end %>
@@ -28,11 +30,13 @@
   <% ultimos_articulos.each do |articulo|%>
     <li>
       <%= link_to([articulo.subcategoria, articulo]) do  %>
+      <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
+      <!-- Icono
         <% if articulo.subcategoria.categoria.icon? %>
           <i class="fa fa-<%= articulo.subcategoria.categoria.icon %>" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
         <% else %>
           <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
-        <% end %>
+        <% end %> -->
       <% end %>
     </li>
   <% end %>

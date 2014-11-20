@@ -26,7 +26,8 @@
             <th>Prioridad</th>
             <th>Visibilidad</th>
             <th>Color</th>
-            <th>Icono</th>
+            <!-- Iconos
+            <th>Icono</th> -->
             <th>Subcategorias</th>
             <th>Acciones</th>
           </tr>
@@ -48,10 +49,12 @@
                 <% end %>
               </td>
               <td>
-                <span class='color-picker' style='background:<%= categoria.color %>;'></span></td>
+                <span class='color-picker' style='background:<%= categoria.color %>;'></span>
+              </td>
+              <!-- Iconos
               <td>
                 <i class="fa fa-<%= categoria.icon %>"></i>
-              </td>
+              </td> -->
               <td>
                   <span class='label-green'><%= categoria.subcategorias.count %></span>
               </td>
