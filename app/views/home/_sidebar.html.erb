@@ -7,7 +7,7 @@
 <ul class='content'>
   <% ultimos_articulos.each do |articulo|%>
   <li>
-    <%= link_to articulo.titulo ,[:categoria, :subcategoria, articulo] %>
+    <%= link_to articulo.titulo , root_path %>
   </li>
   <% end %>
 </ul>
