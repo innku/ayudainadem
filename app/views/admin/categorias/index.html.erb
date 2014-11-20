@@ -17,50 +17,54 @@
       <%= link_to '<i class="fa fa-plus"></i> Agregar Categoria'.html_safe, new_admin_categoria_path , class: 'btn-default push-right mt'%>
     </div>
   </div>
-</div>
-
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Titulo</th>
-      <th>Prioridad</th>
-      <th>Visibilidad</th>
-      <th>Color</th>
-      <th>Icono</th>
-      <th>Subcategorias</th>
-      <th>Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @categorias.each do |categoria| %>
-      <tr>
-        <td><%= categoria.titulo %></td>
-        <td><%= categoria.prioridad %></td>
-        <td>
-          <% if categoria.visible %>
-            <div class='green-label'>
-              <i class="fa fa-eye fa-lg"></i>
-            </div>
-          <% else %>
-            <div class='red-label'>
-              <i class="fa fa-eye-slash fa-lg"></i>
-            </div>
+  <div class='row'>
+    <div class='col-12'>
+      <table class='table'>
+        <thead>
+          <tr>
+            <th>Titulo</th>
+            <th>Prioridad</th>
+            <th>Visibilidad</th>
+            <th>Color</th>
+            <th>Icono</th>
+            <th>Subcategorias</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categorias.each do |categoria| %>
+            <tr>
+              <td><%= categoria.titulo %></td>
+              <td><%= categoria.prioridad %></td>
+              <td>
+                <% if categoria.visible %>
+                  <div class='green-label'>
+                    <i class="fa fa-eye fa-lg"></i>
+                  </div>
+                <% else %>
+                  <div class='red-label'>
+                    <i class="fa fa-eye-slash fa-lg"></i>
+                  </div>
+                <% end %>
+              </td>
+              <td>
+                <span class='color-picker' style='background:<%= categoria.color %>;'></span></td>
+              <td>
+                <i class="fa fa-<%= categoria.icon %>"></i>
+              </td>
+              <td>
+                  <span class='label-green'><%= categoria.subcategorias.count %></span>
+              </td>
+              <td class='acciones'>
+                <%= link_to '<i class="fa fa-plus-square fa-lg"></i>'.html_safe, [:admin, categoria], class: 'show' %>
+                <%= link_to '<i class="fa fa-pencil fa-lg"></i>'.html_safe, edit_admin_categoria_path(categoria) , class: 'show' %>
+                <%= link_to '<i class="fa fa-trash fa-lg"></i>'.html_safe, [:admin, categoria], method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' %>
+              </td>
+            </tr>
           <% end %>
-        </td>
-        <td>
-          <span class='color-picker' style='background:<%= categoria.color %>;'></span></td>
-        <td>
-          <i class="fa fa-<%= categoria.icon %>"></i>
-        </td>
-        <td>
-            <span class='label-green'><%= categoria.subcategorias.count %></span>
-        </td>
-        <td class='acciones'>
-          <%= link_to '<i class="fa fa-plus-square fa-lg"></i>'.html_safe, [:admin, categoria], class: 'show' %>
-          <%= link_to '<i class="fa fa-pencil fa-lg"></i>'.html_safe, edit_admin_categoria_path(categoria) , class: 'show' %>
-          <%= link_to '<i class="fa fa-trash fa-lg"></i>'.html_safe, [:admin, categoria], method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

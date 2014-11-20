@@ -36,7 +36,7 @@
     <div class="col-5">
       <div class='grouped-inputs relative-div'>
         <%= f.label :icon %>
-        <%= f.text_field :icon, class: 'value-icon' %>
+        <%= f.text_field :icon, class: 'value-icon', placeholder: 'Selecciona un Icono' %>
         <div class='icon-select'>
           <i class="fa fa-search-plus"></i>
           <%= render 'iconos' %>
@@ -72,7 +72,7 @@
         </div>
         <div class='grouped-inputs'>
           <%= sub.label :posicion %>
-          <%= sub.number_field :posicion %>
+          <%= sub.number_field :posicion, placeholder: 'Posición en número' %>
         </div>
         <div class="grouped-inputs-textarea">
           <%= sub.cktext_area :descripcion, placeholder: 'Descripción de la subcategoría' %>
