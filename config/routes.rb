@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations" }
-  mount Ckeditor::Engine => '/ckeditor'
 
   get 'admin', to: 'admin#index', as: :admin
   get 'examples', to: 'home#index', as: :examples
