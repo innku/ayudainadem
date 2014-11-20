@@ -8,12 +8,18 @@
     </div>
     <br><br>
   </div>
-  <div class='col-9 question'>
+  <div class='col-9 articulo'>
     <!--Header -->
     <div class='header' style='background: <%= @articulo.subcategoria.categoria.color %>;'>
       <div class="icon">
         <span class='icon' style='background: <%= @articulo.subcategoria.categoria.color %>;'>
-          <i class="fa fa-<%= @articulo.subcategoria.categoria.icon %> fa-lg"></i>
+          <i class="fa fa-file"></i>
+          <!-- Icono
+          <% if @articulo.subcategoria.categoria.icon? %>
+            <i class="fa fa-<%= @articulo.subcategoria.categoria.icon %>"></i>
+          <% else %>
+            <i class="fa fa-file"></i>
+          <% end %> -->
         </span>
         <span class='back'></span>
       </div>

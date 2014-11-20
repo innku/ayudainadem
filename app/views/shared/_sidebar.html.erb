@@ -1,6 +1,28 @@
 <div class='title'>
   <span class='icon'>
-    <i class="fa fa-history fa-lg"></i>
+    <i class="fa fa-list"></i>
+  </span>
+  <h4>Lista de Categorías</h4>
+</div>
+<ul class='content sidebar-categorias'>
+  <% todas_categorias.each do |categoria|%>
+  <li style='background:<%= categoria.color %>;'>
+    <%= link_to(categoria) do  %>
+    <i class="fa fa-file" style='margin-right:10px;'></i><%= categoria %>
+      <!-- Icono
+      <% if categoria.icon? %>
+        <i class="fa fa-<%= categoria.icon %>" style='margin-right:10px;'></i><%= categoria %>
+      <% else %>
+        <i class="fa fa-file" style='margin-right:10px;'></i><%= categoria %>
+      <% end %> -->
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<div class='title'>
+  <span class='icon'>
+    <i class="fa fa-history"></i>
   </span>
   <h4>Últimos Artículos</h4>
 </div>
@@ -8,7 +30,13 @@
   <% ultimos_articulos.each do |articulo|%>
     <li>
       <%= link_to([articulo.subcategoria, articulo]) do  %>
-        <i class="fa fa-<%= articulo.subcategoria.categoria.icon %> fa-lg" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
+      <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
+      <!-- Icono
+        <% if articulo.subcategoria.categoria.icon? %>
+          <i class="fa fa-<%= articulo.subcategoria.categoria.icon %>" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
+        <% else %>
+          <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
+        <% end %> -->
       <% end %>
     </li>
   <% end %>
