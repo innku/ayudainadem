@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin#index', as: :admin
   get 'examples', to: 'home#index', as: :examples
 
-  resources :categorias, only: [:show, :index] do
-    resources :subcategorias, only: [:show, :index]
+  resources :categorias, only: [:index, :show] do
+    resources :subcategorias, only: [:index, :show]
   end
 
-  resources :subcategorias, only: [:show, :index] do
-    resources :articulos, only: [:show, :index]
+  resources :subcategorias, only: [:index, :show] do
+    resources :articulos, only: [:index, :show]
   end
 
   namespace :admin do

@@ -5,7 +5,8 @@
   <h4>Últimos Artículos</h4>
 </div>
 <ul class='content'>
-  <% ultimos_articulos.each do |articulo|%>
+  <% ultimos_articulos.each do |articulo| %>
+    <%#= link_to content_tag(:i, class: "fa fa-#{articulo.subcategoria.categoria.icon}"), articulo.subcategoria %>
     <li>
       <%= link_to([articulo.subcategoria, articulo]) do  %>
         <i class="fa fa-<%= articulo.subcategoria.categoria.icon %> fa-lg" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
