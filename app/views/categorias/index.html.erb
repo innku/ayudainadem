@@ -14,9 +14,9 @@
           </div>
           <div class='content'>
             <ul>
-              <% categoria.subcategorias.each do |subcategoria| %>
+              <% categoria.subcategorias.primeros.each do |subcategoria| %>
               <li>
-                <%= link_to subcategoria.titulo , root_path %>
+                <%= link_to subcategoria.titulo, [subcategoria.categoria, subcategoria] %>
               </li>
               <%end%>
             </ul>

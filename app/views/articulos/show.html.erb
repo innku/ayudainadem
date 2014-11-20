@@ -7,7 +7,7 @@
 
 <p>
   <strong>Contenido:</strong>
-  <%= @articulo.contenido %>
+  <%= @articulo.contenido.html_safe %>
 </p>
 
 <p>
@@ -29,6 +29,3 @@
   <strong>Slug:</strong>
   <%= @articulo.slug %>
 </p>
-
-<%= link_to 'Edit', edit_articulo_path(@articulo) %> |
-<%= link_to 'Back', articulos_path %>

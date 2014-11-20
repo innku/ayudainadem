@@ -2,12 +2,12 @@
   <span class='icon'>
     <i class="fa fa-history fa-lg"></i>
   </span>
-  <h4>Últimos Vistos</h4>
+  <h4>Últimos Agregados</h4>
 </div>
 <ul class='content'>
   <% ultimos_articulos.each do |articulo|%>
   <li>
-    <%= link_to articulo.titulo ,[:categoria, :subcategoria, articulo] %>
+    <%= link_to articulo, [articulo.subcategoria, articulo] %>
   </li>
   <% end %>
 </ul>

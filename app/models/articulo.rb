@@ -3,6 +3,7 @@ class Articulo < ActiveRecord::Base
   extend FriendlyId
   friendly_id :titulo, use: :slugged
   validates :titulo, presence: true
+  scope :primeros, ->{ limit(5) }
   default_scope ->{ order(:posicion) }
   def to_s
     titulo
