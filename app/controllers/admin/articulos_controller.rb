@@ -3,7 +3,7 @@ class Admin::ArticulosController < Admin::BaseController
 
   def index
     @q = Articulo.search(params[:q])
-    @subcategorias = @q.result(distinct: true).paginate(page: params[:page])
+    @articulos = @q.result(distinct: true).paginate(page: params[:page])
   end
 
   def show
@@ -40,7 +40,7 @@ class Admin::ArticulosController < Admin::BaseController
     respond_with([:admin, @articulo])
   end
 
-  def index
+  def search
     index
     render :index
   end

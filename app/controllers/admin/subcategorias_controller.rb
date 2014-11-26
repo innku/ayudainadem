@@ -40,6 +40,11 @@ class Admin::SubcategoriasController < Admin::BaseController
     respond_with([:admin, @subcategoria])
   end
 
+  def search
+    index
+    render :index
+  end
+
   private
   def set_subcategoria
     @subcategoria = Subcategoria.friendly.find(params[:id])

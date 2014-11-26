@@ -30,6 +30,10 @@
         </thead>
 
         <%= will_paginate @subcategorias %>
+        <%= search_form_for @q, url: search_admin_subcategorias_path, html: {method: :post} do |f| %>
+          <%= f.search_field :titulo_cont, placeholder: 'Busca por titulo' %>
+          <%= f.submit %>
+        <% end %>
         <tbody>
           <% @subcategorias.each do |subcategoria| %>
             <tr>
