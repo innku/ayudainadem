@@ -29,6 +29,10 @@
   </thead>
 
   <%= will_paginate @users %>
+  <%= search_form_for @q, url: search_admin_users_path, html: {method: :post} do |f| %>
+      <%= f.search_field :email_cont %>
+      <%= f.submit %>
+  <% end %>
   <tbody>
     <% @users.each do |user| %>
       <tr>

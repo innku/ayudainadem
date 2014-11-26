@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     resources :categorias
     resources :subcategorias
     resources :articulos
-    resources :users
+    resources :users do
+      collection do
+        match 'search' => 'users#search', via: [:get, :post], as: :search
+      end
+    end
   end
 
   root 'categorias#index'

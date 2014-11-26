@@ -2,8 +2,8 @@ class Admin::UsersController < Admin::BaseController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.paginate(page: params[:page])
-    respond_with(@users)
+    @q = User.search(params[:q])
+    @users = @q.result(distinct: true).paginate(page: params[:page])
   end
 
   def show
@@ -38,6 +38,11 @@ class Admin::UsersController < Admin::BaseController
   def destroy
     @user.destroy
     respond_with([:admin, @user])
+  end
+
+  def search
+    index
+    render :index
   end
 
   private
