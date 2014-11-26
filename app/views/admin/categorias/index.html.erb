@@ -36,7 +36,13 @@
           <% @categorias.each do |categoria| %>
             <tr>
               <td><%= categoria.titulo %></td>
-              <td><%= categoria.prioridad %></td>
+              <td>
+                <% if categoria.prioridad? %>
+                  <%= categoria.prioridad %>
+                <%else%>
+                  <i class="fa fa-ban"></i>
+                <%end%>
+              </td>
               <td>
                 <% if categoria.visible %>
                   <div class='green-label'>
