@@ -11,31 +11,26 @@
         </ul>
       </div>
     <% end %>
-
     <div class='col-12'>
       <div class='grouped-inputs'>
         <%= f.label :titulo %>
         <%= f.text_field :titulo, placeholder: 'Título del Artículo' %>
       </div>
+    </div>
+
+    <div class='col-5'>
       <div class="grouped-inputs-select">
         <%= f.label :subcategoria %>
         <%= f.grouped_collection_select :subcategoria_id, Categoria.all, :subcategorias, :titulo, :id, :titulo, prompt: true %>
       </div>
-      <div class="grouped-inputs-textarea">
-        <%= f.text_area :contenido, placeholder: 'Contenido del Artículo', class: 'edit' %>
-      </div>
-      <div class="grouped-inputs">
-        <%= f.label :video %>
-        <%= f.text_field :video, placeholder: 'Liga del Video del Artículo' %>
-      </div>
     </div>
-
     <div class='col-5'>
       <div class='grouped-inputs'>
         <%= f.label :posicion %>
         <%= f.number_field :posicion, placeholder: 'Posición en número' %>
       </div>
     </div>
+
     <div class='col-5'>
       <div class='grouped-inputs'>
         <%= f.label :imagen %>
@@ -43,12 +38,25 @@
       </div>
     </div>
 
+    <div class='col-5'>
+      <div class="grouped-inputs">
+        <%= f.label :video %>
+        <%= f.text_field :video, placeholder: 'Liga del Video del Artículo' %>
+      </div>
+    </div>
+
     <div class='col-12'>
+      <div class="grouped-inputs-textarea">
+        <%= f.text_area :contenido, placeholder: 'Contenido del Artículo', class: 'edit custom-theme' %>
+      </div>
+    </div>
+
+    <div class='col-12'>
+      <br>
       <div class='float'>
         <%= f.submit 'Guardar', class:'btn-default push-right'  %>
         <%= link_to 'Cancelar', admin_articulos_path, class:'btn-cancel push-right' %>
       </div>
     </div>
   <% end %>
-
 </div>
