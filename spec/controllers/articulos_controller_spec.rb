@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe ArticulosController, :type => :controller do
-  let(:articulo) {Factory.create :articulo}
+  let(:articulo) {build :articulo}
 
   describe "GET index" do
     it "assigns all articulos as @articulos" do
-      articulo = Articulo.create! valid_attributes
       get :index
-      expect(assigns(:articulos)).to eq([articulo])
+      expect(assigns(:articulos)).to eq([:articulo])
     end
   end
 
