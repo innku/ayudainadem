@@ -54,30 +54,27 @@
 
     <div class='col-12'>
       <div class='row'>
-        <div class='col-3'>
-          <ul>
+        <div class='col-3 sidebar'>
+          <div class='title'>
+            <span class='icon'>
+              <i class="fa fa-th-large"></i>
+            </span>
+            <h4>Todas las Subcategorías</h4>
+          </div>
+          <ul class='content'>
             <% @categoria.subcategorias.each do |sub| %>
             <li><%= link_to sub.titulo , '', class: sub.slug %></li>
             <% end %>
           </ul>
-          <br>
         </div>
         <div class='col-9'>
-          <%= f.link_to_add '<i class="fa fa-plus"></i> Agrega subcategoría'.html_safe, :subcategorias , class: 'btn-default', onclick: 'runwysi()'%>
-          <script charset="utf-8">
-          function runwysi() {
-            var elemento = $('.add-subcategory > .wysiwyg').last();
-            var text = elemento.text();
-            if (text == '') {
-              console.log('corriendo wysi');
-              $(".wysiwyg").delay(500).editable({inlineMode: false});
-              console.log('listo wysi');
-            }
-          }
-          </script>
+          <div class='float'>
+            <%= f.link_to_add '<i class="fa fa-plus"></i> Agrega subcategoría'.html_safe, :subcategorias , class: 'btn-default push-right', onclick: 'runwysi()'%>
+          </div>
           <%= f.fields_for :subcategorias do |sub| %>
           <% unless sub.try(:slug) %>
-            <div class='add-subcategory <%= sub.try(:slug) %>'>
+            existo
+            <div class='add-subcategory <%= sub.try(:slug) %> oculta'>
           <% else %>
             <div class='add-subcategory'>
           <% end %>
@@ -108,10 +105,15 @@
               </div>
             </div>
           </div>
+          <script charset="utf-8">
+            function runwysi(){
+              console.log('Corriendo Wysi');
+              $(".wysiwyg").editable({inlineMode: false});
+            }
+          </script>
           <% end %>
         </div>
       </div>
-
     </div>
 
     <div class='col-12'>
