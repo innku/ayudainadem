@@ -11,6 +11,8 @@ module Inademtickets
     config.time_zone = 'Central Time (US & Canada)'
     config.i18n.default_locale = 'es-MX'
 
+    WillPaginate.per_page = 10
+
     config.generators do |g|
       g.test_framework :rspec,
                         fixtures: true,

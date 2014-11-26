@@ -1,8 +1,8 @@
 <% content_for :breadcrumbs do %>
   <div class="breadcrumb">
-    <%= link_to 'Dashboard', admin_path %>
-    <%= link_to 'Categorías', admin_categorias_path %>
-  </div>
+  <%= link_to 'Dashboard', admin_path %>
+  <%= link_to 'Categorías', admin_categorias_path %>
+</div>
 <% end %>
 
 <div class='container'>
@@ -22,16 +22,21 @@
       <table class='table'>
         <thead>
           <tr>
-            <th>Titulo</th>
-            <th>Prioridad</th>
-            <th>Visibilidad</th>
+            <%= content_tag :th, sort_link(@q, :titulo) %>
+            <%= content_tag :th, sort_link(@q, :prioridad) %>
+            <%= content_tag :th, sort_link(@q, :visibilidad) %>
             <th>Color</th>
             <!-- Iconos
             <th>Icono</th> -->
-            <th>Subcategorias</th>
+            <%= content_tag :th, sort_link(@q, :subcategoria, 'Subcategorías') %>
             <th>Acciones</th>
           </tr>
         </thead>
+        <%= will_paginate @categorias %>
+        <%= search_form_for @q, url: search_admin_categorias_path, html: {method: :post} do |f| %>
+          <%= f.search_field :titulo_cont, placeholder: 'Busca por titulo' %>
+          <%= f.submit %>
+        <% end %>
         <tbody>
           <% @categorias.each do |categoria| %>
             <tr>
@@ -62,7 +67,7 @@
                 <i class="fa fa-<%= categoria.icon %>"></i>
               </td> -->
               <td>
-                  <span class='label-green'><%= categoria.subcategorias.count %></span>
+                <span class='label-green'><%= categoria.subcategorias.count %></span>
               </td>
               <td class='acciones'>
                 <%= link_to '<i class="fa fa-plus-square fa-lg"></i>'.html_safe, [:admin, categoria], class: 'show' %>

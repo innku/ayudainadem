@@ -2,8 +2,8 @@ class Admin::ArticulosController < Admin::BaseController
   before_action :set_articulo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articulos = Articulo.all
-    respond_with(@articulos)
+    @q = Articulo.search(params[:q])
+    @articulos = @q.result(distinct: true).paginate(page: params[:page])
   end
 
   def show
@@ -38,6 +38,11 @@ class Admin::ArticulosController < Admin::BaseController
   def destroy
     @articulo.destroy
     respond_with([:admin, @articulo])
+  end
+
+  def search
+    index
+    render :index
   end
 
   private

@@ -2,8 +2,8 @@ class Admin::SubcategoriasController < Admin::BaseController
   before_action :set_subcategoria, only: [:show, :edit, :update, :destroy]
 
   def index
-    @subcategorias = Subcategoria.all
-    respond_with(@subcategorias)
+    @q = Subcategoria.search(params[:q])
+    @subcategorias = @q.result(distinct: true).paginate(page: params[:page])
   end
 
   def show
@@ -38,6 +38,11 @@ class Admin::SubcategoriasController < Admin::BaseController
   def destroy
     @subcategoria.destroy
     respond_with([:admin, @subcategoria])
+  end
+
+  def search
+    index
+    render :index
   end
 
   private
