@@ -2,8 +2,8 @@ class Admin::CategoriasController < Admin::BaseController
   before_action :set_categoria, only: [:show, :edit, :update, :destroy]
 
   def index
-    @categorias = Categoria.paginate(page: params[:page])
-    respond_with(@categorias)
+    @q = Categoria.search(params[:q])
+    @categorias = @q.result(distinct: true).paginate(page: params[:page])
   end
 
   def show
@@ -38,6 +38,11 @@ class Admin::CategoriasController < Admin::BaseController
   def destroy
     @categoria.destroy
     respond_with([:admin, @categoria])
+  end
+
+  def search
+    index
+    render :index
   end
 
   private
