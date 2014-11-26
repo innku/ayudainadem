@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :articulo do
-    titulo "MyString"
-    contenido "MyString"
-    subcategoria "MyString"
+    titulo "Primer Articulo"
+    contenido "Uno de los mejores articulos"
+    slug "primer-articulo"
     video "MyString"
     imagen "MyString"
-    slug "MyString"
+    subcategoria
   end
 end
