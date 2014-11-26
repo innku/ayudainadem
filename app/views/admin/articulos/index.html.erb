@@ -22,8 +22,8 @@
       <table class='table'>
         <thead>
           <tr>
-            <th>Titulo</th>
-            <th>Subcategoria</th>
+            <%= content_tag :th, sort_link(@q, :titulo) %>
+            <%= content_tag :th, sort_link(@q, :subcategoria, 'Subcategoría') %>
             <th>Acciones</th>
           </tr>
         </thead>

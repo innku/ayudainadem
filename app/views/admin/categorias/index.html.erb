@@ -22,13 +22,13 @@
       <table class='table'>
         <thead>
           <tr>
-            <th>Titulo</th>
-            <th>Prioridad</th>
-            <th>Visibilidad</th>
+            <%= content_tag :th, sort_link(@q, :titulo) %>
+            <%= content_tag :th, sort_link(@q, :prioridad) %>
+            <%= content_tag :th, sort_link(@q, :visibilidad) %>
             <th>Color</th>
             <!-- Iconos
             <th>Icono</th> -->
-            <th>Subcategorias</th>
+            <%= content_tag :th, sort_link(@q, :subcategoria, 'Subcategorías') %>
             <th>Acciones</th>
           </tr>
         </thead>
