@@ -2,7 +2,7 @@ class Admin::CategoriasController < Admin::BaseController
   before_action :set_categoria, only: [:show, :edit, :update, :destroy]
 
   def index
-    @categorias = Categoria.includes(:subcategorias).all
+    @categorias = Categoria.paginate(page: params[:page])
     respond_with(@categorias)
   end
 

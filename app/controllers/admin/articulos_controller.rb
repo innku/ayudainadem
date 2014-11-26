@@ -2,7 +2,7 @@ class Admin::ArticulosController < Admin::BaseController
   before_action :set_articulo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articulos = Articulo.all
+    @articulos = Articulo.paginate(page: params[:page])
     respond_with(@articulos)
   end
 

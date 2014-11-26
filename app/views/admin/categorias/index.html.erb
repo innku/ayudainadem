@@ -32,6 +32,7 @@
             <th>Acciones</th>
           </tr>
         </thead>
+        <%= will_paginate @categorias %>
         <tbody>
           <% @categorias.each do |categoria| %>
             <tr>
