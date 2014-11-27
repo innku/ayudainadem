@@ -59,7 +59,13 @@
                 <% @categoria.subcategorias.each do |subcategoria| %>
                 <tr>
                   <td><%= subcategoria.titulo %></td>
-                  <td><%= subcategoria.posicion %></td>
+                  <td>
+                    <% if subcategoria.posicion? %>
+                      <%= subcategoria.posicion %>
+                    <%else%>
+                      <i class="fa fa-ban"></i>
+                    <%end%>
+                  </td>
                   <td>
                     <span class='label-green'><%= subcategoria.categoria %></span>
                   </td>

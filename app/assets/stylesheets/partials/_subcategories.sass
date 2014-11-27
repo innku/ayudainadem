@@ -1,6 +1,18 @@
 // Subcategories
-.add-subcategory
-  //display: none
+.oculta, .add-sub
+  display: none
+
+.lista-sub
+  li:first-child
+    background: $greenLightColor
+    a
+      color: white
+      &:hover
+        background: darken($greenLightColor,5)
+  i
+    margin-right: em(10)
+  a:hover
+    cursor: pointer
 .subcategory
   @include header
   .subtitle

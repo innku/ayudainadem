@@ -1,12 +1,15 @@
 $(document).ready ->
-  # Multiple Select
-  $(".select-multiple").multipleSelect()
-
-  # Color picker
-  $(".minicolor").minicolors theme: "bootstrap"
 
   # Wysiwyg
   $(".wysiwyg").editable inlineMode: false
+
+  # Mini picker
+  $(".minicolor").minicolors theme: "bootstrap"
+
+  # multiple select
+  $(".select-multiple").multipleSelect()
+
+
 
   # Icon Select
   #$(".icon-select-ul").hide()
@@ -24,7 +27,18 @@ $(document).ready ->
   #  return
   #return
 
-  runwysi = ->
-    alert "hola"
-    $(".wysiwyg").editable inlineMode: false
-    return
+  # Add sub
+  $('.nueva-sub').click ->
+    $(".add-subcategory").hide()
+    $('.add-sub').show()
+    $('.nuevo').show()
+
+  $('.lista-sub .existe').click ->
+    clase = this.className
+    $(".add-subcategory").hide()
+    $(".add-sub").hide()
+    primera = clase.split(' ')[0]
+    $('.'+primera).show()
+
+  $('.add-sub').click ->
+    $(".oculta").hide()

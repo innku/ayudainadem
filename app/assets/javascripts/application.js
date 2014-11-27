@@ -18,4 +18,3 @@
 //= require accordion
 //= require jquery.multiple.select.js
 //= require jquery.minicolors
-//= require_tree .
