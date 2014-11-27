@@ -14,8 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery_nested_form
-////= require froala_editor.min.js
+//= require froala_editor.min.js
 //= require accordion
 //= require jquery.multiple.select.js
 //= require jquery.minicolors
 //= require_tree .
+//= require langs/es.js
+//= require plugins/block_styles.min.js
+//= require plugins/colors.min.js
+//= require plugins/media_manager.min.js
+//= require plugins/tables.min.js
+//= require plugins/video.min.js
+//= require plugins/file_upload.min.js
+//= require plugins/lists.min.js
