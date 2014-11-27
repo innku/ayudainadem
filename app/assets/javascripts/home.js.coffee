@@ -13,23 +13,6 @@ $(document).ready ->
   $(".select-multiple").multipleSelect()
 
 
-
-  # Icon Select
-  #$(".icon-select-ul").hide()
-  #$(".icon-select").hover (->
-  #  $(".icon-select-ul").show()
-  #  $(".icon-select-ul li > i").click ->
-  #    este = $(this).attr("class").split('-')
-  #    ultimo = este[este.length-1]
-  #    $('.value-icon').val(ultimo)
-  #    $(".icon-select-ul").hide()
-  #    return
-  #  return
-  #), ->
-  #  $(".icon-select-ul").hide()
-  #  return
-  #return
-
   if contenedor == 'categorias' && vista == 'edit' || vista == 'new'
     nuevo = $('.nuevo').length
     total = nuevo
@@ -49,3 +32,19 @@ $(document).ready ->
       $(".add-subcategory").hide()
       primera = clase.split(' ')[0]
       $('.'+primera).show()
+
+    # Icon Select
+    #$(".icon-select-ul").hide()
+    #$(".icon-select").hover (->
+    #  $(".icon-select-ul").show()
+    #  $(".icon-select-ul li > i").click ->
+    #    este = $(this).attr("class").split('-')
+    #    ultimo = este[este.length-1]
+    #    $('.value-icon').val(ultimo)
+    #    $(".icon-select-ul").hide()
+    #    return
+    #  return
+    #), ->
+    #  $(".icon-select-ul").hide()
+    #  return
+    #return
