@@ -11,6 +11,9 @@
     <%= yield %>
   </div>
   <%= image_tag 'footer.png', style: 'width:100%' %>
+  <% if user_signed_in? %>
+    <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
+  <% end %>
 </body>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>

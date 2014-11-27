@@ -45,8 +45,8 @@ rake db:seed
 
 Nota: De datos de pruebas
 
-* Email de administrador: "admin@sample.com"
-* Email de agente de prueba: "agente@sample.com" y "agente2@sample.com"
+* Email de administrador: "admin@inadem.gob.mx"
+* Email de agente de prueba: "agente@inadem.gob.mx" y "agente2@inadem.gob.mx"
 * Todas las contraseñs: "secret"
 
 == El equipo
