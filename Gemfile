@@ -23,7 +23,9 @@ gem 'therubyracer', '~> 0.12.1'
 gem 'turbolinks', '~> 2.5.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate', '~> 3.0.7'
-gem 'wysiwyg-rails'
+
+#gem 'wysiwyg-rails'
+gem 'quill-rails', '~> 0.1.0'
 
 # Assets
 gem 'bourbon'

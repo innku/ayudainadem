@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery_nested_form
-////= require froala_editor.min.js
+//= require quill
 //= require accordion
 //= require jquery.multiple.select.js
 //= require jquery.minicolors

@@ -22,7 +22,8 @@
         <%= f.grouped_collection_select :subcategoria_id, Categoria.all, :subcategorias, :titulo, :id, :titulo, prompt: true %>
       </div>
       <div class="grouped-inputs-textarea">
-        <%= f.text_area :contenido, placeholder: 'Contenido del Artículo', class: 'edit' %>
+        <%#= f.text_area :contenido, placeholder: 'Contenido del Artículo', class: 'edit' %>
+        <%= quill_editor %>
       </div>
       <div class="grouped-inputs">
         <%= f.label :video %>
