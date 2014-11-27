@@ -1,5 +1,8 @@
 $(document).ready ->
 
+  contenedor = $('#generalContent').attr("data-controller")
+  vista = $('#generalContent').attr("data-view")
+
   # Wysiwyg
   $(".wysiwyg").editable inlineMode: false
 
@@ -27,18 +30,22 @@ $(document).ready ->
   #  return
   #return
 
-  # Add sub
-  $('.nueva-sub').click ->
-    $(".add-subcategory").hide()
-    $('.add-sub').show()
-    $('.nuevo').show()
+  if contenedor == 'categorias' && vista == 'edit' || vista == 'new'
+    nuevo = $('.nuevo').length
+    total = nuevo
+    if total == 0
+      $('#totalSub').hide()
+    else
+      $('#totalSub').html(total)
 
-  $('.lista-sub .existe').click ->
-    clase = this.className
-    $(".add-subcategory").hide()
-    $(".add-sub").hide()
-    primera = clase.split(' ')[0]
-    $('.'+primera).show()
+    # Add sub
+    $('.add-sub').click ->
+      $(".add-subcategory").hide()
+      $('.nuevo').show()
+      $(".oculta").hide()
 
-  $('.add-sub').click ->
-    $(".oculta").hide()
+    $('.lista-sub .existe').click ->
+      clase = this.className
+      $(".add-subcategory").hide()
+      primera = clase.split(' ')[0]
+      $('.'+primera).show()

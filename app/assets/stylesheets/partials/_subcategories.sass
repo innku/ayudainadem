@@ -3,12 +3,13 @@
   display: none
 
 .lista-sub
-  li:first-child
+  .primer-li
     background: $greenLightColor
     a
       color: white
       &:hover
-        background: darken($greenLightColor,5)
+        background: darken($greenLightColor,5) !important
+
   i
     margin-right: em(10)
   a:hover
