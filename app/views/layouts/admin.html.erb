@@ -42,8 +42,10 @@
         </div>
         <div class='push-right'>
           <div class='menu'>
-            <h6><%= link_to current_user.email, edit_user_registration_path %></h6>
-            <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
+            <% if user_signed_in? %>
+              <h6><%= link_to current_user.email, edit_user_registration_path %></h6>
+              <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class: 'btn-cancel' %>
+            <% end %>
           </div>
         </div>
       </div>
