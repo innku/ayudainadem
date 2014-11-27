@@ -13,10 +13,26 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :categorias
-    resources :subcategorias
-    resources :articulos
-    resources :users
+    resources :categorias do
+      collection do
+        match 'search' => 'categorias#search', via: [:get, :post], as: :search
+      end
+    end
+    resources :subcategorias do
+      collection do
+        match 'search' => 'subcategorias#search', via: [:get, :post], as: :search
+      end
+    end
+    resources :articulos do
+      collection do
+        match 'search' => 'articulos#search', via: [:get, :post], as: :search
+      end
+    end
+    resources :users do
+      collection do
+        match 'search' => 'users#search', via: [:get, :post], as: :search
+      end
+    end
   end
 
   root 'categorias#index'

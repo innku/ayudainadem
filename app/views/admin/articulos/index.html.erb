@@ -22,12 +22,17 @@
       <table class='table'>
         <thead>
           <tr>
-            <th>Titulo</th>
-            <th>Subcategoria</th>
+            <%= content_tag :th, sort_link(@q, :titulo) %>
+            <%= content_tag :th, sort_link(@q, :subcategoria, 'Subcategoría') %>
             <th>Acciones</th>
           </tr>
         </thead>
 
+        <%= will_paginate @articulos %>
+  <%= search_form_for @q, url: search_admin_articulos_path, html: {method: :post} do |f| %>
+      <%= f.search_field :titulo_cont, placeholder: 'Busca por Titulo' %>
+      <%= f.submit %>
+  <% end %>
         <tbody>
           <% @articulos.each do |articulo| %>
             <tr>
