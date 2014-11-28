@@ -60,9 +60,9 @@
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <script>
 $(function() {
-    $('.edit').editable({language: 'es', inlineMode: false})
+$('.edit').editable({language: 'es', inlineMode: false, buttons: ["bold", "italic", "underline", "fontSize", "table", "insertVideo", "insertImage", "uploadFile", "insertOrderedList", "insertUnorderedList", "color", "createLink", "redo", "undo"]})
     });
-    $('.fa-strikethrough').remove();
+    $('.fa fa-strikethrough').remove();
 </script>
 </body>
 </html>
