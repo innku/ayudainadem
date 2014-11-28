@@ -4,7 +4,25 @@ $(document).ready ->
   vista = $('#generalContent').attr("data-view")
 
   # Wysiwyg
-  $(".wysiwyg").editable inlineMode: false
+  $(".wysiwyg").editable
+    language: "es"
+    inlineMode: false
+    buttons: [
+      "bold"
+      "italic"
+      "underline"
+      "fontSize"
+      "table"
+      "insertVideo"
+      "insertImage"
+      "uploadFile"
+      "insertOrderedList"
+      "insertUnorderedList"
+      "color"
+      "createLink"
+      "redo"
+      "undo"
+    ]
 
   # Mini picker
   $(".minicolor").minicolors theme: "bootstrap"

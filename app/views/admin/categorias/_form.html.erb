@@ -114,9 +114,7 @@
                 <% unless sub.object.id %>
                   <script charset="utf-8">
                     $(document).ready(function(){
-                      $(".wysiwyg").editable({
-                        inlineMode: false
-                      });
+                      $(".wysiwyg").editable({language: 'es', inlineMode: false, buttons: ["bold", "italic", "underline", "fontSize", "table", "insertVideo", "insertImage", "uploadFile", "insertOrderedList", "insertUnorderedList", "color", "createLink", "redo", "undo"]});
                     });
                   </script>
                 <% end %>
