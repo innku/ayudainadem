@@ -62,7 +62,7 @@
             <h4>Editar Subcategorías</h4>
           </div>
           <ul class='content lista-sub'>
-            <li class='primer-li'><%= f.link_to_add '<i class="fa fa-plus"></i> Agregar Subcategoría <span id="totalSub" class="indicador-rojo"></span>'.html_safe, :subcategorias , class: 'add-sub', data: {target: '#target'}, onclick: 'checkNew()' %>
+            <li class='primer-li'><%= f.link_to_add '<i class="fa fa-plus"></i> Agregar Subcategoría <span id="totalSub" class="indicador-rojo"></span>'.html_safe, :subcategorias , class: 'add-sub', data: {target: '#target'}, onclick: 'listener()' %>
             </li>
 
             <% if @categoria.subcategorias.count > 0 %>
@@ -92,7 +92,7 @@
                       <h3>Subcategoría</h3>
                     </div>
                     <div class='col-3 float'>
-                      <%= sub.link_to_remove '<i class="fa fa-trash"></i> eliminar'.html_safe, class: 'btn-cancel push-right mt'%>
+                      <%= sub.link_to_remove '<i class="fa fa-trash"></i> eliminar'.html_safe, class: 'btn-cancel push-right mt', onclick: 'update()'%>
                     </div>
                   </div>
                   <div class='row'>
@@ -137,9 +137,19 @@
 <% end %>
 
 <script charset="utf-8">
-  function checkNew() {
-    var nuevo = $('.nuevo').length;
+  function listener() {
+    var nuevo = $('.nuevo:visible').length;
     var total = nuevo + 1;
+    if (total == 0) {
+      $('#totalSub').hide();
+    } else {
+      $('#totalSub').show();
+      $('#totalSub').html(total);
+    }
+  }
+  function update(){
+    var actualizar = $('.nuevo:visible').length;
+    var total = actualizar - 1;
     if (total == 0) {
       $('#totalSub').hide();
     } else {
