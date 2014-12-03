@@ -1,0 +1,32 @@
+<div class='top-header'>
+  <h2>Administrador</h2>
+</div>
+<ul>
+  <li class='divider'><i class="fa fa-pie-chart"></i> Dashboard</li>
+  <li>
+    <%= link_to '<i class="fa fa-line-chart"></i> General '.html_safe, admin_path %>
+  </li>
+  <li class='divider'><i class="fa fa-info-circle"></i> Preguntas Frecuentes</li>
+  <li>
+    <%= link_to(admin_categorias_path) do %>
+      <i class="fa fa-bookmark"></i> Categorías <small class="indicador-rojo"><%= total_categorias %></small>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to(admin_subcategorias_path) do %>
+      <i class="fa fa-th-large"></i> Subcategorías <small class="indicador-rojo"><%= total_subcategorias %></small>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to(admin_articulos_path) do %>
+      <i class="fa fa-file"></i> Artículos <small class="indicador-rojo"><%= total_articulos %></small>
+    <% end %>
+  </li>
+  <li class='divider'><i class="fa fa-cog"></i> Administración</li>
+  <li>
+    <%= link_to '<i class="fa fa-user"></i> Usuarios'.html_safe, admin_users_path %>
+  </li>
+</ul>
+<footer>
+  INADEM
+</footer>

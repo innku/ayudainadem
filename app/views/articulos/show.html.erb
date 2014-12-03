@@ -13,7 +13,7 @@
     <div class='header' style='background: <%= @articulo.subcategoria.categoria.color %>;'>
       <div class="icon">
         <span class='icon' style='background: <%= @articulo.subcategoria.categoria.color %>;'>
-          <i class="fa fa-file"></i>
+          <i class="fa fa-bookmark"></i>
           <!-- Icono
           <% if @articulo.subcategoria.categoria.icon? %>
             <i class="fa fa-<%= @articulo.subcategoria.categoria.icon %>"></i>
@@ -27,7 +27,7 @@
     </div>
     <h4 class='subtitle'><%= @articulo.subcategoria %></h4>
     <div class='content'>
-      <h2 class='title'><%= @articulo %></h2>
+      <h2 class='title'><i class="fa fa-file"></i> <%= @articulo %></h2>
       <% if @articulo.video? %>
         <div class='image'>
           <%= @articulo.imagen %>

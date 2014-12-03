@@ -9,7 +9,7 @@
   <div class='row title'>
     <div class='col-9'>
       <span class='icon'>
-        <i class="fa fa-star fa-lg"></i>
+        <i class="fa fa-bookmark fa-lg"></i>
       </span>
       <h3>Todas las Categorías</h3>
     </div>
@@ -35,7 +35,8 @@
             <%= content_tag :th, sort_link(@q, :titulo) %>
             <%= content_tag :th, sort_link(@q, :prioridad) %>
             <%= content_tag :th, sort_link(@q, :visibilidad) %>
-            <th>Color</th>
+            <!-- Color
+            <th>Color</th> -->
             <!-- Iconos
             <th>Icono</th> -->
             <%= content_tag :th, sort_link(@q, :subcategoria, 'Subcategorías') %>
@@ -64,9 +65,10 @@
                   </div>
                 <% end %>
               </td>
+              <!-- Color
               <td>
                 <span class='color-picker' style='background:<%= categoria.color %>;'></span>
-              </td>
+              </td> -->
               <!-- Iconos
               <td>
                 <i class="fa fa-<%= categoria.icon %>"></i>
