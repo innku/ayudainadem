@@ -32,12 +32,13 @@
     </div>
     <div class='col-12'>
       <div class='grouped-inputs-textarea'>
-        <%= f.text_area :descripcion, placeholder: 'Descripción de la Subategoría', class: 'edit' %>
+        <%= f.text_area :descripcion, placeholder: 'Descripción de la Subategoría', class: 'wysiwyg' %>
       </div>
     </div>
 
     <div class='col-12'>
-      <div class='float'>
+      <br>
+      <div class='float actions'>
         <%= f.submit 'Guardar', class:'btn-default push-right'  %>
         <%= link_to 'Cancelar', admin_subcategorias_path, class:'btn-cancel push-right' %>
       </div>

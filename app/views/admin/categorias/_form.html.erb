@@ -53,40 +53,106 @@
     </div>
 
     <div class='col-12'>
-      <%= f.link_to_add '<i class="fa fa-plus"></i> Agrega subcategoría'.html_safe, :subcategorias , class: 'btn-default'%>
-      <%= f.fields_for :subcategorias do |sub| %>
-      <div class='row title'>
+      <div class='row'>
+        <div class='col-3 sidebar'>
+          <div class='title'>
+            <span class='icon'>
+              <i class="fa fa-th-large"></i>
+            </span>
+            <h4>Editar Subcategorías</h4>
+          </div>
+          <ul class='content lista-sub'>
+            <li class='primer-li'><%= f.link_to_add '<i class="fa fa-plus"></i> Agregar Subcategoría <span id="totalSub" class="indicador-rojo"></span>'.html_safe, :subcategorias , class: 'add-sub', data: {target: '#target'}, onclick: 'listener()' %>
+            </li>
+
+            <% if @categoria.subcategorias.count > 0 %>
+                <%= f.fields_for :subcategorias do |sub| %>
+                  <% if sub.object.slug? %>
+                    <li><a class='<%= sub.object.slug%> existe'><i class="fa fa-th-large"></i> <%= sub.object.titulo.truncate(30) %></a></li>
+                  <% end %>
+                <% end %>
+            <% else %>
+              <li><%= link_to 'Sin Subcategorías', '' %></li>
+            <% end %>
+          </ul>
+        </div>
         <div class='col-9'>
-          <span class='icon'>
-            <i class="fa fa-th-large fa-lg"></i>
-          </span>
-          <h3>Subcategoría</h3>
-        </div>
-        <div class='col-3 float'>
-          <%= sub.link_to_remove 'Quita esta subcategoría', class: 'btn-cancel push-right mt' %>
+          <div class='caja-sub' id='target'>
+            <%= f.fields_for :subcategorias do |sub| %>
+              <% if sub.object.slug? %>
+                <div class='add-subcategory oculta <%= sub.object.slug %>'>
+              <% else %>
+                <div class='add-subcategory nuevo'>
+              <% end %>
+                  <div class='row title'>
+                    <div class='col-9'>
+                      <span class='icon'>
+                        <i class="fa fa-th-large fa-lg"></i>
+                      </span>
+                      <h3>Subcategoría</h3>
+                    </div>
+                    <div class='col-3 float'>
+                      <%= sub.link_to_remove '<i class="fa fa-trash"></i> eliminar'.html_safe, class: 'btn-cancel push-right mt', onclick: 'update()'%>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-12 info'>
+                      <div class='grouped-inputs'>
+                        <%= sub.label :titulo %>
+                        <%= sub.text_field :titulo, placeholder: 'Agrega titulo de subcategoría' %>
+                      </div>
+                      <div class='grouped-inputs'>
+                        <%= sub.label :posicion %>
+                        <%= sub.number_field :posicion, placeholder: 'Posición en número' %>
+                      </div>
+                      <div class="grouped-inputs-textarea">
+                        <%= sub.text_area :descripcion, placeholder: 'Descripción de la subcategoría', class: 'wysiwyg' %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% unless sub.object.id %>
+                  <script charset="utf-8">
+                    $(document).ready(function(){
+                      $(".wysiwyg").editable({language: 'es', inlineMode: false, buttons: ["bold", "italic", "underline", "fontSize", "table", "insertVideo", "insertImage", "uploadFile", "insertOrderedList", "insertUnorderedList", "color", "createLink", "redo", "undo"]});
+                    });
+                  </script>
+                <% end %>
+              <% end %>
+          </div>
         </div>
       </div>
-      <div class='col-12 info'>
-        <div class='grouped-inputs'>
-          <%= sub.label :titulo %>
-          <%= sub.text_field :titulo, placeholder: 'Agrega titulo de subcategoría' %>
-        </div>
-        <div class='grouped-inputs'>
-          <%= sub.label :posicion %>
-          <%= sub.number_field :posicion, placeholder: 'Posición en número' %>
-        </div>
-        <div class="grouped-inputs-textarea">
-          <%= sub.text_area :descripcion, placeholder: 'Descripción de la subcategoría', class: 'edit' %>
-        </div>
-      </div>
-      <% end %>
     </div>
 
     <div class='col-12'>
-      <div class='float'>
+      <br>
+      <div class='float actions'>
         <%= f.submit 'Guardar', class:'btn-default push-right'  %>
         <%= link_to 'Cancelar', admin_categorias_path, class:'btn-cancel push-right' %>
       </div>
     </div>
   </div>
 <% end %>
+
+<script charset="utf-8">
+  function listener() {
+    var nuevo = $('.nuevo:visible').length;
+    var total = nuevo + 1;
+    if (total == 0) {
+      $('#totalSub').hide();
+    } else {
+      $('#totalSub').show();
+      $('#totalSub').html(total);
+    }
+  }
+  function update(){
+    var actualizar = $('.nuevo:visible').length;
+    var total = actualizar - 1;
+    if (total == 0) {
+      $('#totalSub').hide();
+    } else {
+      $('#totalSub').show();
+      $('#totalSub').html(total);
+    }
+  }
+</script>

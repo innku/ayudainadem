@@ -2,7 +2,8 @@
 <html>
 <head>
 <title>Inadem tickets :: Admin</title>
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
 </head>
 <body>
@@ -51,18 +52,12 @@
       </div>
     </header>
     <div class='overflow'>
-      <div class='content'>
+      <div id='generalContent' class='content' data-controller='<%= controller.controller_name %>' data-view='<%= controller.action_name %>'>
         <%= yield %>
       </div>
     </div>
   </div>
 </div>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<script>
-$(function() {
-$('.edit').editable({language: 'es', inlineMode: false, buttons: ["bold", "italic", "underline", "fontSize", "table", "insertVideo", "insertImage", "uploadFile", "insertOrderedList", "insertUnorderedList", "color", "createLink", "redo", "undo"]})
-    });
-    $('.fa fa-strikethrough').remove();
-</script>
 </body>
+<%= javascript_include_tag 'home', 'data-turbolinks-track' => true %>
 </html>

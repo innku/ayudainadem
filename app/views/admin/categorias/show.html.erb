@@ -19,35 +19,85 @@
         <div class='col-12'>
           <ul>
             <li>
-              La prioridad de esta categoría es <b class='green-text'><%= @categoria.prioridad %></b>.
-            </li>
-            <li>
-              <% if @categoria.visible?  %>
-                 Esta categoría <b class='green-text'>esta visible <i class="fa fa-eye fa-lg"></i></b> en el sitio.
+              <% if @categoria.prioridad? %>
+              La prioridad de esta categoría es <b class='green-text'><%= @categoria.prioridad %></b>
               <%else%>
-                Esta categoría <b class='green-text'>no esta visible <i class="fa fa-eye-slash fa-lg red-text"></i></b> en el sitio.
+              Esta categoría aun <b class='red-text'>no</b> tiene prioridad
+              <%end%>
+              <% if @categoria.visible?  %>
+                 y <b class='green-text'>esta visible <i class="fa fa-eye fa-lg"></i></b> en el sitio.
+              <%else%>
+                y <b class='red-text'>no esta visible <i class="fa fa-eye-slash fa-lg red-text"></i></b> en el sitio.
               <%end%>
             </li>
           </ul>
           <hr>
           <% if @categoria.subcategorias.count > 0 %>
-          <h4>Subcategorías</h4>
-          <ul>
-            <% @categoria.subcategorias.each  do |subcategoria| %>
-              <li><i class="fa fa-check"></i> <%= link_to subcategoria.titulo, admin_subcategoria_path(subcategoria) %></li>
-            <% end %>
-          </ul>
-          <%= link_to '<i class="fa fa-plus"></i> Agregar otra Subcategoría'.html_safe, new_admin_subcategoria_path , class: 'btn-default push-right mt'%>
+          <div class='row title'>
+            <div class='col-9'>
+              <span class='icon'>
+                <i class="fa fa-th-large fa-lg"></i>
+              </span>
+              <h3>Subcategorías</h3>
+            </div>
+            <div class='col-3 float'>
+              <%= link_to '<i class="fa fa-plus"></i> Agregar otra Subcategoría'.html_safe, new_admin_subcategoria_path , class: 'btn-default push-right mt'%>
+            </div>
+          </div>
+          <div class='row'>
+            <table class='table'>
+              <thead>
+                <tr>
+                  <th>Titulo</th>
+                  <th>Posicion</th>
+                  <th>Categoria</th>
+                  <th> Acciones</th>
+                </tr>
+              </thead>
 
+              <tbody>
+                <% @categoria.subcategorias.each do |subcategoria| %>
+                <tr>
+                  <td><%= subcategoria.titulo %></td>
+                  <td>
+                    <% if subcategoria.posicion? %>
+                      <%= subcategoria.posicion %>
+                    <%else%>
+                      <i class="fa fa-ban"></i>
+                    <%end%>
+                  </td>
+                  <td>
+                    <span class='label-green'><%= subcategoria.categoria %></span>
+                  </td>
+                  <td class='acciones'>
+                    <%= link_to '<i class="fa fa-plus-square fa-lg"></i>'.html_safe, [:admin, subcategoria], class: 'show' %>
+                    <%= link_to '<i class="fa fa-pencil fa-lg"></i>'.html_safe, edit_admin_subcategoria_path(subcategoria), class: 'show' %>
+                    <%= link_to '<i class="fa fa-trash fa-lg"></i>'.html_safe, [:admin, subcategoria], method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' %>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
           <%else%>
-            Sin Subcategorías <br>
-            <%= link_to '<i class="fa fa-plus"></i> Agregar Subcategoría'.html_safe, new_admin_subcategoria_path , class: 'btn-default push-right mt'%>
+          <div class='row title'>
+            <div class='col-9'>
+              <span class='icon'>
+                <i class="fa fa-th-large fa-lg"></i>
+              </span>
+              <h3>Sin Subcategorías</h3>
+            </div>
+            <div class='col-3 float'>
+              <%= link_to '<i class="fa fa-plus"></i> Agregar Subcategoría'.html_safe, new_admin_subcategoria_path , class: 'btn-default push-right mt'%>
+            </div>
+          </div>
           <%end%>
         </div>
         <div class='col-12'>
+          <br>
           <div class='float'>
             <%= link_to 'Editar', edit_admin_categoria_path(@categoria), class:'btn-default push-right'  %>
-            <%= link_to 'Regresar', admin_categorias_path, class:'btn-gray push-right'  %>
+            <%= link_to 'Regresar', admin_categorias_path, class:'btn-cancel push-right'  %>
           </div>
         </div>
       </div>

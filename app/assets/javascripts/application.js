@@ -18,7 +18,6 @@
 //= require accordion
 //= require jquery.multiple.select.js
 //= require jquery.minicolors
-//= require_tree .
 //= require langs/es.js
 //= require plugins/block_styles.min.js
 //= require plugins/media_manager.min.js

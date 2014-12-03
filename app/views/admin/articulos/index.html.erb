@@ -19,6 +19,16 @@
   </div>
   <div class='row'>
     <div class='col-12'>
+      <div class='float'>
+        <%= search_form_for @q, url: search_admin_articulos_path, html: {method: :post} do |f| %>
+        <div class='search push-right'>
+          <%= f.search_field :titulo_cont, placeholder: 'Buscar por titulo' %>
+          <%= f.button 'buscar' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class='col-12'>
       <table class='table'>
         <thead>
           <tr>
@@ -27,12 +37,6 @@
             <th>Acciones</th>
           </tr>
         </thead>
-
-        <%= will_paginate @articulos %>
-  <%= search_form_for @q, url: search_admin_articulos_path, html: {method: :post} do |f| %>
-      <%= f.search_field :titulo_cont, placeholder: 'Busca por Titulo' %>
-      <%= f.submit %>
-  <% end %>
         <tbody>
           <% @articulos.each do |articulo| %>
             <tr>
@@ -47,7 +51,7 @@
           <% end %>
         </tbody>
       </table>
-
+      <%= will_paginate @articulos %>
     </div>
   </div>
 </div>
