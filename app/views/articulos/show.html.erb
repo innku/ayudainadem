@@ -28,15 +28,9 @@
     <h4 class='subtitle'><%= @articulo.subcategoria %></h4>
     <div class='content'>
       <h2 class='title'><%= @articulo %></h2>
-      <% if @articulo.video? %>
-        <div class='image'>
-          <%= @articulo.imagen %>
-        </div>
-      <%end%>
       <div class='info'>
         <%= @articulo.contenido.html_safe %>
         <br>
-        <%= link_to 'Ver video', @articulo.video if @articulo.video? %>
       </div>
     </div>
   </div>
