@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @q = User.search(params[:q])
+    @q = User.includes(:roles).search(params[:q])
     @users = @q.result(distinct: true).paginate(page: params[:page])
   end
 
