@@ -21,7 +21,7 @@
     <div class='col-5'>
       <div class="grouped-inputs-select">
         <%= f.label :subcategoria %>
-        <%= f.grouped_collection_select :subcategoria_id, Categoria.all, :subcategorias, :titulo, :id, :titulo, prompt: true %>
+        <%= f.grouped_collection_select :subcategoria_id, Categoria.includes(:subcategorias).all, :subcategorias, :titulo, :id, :titulo, prompt: true %>
       </div>
     </div>
     <div class='col-5'>
