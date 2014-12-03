@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: articulos
+#
+#  id              :integer          not null, primary key
+#  titulo          :string(255)
+#  posicion        :integer
+#  contenido       :text
+#  slug            :string(255)
+#  subcategoria_id :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 class Articulo < ActiveRecord::Base
   belongs_to :subcategoria
   extend FriendlyId

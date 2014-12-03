@@ -35,10 +35,13 @@ gem 'neat'
 gem 'sass-rails', '~> 4.0.3'
 
 group :development do
+  gem 'annotate', '~> 2.6.5'
   gem 'awesome_print', '~> 1.2'
   gem 'better_errors', '~> 2.0'
-  gem 'spring', '~> 1.1.3'
+  gem 'bullet'
+  gem 'quiet_assets'
   gem 'sextant'
+  gem 'spring', '~> 1.1.3'
 end
 
 group :test do

@@ -57,6 +57,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
     bcrypt (3.1.9)
@@ -70,6 +73,9 @@ GEM
       sass (~> 3.2)
       thor
     builder (3.2.2)
+    bullet (4.14.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (>= 1.6.0)
     byebug (2.7.0)
       columnize (~> 0.3)
       debugger-linecache (~> 1.2)
@@ -254,6 +260,8 @@ GEM
       pry (>= 0.9.11)
     puma (2.9.2)
       rack (>= 1.1, < 2.0)
+    quiet_assets (1.0.3)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -354,6 +362,7 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode_utils (1.4.0)
+    uniform_notifier (1.6.2)
     warden (1.2.3)
       rack (>= 1.0)
     websocket (1.2.1)
@@ -369,9 +378,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate (~> 2.6.5)
   awesome_print (~> 1.2)
   better_errors (~> 2.0)
   bourbon
+  bullet
   cancancan (~> 1.9.2)
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.0.0)
@@ -397,6 +408,7 @@ DEPENDENCIES
   pg_search (~> 0.7.8)
   pry-byebug
   puma (~> 2.9.2)
+  quiet_assets
   rails (= 4.1.8)
   rails-i18n (~> 4.0.3)
   rails_12factor
