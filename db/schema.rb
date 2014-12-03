@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203004602) do
+ActiveRecord::Schema.define(version: 20141203182406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,5 +126,9 @@ ActiveRecord::Schema.define(version: 20141203004602) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+
+  add_foreign_key "articulos", "subcategorias", name: "articulos_subcategoria_id_fk"
+
+  add_foreign_key "subcategorias", "categorias", name: "subcategorias_categoria_id_fk"
 
 end
