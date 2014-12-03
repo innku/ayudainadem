@@ -19,12 +19,7 @@
             <h3 class='title'>
               <%= categoria.titulo %>
               <small class='span-gray'>
-                (<%= categoria.subcategorias.count %>
-                <% if categoria.subcategorias.count == 1 %>
-                Subcategoría)
-                <% else %>
-                Subcategorías)
-                <% end %>
+                (<%= pluralize(categoria.subcategorias.count, 'Subcategoría') %>)
               </small>
             </h3>
           </div>
@@ -35,12 +30,7 @@
                 <%= link_to([subcategoria.categoria, subcategoria]) do %>
                    <%= subcategoria.titulo %>
                    <small class='span-gray'>
-                     (<%= subcategoria.articulos.count %>
-                     <% if subcategoria.articulos.count == 1 %>
-                        Artículo)
-                     <% else %>
-                        Artículos)
-                      <% end %>
+                     (<%= pluralize(subcategoria.articulos.count, 'Artículo') %>)
                     </small>
                 <% end %>
               </li>

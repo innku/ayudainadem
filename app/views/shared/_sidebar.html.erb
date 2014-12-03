@@ -11,12 +11,7 @@
     <i class="fa fa-bookmark" style='margin-right:10px;'></i><%= categoria %>
     <br>
     <small class='time'>
-        (<%= categoria.subcategorias.count %>
-        <% if categoria.subcategorias.count == 1 %>
-        Subcategoría)
-        <% else %>
-        Subcategorías)
-        <% end %>
+      (<%= pluralize(categoria.subcategorias.count, 'Subcategoría') %>)
     </small>
       <!-- Icono
       <% if categoria.icon? %>
@@ -42,8 +37,7 @@
       <%= link_to([articulo.subcategoria, articulo]) do  %>
       <p>
         <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo.titulo.truncate(30) %>
-        <br>
-        <small class='time'><%= articulo.updated_at.strftime('%d/%m/%Y') %> a las <%= articulo.updated_at.strftime('%H:%M %P') %></small>
+        <small class='time'><%= time_ago_in_words(articulo.updated_at) %></small>
       </p>
       <!-- Icono
         <% if articulo.subcategoria.categoria.icon? %>
