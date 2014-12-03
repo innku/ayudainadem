@@ -21,7 +21,6 @@
 //= require_tree .
 //= require langs/es.js
 //= require plugins/block_styles.min.js
-//= require plugins/colors.min.js
 //= require plugins/media_manager.min.js
 //= require plugins/tables.min.js
 //= require plugins/video.min.js
