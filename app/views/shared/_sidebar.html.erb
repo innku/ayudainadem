@@ -8,7 +8,16 @@
   <% todas_categorias.each do |categoria|%>
   <li style='background:<%= categoria.color %>;'>
     <%= link_to(categoria) do  %>
-    <i class="fa fa-file" style='margin-right:10px;'></i><%= categoria %>
+    <i class="fa fa-bookmark" style='margin-right:10px;'></i><%= categoria %>
+    <br>
+    <small class='time'>
+        (<%= categoria.subcategorias.count %>
+        <% if categoria.subcategorias.count == 1 %>
+        Subcategoría)
+        <% else %>
+        Subcategorías)
+        <% end %>
+    </small>
       <!-- Icono
       <% if categoria.icon? %>
         <i class="fa fa-<%= categoria.icon %>" style='margin-right:10px;'></i><%= categoria %>
@@ -24,14 +33,18 @@
   <span class='icon'>
     <i class="fa fa-history"></i>
   </span>
-  <h4>Últimos Artículos</h4>
+  <h4>Última Actividad</h4>
 </div>
 <ul class='content'>
   <% ultimos_articulos.each do |articulo| %>
     <%#= link_to content_tag(:i, class: "fa fa-#{articulo.subcategoria.categoria.icon}"), articulo.subcategoria %>
     <li>
       <%= link_to([articulo.subcategoria, articulo]) do  %>
-      <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
+      <p>
+        <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo.titulo.truncate(30) %>
+        <br>
+        <small class='time'><%= articulo.updated_at.strftime('%d/%m/%Y') %> a las <%= articulo.updated_at.strftime('%H:%M %P') %></small>
+      </p>
       <!-- Icono
         <% if articulo.subcategoria.categoria.icon? %>
           <i class="fa fa-<%= articulo.subcategoria.categoria.icon %>" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>

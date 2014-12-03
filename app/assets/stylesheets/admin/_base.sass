@@ -28,15 +28,23 @@
     ul
       margin-top: em(20)
       padding: em(10) em(20)
+      .divider
+        padding: em(10) 0 em(5) 0
+        font-style: italic
+        color: lighten($sidebarAdmin,10)
+        border-bottom: solid 1px lighten($sidebarAdmin,5)
       li
+        i
+          margin-right: em(7)
         a
           color: white
           display: block
+          font-size: 11pt
           padding: em(10) 0
           border-bottom: solid 1px lighten($sidebarAdmin,5)
           i
-            margin-right: em(10)
             color: $greenMediumColor
+            margin-left: em(10)
           &:hover
             color: darken(white,30)
   .container-admin
