@@ -2,7 +2,7 @@
   <%= form_for [:admin, @articulo] do |f| %>
     <% if @articulo.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@articulo.errors.count, "error") %> prohibited this articulo from being saved:</h2>
+        <h2><%= pluralize(@articulo.errors.count, "error") %> no permitieron guardar los cambios:</h2>
 
         <ul>
         <% @articulo.errors.full_messages.each do |message| %>
@@ -28,20 +28,6 @@
       <div class='grouped-inputs'>
         <%= f.label 'Posición' %>
         <%= f.number_field :posicion, placeholder: 'Posición en número' %>
-      </div>
-    </div>
-
-    <div class='col-5'>
-      <div class='grouped-inputs'>
-        <%= f.label :imagen %>
-        <%= f.file_field :imagen %>
-      </div>
-    </div>
-
-    <div class='col-5'>
-      <div class="grouped-inputs">
-        <%= f.label :video %>
-        <%= f.text_field :video, placeholder: 'Liga del Video del Artículo' %>
       </div>
     </div>
 

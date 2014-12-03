@@ -2,7 +2,7 @@
   <%= form_for [:admin, @user] do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <h2><%= pluralize(@user.errors.count, "error") %> no permitieron guardar los cambios:</h2>
         <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -34,8 +34,8 @@
 
     <div class="col-12">
       <div class='grouped-inputs-select'>
-        <%= f.label :roles %>
-        <%= f.select :roles, User::ROLES, {prompt: "Selecciona los roles"}, {:multiple => true, class: 'select-multiple'} %>
+        <%= f.label :roles, 'Permisos' %>
+        <%= f.select :roles, ['admin', 'agente'], {prompt: "Selecciona los permisos"}, {:multiple => true, class: 'select-multiple'} %>
       </div>
     </div>
 
