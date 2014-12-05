@@ -8,13 +8,11 @@
   <% todas_categorias.each do |categoria|%>
   <li style='background:<%= categoria.color %>;'>
     <%= link_to(categoria) do  %>
-    <i class="fa fa-file" style='margin-right:10px;'></i><%= categoria %>
-      <!-- Icono
-      <% if categoria.icon? %>
-        <i class="fa fa-<%= categoria.icon %>" style='margin-right:10px;'></i><%= categoria %>
-      <% else %>
-        <i class="fa fa-file" style='margin-right:10px;'></i><%= categoria %>
-      <% end %> -->
+    <i class="fa fa-bookmark" style='margin-right:10px;'></i><%= categoria %>
+    <br>
+    <small class='time'>
+      (<%= pluralize(categoria.subcategorias.count, 'Subcategoría') %>)
+    </small>
     <% end %>
   </li>
   <% end %>
@@ -24,38 +22,18 @@
   <span class='icon'>
     <i class="fa fa-history"></i>
   </span>
-  <h4>Últimos Artículos</h4>
+  <h4>Última Actividad</h4>
 </div>
 <ul class='content'>
   <% ultimos_articulos.each do |articulo| %>
     <%#= link_to content_tag(:i, class: "fa fa-#{articulo.subcategoria.categoria.icon}"), articulo.subcategoria %>
     <li>
       <%= link_to([articulo.subcategoria, articulo]) do  %>
-      <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
-      <!-- Icono
-        <% if articulo.subcategoria.categoria.icon? %>
-          <i class="fa fa-<%= articulo.subcategoria.categoria.icon %>" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
-        <% else %>
-          <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
-        <% end %> -->
+      <p>
+        <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo.titulo.truncate(30) %>
+        <small class='time'><%= time_ago_in_words(articulo.updated_at) %></small>
+      </p>
       <% end %>
     </li>
   <% end %>
 </ul>
-
-<!--  Valorados
-<div class='title'>
-  <span class='icon'>
-    <i class="fa fa-heart fa-lg"></i>
-  </span>
-  <h4>Más Valorados</h4>
-</div>
-<ul class='content'>
-  <li>
-    <%= link_to 'Pregunta', root_path %>
-  </li>
-  <li>
-    <%= link_to 'Pregunta', root_path %>
-  </li>
-</ul>
--->

@@ -6,7 +6,7 @@
           <div class='header' style='background:<%= categoria.color %>;'>
             <div class="icon">
               <span class='icon' style='background:<%= categoria.color %>;'>
-                <i class="fa fa-file"></i>
+                <i class="fa fa-bookmark"></i>
                 <!-- Icono
                 <% if categoria.icon? %>
                   <i class="fa fa-<%= categoria.icon %>"></i>
@@ -16,18 +16,30 @@
               </span>
               <span class='back'></span>
             </div>
-            <h3 class='title'><%= categoria.titulo %></h3>
+            <h3 class='title'>
+              <%= categoria.titulo %>
+              <small class='span-gray'>
+                (<%= pluralize(categoria.subcategorias.count, 'Subcategoría') %>)
+              </small>
+            </h3>
           </div>
           <div class='content'>
             <ul>
               <% categoria.subcategorias.primeros.each do |subcategoria| %>
               <li>
-                <%= link_to subcategoria.titulo, [subcategoria.categoria, subcategoria] %>
+                <%= link_to([subcategoria.categoria, subcategoria]) do %>
+                   <%= subcategoria.titulo %>
+                   <small class='span-gray'>
+                     (<%= pluralize(subcategoria.articulos.count, 'Artículo') %>)
+                    </small>
+                <% end %>
               </li>
               <%end%>
             </ul>
           </div>
-          <%= link_to '<span>ver todas las subcategorias</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, categoria , class: 'link-to'%>
+          <% if categoria.subcategorias.count > 0 %>
+            <%= link_to '<span>ver todas las subcategorias</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, categoria , class: 'link-to'%>
+          <% end %>
         </li>
       <% end %>
     </ul>

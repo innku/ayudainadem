@@ -11,7 +11,7 @@
     <div class='header' style='background: <%= @categoria.color %>;'>
       <div class="icon">
         <span class='icon'  style='background: <%= @categoria.color %>;'>
-          <i class="fa fa-file"></i>
+          <i class="fa fa-bookmark"></i>
           <!-- Icono
           <% if @categoria.icon? %>
             <i class="fa fa-<%= @categoria.icon %>"></i>
@@ -28,7 +28,17 @@
       <% @categoria.subcategorias.each do |subcategoria| %>
         <dt>
           <%= link_to(root_path) do %>
-            <span><%= subcategoria.titulo %></span> <i class="fa fa-sort"></i>
+            <span>
+              <%= subcategoria.titulo %>
+              <small class='span-gray'>
+                (<%= subcategoria.articulos.count %>
+                <% if subcategoria.articulos.count == 1 %>
+                Artículo)
+                <% else %>
+                Artículos)
+                <% end %>
+              </small>
+            </span> <i class="fa fa-sort"></i>
           <% end %>
         </dt>
         <dd class='content'>

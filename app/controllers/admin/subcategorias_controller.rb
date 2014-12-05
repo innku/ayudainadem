@@ -2,7 +2,7 @@ class Admin::SubcategoriasController < Admin::BaseController
   before_action :set_subcategoria, only: [:show, :edit, :update, :destroy]
 
   def index
-    @q = Subcategoria.search(params[:q])
+    @q = Subcategoria.includes(:categoria).search(params[:q])
     @subcategorias = @q.result(distinct: true).paginate(page: params[:page])
   end
 

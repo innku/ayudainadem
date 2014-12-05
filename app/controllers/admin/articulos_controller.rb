@@ -2,7 +2,7 @@ class Admin::ArticulosController < Admin::BaseController
   before_action :set_articulo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @q = Articulo.search(params[:q])
+    @q = Articulo.includes(:subcategoria).search(params[:q])
     @articulos = @q.result(distinct: true).paginate(page: params[:page])
   end
 
@@ -51,6 +51,6 @@ class Admin::ArticulosController < Admin::BaseController
   end
 
   def articulo_params
-    params.require(:articulo).permit(:titulo, :contenido, :subcategoria_id , :video, :imagen, :slug)
+    params.require(:articulo).permit(:titulo, :contenido, :subcategoria_id , :slug)
   end
 end
