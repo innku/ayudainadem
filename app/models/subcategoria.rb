@@ -19,7 +19,7 @@ class Subcategoria < ActiveRecord::Base
   default_scope ->{ order(:posicion) }
   scope :primeros, ->{ limit(5) }
   belongs_to :categoria
-  has_many :articulos
+  has_many :articulos, inverse_of: :subcategoria, dependent: :delete_all
   accepts_nested_attributes_for :articulos, allow_destroy: true, reject_if: :all_blank
   def to_s
     titulo

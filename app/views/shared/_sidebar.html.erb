@@ -12,19 +12,8 @@
     <i class="fa fa-bookmark" style='margin-right:10px;'></i><%= categoria %>
     <br>
     <small class='time'>
-        (<%= categoria.subcategorias.count %>
-        <% if categoria.subcategorias.count == 1 %>
-        Subcategoría)
-        <% else %>
-        Subcategorías)
-        <% end %>
+      (<%= pluralize(categoria.subcategorias.count, 'Subcategoría') %>)
     </small>
-      <!-- Icono
-      <% if categoria.icon? %>
-        <i class="fa fa-<%= categoria.icon %>" style='margin-right:10px;'></i><%= categoria %>
-      <% else %>
-        <i class="fa fa-file" style='margin-right:10px;'></i><%= categoria %>
-      <% end %> -->
     <% end %>
   </li>
   <% end %>
@@ -44,33 +33,9 @@
       <%= link_to([articulo.subcategoria, articulo]) do  %>
       <p>
         <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo.titulo.truncate(30) %>
-        <br>
-        <small class='time'><%= articulo.updated_at.strftime('%d/%m/%Y') %> a las <%= articulo.updated_at.strftime('%H:%M %P') %></small>
+        <small class='time'><%= time_ago_in_words(articulo.updated_at) %></small>
       </p>
-      <!-- Icono
-        <% if articulo.subcategoria.categoria.icon? %>
-          <i class="fa fa-<%= articulo.subcategoria.categoria.icon %>" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
-        <% else %>
-          <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo %>
-        <% end %> -->
       <% end %>
     </li>
   <% end %>
 </ul>
-
-<!--  Valorados
-<div class='title'>
-  <span class='icon'>
-    <i class="fa fa-heart fa-lg"></i>
-  </span>
-  <h4>Más Valorados</h4>
-</div>
-<ul class='content'>
-  <li>
-    <%= link_to 'Pregunta', root_path %>
-  </li>
-  <li>
-    <%= link_to 'Pregunta', root_path %>
-  </li>
-</ul>
--->

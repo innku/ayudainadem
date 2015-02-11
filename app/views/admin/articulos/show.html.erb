@@ -21,13 +21,9 @@
             <li>
               La subcategoría de este artículo es <b class='green-text'><%= @articulo.subcategoria %></b>.
             </li>
-            <li>
-              <%= @articulo.video %>
-            </li>
           </ul>
           <hr>
           <h4>Contenido</h4>
-          <%= image_tag @articulo.imagen.url(:grande) if @articulo.imagen %>
           <p>
             <%= raw @articulo.contenido %>
           </p>

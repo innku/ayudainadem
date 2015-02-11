@@ -13,12 +13,6 @@
       <div class="icon">
         <span class='icon' style='background: <%= @subcategoria.categoria.color %>;'>
           <i class="fa fa-bookmark"></i>
-          <!-- Icono
-          <% if @subcategoria.categoria.icon? %>
-            <i class="fa fa-<%= @subcategoria.categoria.icon %>"></i>
-          <% else %>
-            <i class="fa fa-file"></i>
-          <% end %> -->
         </span>
         <span class='back'></span>
       </div>
@@ -27,20 +21,15 @@
     <h4 class='subtitle'>
       <%= @subcategoria %>
       <small class='span-gray'>
-        (<%= @subcategoria.articulos.count %>
-        <% if @subcategoria.articulos.count == 1 %>
-        Artículo)
-        <% else %>
-        Artículos)
-        <% end %>
+        (<%= pluralize(@subcategoria.articulos.count, 'Artículo') %>)
       </small>
     </h4>
     <ul class='content'>
       <% @subcategoria.articulos.each do |articulo| %>
-      <li>
-        <%= link_to articulo, [articulo.subcategoria,articulo] %>
+        <li>
+      <%= link_to articulo, [articulo.subcategoria,articulo] %>
       </li>
-      <% end %>
+    <% end %>
     </ul>
   </div>
   <div class='col-3 sidebar'>

@@ -21,7 +21,7 @@ class Articulo < ActiveRecord::Base
   default_scope ->{ order(:posicion) }
 
   def self.los_ultimos
-    unscoped.order(:created_at).limit(10)
+    unscoped.order(:created_at).limit(10).reverse
   end
 
   def to_s

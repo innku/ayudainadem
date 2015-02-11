@@ -28,11 +28,6 @@
     <h4 class='subtitle'><%= @articulo.subcategoria %></h4>
     <div class='content'>
       <h2 class='title'><i class="fa fa-file"></i> <%= @articulo %></h2>
-      <% if @articulo.video? %>
-        <div class='image'>
-          <%= @articulo.imagen %>
-        </div>
-      <%end%>
       <div class='info'>
         <%= @articulo.contenido.html_safe %>
         <br>
