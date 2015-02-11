@@ -38,6 +38,7 @@
           <div class='content'>
             <ul>
               <% categoria.subcategorias.primeros.each do |subcategoria| %>
+              <% if subcategoria.articulos.count >= 1 %>
               <li>
                 <%= link_to([subcategoria.categoria, subcategoria]) do %>
                    <%= subcategoria.titulo %>
@@ -46,6 +47,7 @@
                     </small>
                 <% end %>
               </li>
+              <%end%>
               <%end%>
             </ul>
           </div>

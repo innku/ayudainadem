@@ -26,34 +26,38 @@
     <!--Subcategorias -->
     <dl class="accordion">
       <% @categoria.subcategorias.each do |subcategoria| %>
-        <dt>
-          <%= link_to(root_path) do %>
-            <span>
-              <%= subcategoria.titulo %>
-              <small class='span-gray'>
-                (<%= subcategoria.articulos.count %>
-                <% if subcategoria.articulos.count == 1 %>
-                Artículo)
-                <% else %>
-                Artículos)
-                <% end %>
-              </small>
-            </span> <i class="fa fa-sort"></i>
-          <% end %>
-        </dt>
-        <dd class='content'>
-          <!--Preguntas -->
-          <ul>
-            <% subcategoria.articulos.primeros.each do |articulo| %>
-            <li>
-              <%= link_to articulo, [articulo.subcategoria, articulo] %>
-            </li>
-            <%end%>
-          </ul>
-          <%= link_to([subcategoria.categoria, subcategoria], html_options = {class: 'link-to' }) do %>
-            <span>ver todos los artículos de <%= subcategoria %></span> <i class="fa fa-arrow-circle-right"></i>
-          <% end %>
-        </dd>
+        <% if subcategoria.articulos.count >= 1 %>
+          <dt>
+            <%= link_to(root_path) do %>
+              <span>
+                <%= subcategoria.titulo %>
+                <small class='span-gray'>
+                  (<%= subcategoria.articulos.count %>
+                  <% if subcategoria.articulos.count == 1 %>
+                  Artículo)
+                  <% else %>
+                  Artículos)
+                  <% end %>
+                </small>
+              </span> <i class="fa fa-sort"></i>
+            <% end %>
+          </dt>
+          <dd class='content'>
+            <!--Preguntas -->
+            <ul>
+              <% subcategoria.articulos.primeros.each do |articulo| %>
+              <li>
+                <%= link_to articulo, [articulo.subcategoria, articulo] %>
+              </li>
+              <%end%>
+            </ul>
+            <% if subcategoria.articulos.count > 5 %>
+              <%= link_to([subcategoria.categoria, subcategoria], html_options = {class: 'link-to' }) do %>
+                <span>ver los <%= subcategoria.articulos.count %> artículos de <%= subcategoria %></span> <i class="fa fa-arrow-circle-right"></i>
+              <% end %>
+            <% end %>
+          </dd>
+        <%end%>
       <%end%>
     </dl>
   </div>
