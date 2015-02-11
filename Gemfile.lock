@@ -139,6 +139,8 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     ffi (1.9.6)
     fog (1.24.0)
       fog-brightbox
@@ -235,6 +237,7 @@ GEM
       arel
     polyamorous (1.1.0)
       activerecord (>= 3.0)
+    populator (1.0.0)
     posix-spawn (0.3.9)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -393,6 +396,7 @@ DEPENDENCIES
   devise-i18n-views!
   email_spec (~> 1.6.0)
   factory_girl_rails (~> 4.5.0)
+  faker
   fog (~> 1.24.0)
   font-awesome-sass (~> 4.2.0)
   foreigner (~> 1.6.1)
@@ -406,6 +410,7 @@ DEPENDENCIES
   nested_form (~> 0.3.2)
   pg (~> 0.17.1)
   pg_search (~> 0.7.8)
+  populator
   pry-byebug
   puma (~> 2.9.2)
   quiet_assets
