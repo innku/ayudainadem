@@ -33,7 +33,7 @@
       <%= link_to([articulo.subcategoria, articulo]) do  %>
       <p>
         <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i><%= articulo.titulo.truncate(30) %>
-        <small class='time'><%= time_ago_in_words(articulo.updated_at) %></small>
+        <br><small class='time'><%= time_ago_in_words(articulo.updated_at) %></small>
       </p>
       <% end %>
     </li>
