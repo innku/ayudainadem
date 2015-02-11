@@ -42,6 +42,8 @@ group :development do
   gem 'quiet_assets'
   gem 'sextant'
   gem 'spring', '~> 1.1.3'
+  gem 'populator'
+  gem 'faker'
 end
 
 group :test do

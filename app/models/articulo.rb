@@ -20,6 +20,9 @@ class Articulo < ActiveRecord::Base
   scope :primeros, ->{ limit(5) }
   default_scope ->{ order(:posicion) }
 
+  scope :top_cinco_creados, -> { order(:created_at).limit(5).reverse }
+  scope :top_cinco_creados, -> { order(:updated_at).limit(5).reverse }
+
   def self.los_ultimos
     unscoped.order(:created_at).limit(10).reverse
   end
