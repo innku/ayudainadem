@@ -6,6 +6,6 @@ module AdminHelper
     Subcategoria.all.count
   end
   def total_articulos
-    Articulo.all.count
+    Articulo.count
   end
 end

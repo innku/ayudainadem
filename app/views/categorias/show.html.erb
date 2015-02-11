@@ -21,7 +21,12 @@
         </span>
         <span class='back'></span>
       </div>
-      <h3 class='title'><%= @categoria.titulo %></h3>
+      <h3 class='title'>
+        <%= @categoria.titulo %>
+        <small class='span-gray'>
+          (<%= pluralize(@categoria.subcategorias.count, 'Subcategoría') %>)
+         </small>
+      </h3>
     </div>
     <!--Subcategorias -->
     <dl class="accordion">
@@ -47,13 +52,15 @@
             <ul>
               <% subcategoria.articulos.primeros.each do |articulo| %>
               <li>
-                <%= link_to articulo, [articulo.subcategoria, articulo] %>
+                <%= link_to([articulo.subcategoria,articulo]) do %>
+                 <i class="fa fa-file" style='color:<%= articulo.subcategoria.categoria.color %>; margin-right:10px;'></i> <%= articulo %>
+                <% end %>
               </li>
               <%end%>
             </ul>
             <% if subcategoria.articulos.count > 5 %>
               <%= link_to([subcategoria.categoria, subcategoria], html_options = {class: 'link-to' }) do %>
-                <span>ver los <%= subcategoria.articulos.count %> artículos de <%= subcategoria %></span> <i class="fa fa-arrow-circle-right"></i>
+                <span><%= subcategoria.articulos.count %> artículos</span> <i class="fa fa-arrow-circle-right"></i>
               <% end %>
             <% end %>
           </dd>
