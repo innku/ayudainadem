@@ -19,5 +19,8 @@ namespace :db do
         end
       end
     end
+    Categoria.find_each(&:save)
+    Subcategoria.find_each(&:save)
+    Articulo.find_each(&:save)
   end
 end

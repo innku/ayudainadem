@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.4'
 
-gem 'rails', '4.1.8'
+gem 'rails', '4.1.9'
 gem 'cancancan', '~> 1.9.2'
 gem 'carrierwave', '~> 0.10.0'
 gem 'devise'
