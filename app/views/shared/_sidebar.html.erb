@@ -6,6 +6,7 @@
 </div>
 <ul class='content sidebar-categorias'>
   <% todas_categorias.each do |categoria|%>
+  <% if categoria.subcategorias.count >= 1 %>
   <li style='background:<%= categoria.color %>;'>
     <%= link_to(categoria) do  %>
     <i class="fa fa-bookmark" style='margin-right:10px;'></i><%= categoria %>
@@ -26,6 +27,7 @@
       <% end %> -->
     <% end %>
   </li>
+  <% end %>
   <% end %>
 </ul>
 

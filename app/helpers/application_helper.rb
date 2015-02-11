@@ -3,6 +3,6 @@ module ApplicationHelper
     Articulo.los_ultimos
   end
   def todas_categorias
-    Categoria.all
+    Categoria.disponibles
   end
 end

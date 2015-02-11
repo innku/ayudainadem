@@ -1,7 +1,19 @@
 <div class='row'>
   <div class='col-9 categories'>
+    <div class='ultimos-movimientos'>
+      <div class='row'>
+          <div class='col-6'>
+            <h3 class='green-text'>Últimos Artículos Actualizados</h3>
+          </div>
+          <div class='col-6'>
+            <h3 class='green-text'>Últimos Artículos Creados</h3>
+          </div>
+      </div>
+    </div>
+    <br>
     <ul>
       <% @categorias.each do |categoria| %>
+        <% if categoria.subcategorias.count >= 1 %>
         <li>
           <div class='header' style='background:<%= categoria.color %>;'>
             <div class="icon">
@@ -47,10 +59,14 @@
               <%end%>
             </ul>
           </div>
-          <% if categoria.subcategorias.count > 0 %>
-            <%= link_to '<span>ver todas las subcategorias</span> <i class="fa fa-arrow-circle-right"></i>'.html_safe, categoria , class: 'link-to'%>
+
+          <% if categoria.subcategorias.count > 5 %>
+            <%= link_to(categoria , class: 'link-to') do %>
+              <span> ver las <%= categoria.subcategorias.count%> subcategorias </span> <i class="fa fa-arrow-circle-right"></i>
+            <% end %>
           <% end %>
         </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
